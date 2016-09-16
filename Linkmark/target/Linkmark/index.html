@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="main"><h1>Educational Resource LinkMarking</h1>
+<h4>Please choose a query in the list below, and mark the relevant links from search results on the right(select the checkbox). If the link dosen't lead to a page that contains a syllabus or course schedule, please provide a revised link.</h4>
+<h4>Thank You!</h4>
+
+</div>
+<table>
+<tr><td class="td-4" valign="top">
+<div class="main">
+<ur>
+</br>
+<h3>Search Query List:</h3>
+<li><input class="queryitem" type="button" value="information retrieval course" onclick="Go(this)" width="100%"></input></li>
+</ur>
+</div>
+<td class="td-6">
+</br>
+<h3 id="head">Search Results:</h3>
+<div id="linklist"></div>
+<div><input id="submit" type="submit" value="submit" onclick="submit()" disabled="disabled"></input></div>
+
+
+
+</td>
+
+
+
+</tr>
+
+</table>
+
+<script>
+
+function Go(obj){
+	var inputQuery=obj.value;
+	inputQuery=inputQuery.replace(/\s+/g,"_");
+	obj.disabled="disabled";
+	var submit=document.getElementById("submit");
+	if(submit.getAttribute('disabled')){
+		submit.disabled=false;
+	}
+	query={
+			"query":inputQuery
+	};
+	$.ajax({
+	      type:"GET",
+	      url:"LoadLinkList",
+	      data:query,
+	      dataType:'json',
+	      cache:false,
+	      success: function(data){
+	    	  var d=eval(data);
+	    	  var main=document.getElementById('linklist');
+	    	  if(d.error==true){
+	    		  var h2=document.createElement('h2');
+	    		  h2.innerHTML="No Search Reasult!";
+	    		  main.appendChild(h2);
+	    	  }
+	    	  else{
+	    		  console.log(d.links)
+					
+		    	  	var lks=d.links;
+					for(var i=0;i<lks.length;i++){
+						var subdiv=document.createElement('div');
+						subdiv.className="subdiv";
+						var h3=document.createElement('h3');
+						var a=document.createElement('a');
+						a.onmousedown="return rwt(this,'','','','1','AFQjCNFOBDgDYFpVZXE_nTneyKK2PE_t0g','xVCoxFIBrrIwfaIKSIsrGg','0ahUKEwjU7MWe76fNAhUHNJQKHU7qCUoQFggcMAA','','',event)";
+						a.target="_blank";
+						a.href=lks[i].link;
+						a.innerHTML=lks[i].name;
+						a.name="SearchResult"
+						h3.appendChild(a);
+						subdiv.appendChild(h3);
+						//main.appendChild(h3);
+						//////////
+						var checkbox=document.createElement('input');
+						checkbox.type="checkbox";
+						checkbox.name="isRelevant";
+						checkbox.value=lks[i].ID;
+						subdiv.appendChild(checkbox);
+						//main.appendChild(checkbox);
+						var textbox=document.createElement('input');
+						textbox.className="textinput";
+						textbox.type="text";
+						textbox.name="RevisedLink";
+						textbox.value="";
+						textbox.placeholder="Input a revised link where the course schedule shows";
+						//main.appendChild(textbox);
+						subdiv.appendChild(textbox);
+						main.appendChild(subdiv);
+					} 
+	    	  }
+	    	  	
+	      }
+	    });
+	
+}
+
+function submit(){
+	var userid=Math.random().toString(36).substr(2, 16);
+	var check=document.getElementsByName("isRelevant");
+	var results=document.getElementsByName("SearchResult");
+	var revised=document.getElementsByClassName("textinput");
+	var list=[];
+	for(var i=0;i<check.length;i++){
+		if(check[i].checked==true){
+			
+			var l;
+			console.log(results[i].href);
+			console.log(results[i]);
+			console.log(revised[i].value);
+			if(revised[i].value === ""){
+				
+				l={
+						"id":check[i].value,
+						"link":results[i].href
+					}
+			}
+			else{
+				var revisedlink=revised[i].value;
+				l={
+						"id":check[i].value,
+						"link":revisedlink
+				}
+			}
+			list.push(l);
+		}
+	}
+	var Data={
+			"userid":userid,
+			"list":list
+	}
+	console.log(Data.list);
+	$.ajax({
+      url: "submit",
+      dataType: 'json',
+      type: 'POST',
+      data: Data,
+      success: function(data) {
+    	  var d=eval(data);
+    	  if(d.reply==1){
+    		  window.alert("submit successfully!");
+    		  document.getElementById("linklist").innerHTML="";
+    		  document.getElementById("submit").disabled="disabled";
+    	  }
+    	  else{
+    		  window.alert("submit failed!");
+    		  
+    	  }
+      }
+    });
+}
+
+
+</script>
+</body>
+</html>
