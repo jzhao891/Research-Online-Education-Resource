@@ -1,0 +1,14 @@
+{"lists":
+  [
+{"xpath": "//*[@id=\"schedule\"]", "revised": true, "link": "http://www.cs.rochester.edu/courses/212/fall2015/index.php?page", "id": 128, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"centerCol\"]/article[9]/div", "revised": false, "link": "http://www.it.uu.se/edu/course/homepage/avint/vt10", "id": 131, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"content-primary\"]", "revised": true, "link": "https://www.cl.cam.ac.uk/teaching/1314/HCI/materials.html", "id": 70, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"AutoNumber1\"]", "revised": false, "link": "http://www.cs.ucsb.edu/~holl/CS185/", "id": 74, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"outline_container\"]/table", "revised": false, "link": "http://www.cim.mcgill.ca/~jer/courses/hci/", "id": 43, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"sites-canvas-main-content\"]/table/tbody/tr/td/div/div/table", "revised": true, "link": "https://sites.google.com/site/interactiondesignpsu/class-schedule", "id": 78, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"content\"]/div/div/table", "revised": true, "link": "http://cs.wellesley.edu/~hci/schedule.html", "id": 83, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"schedule\"]", "revised": false, "link": "http://www4.ncsu.edu/~stamant/454/", "id": 57, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"course_inner_section\"]/div[1]/table", "revised": true, "link": "http://ocw.mit.edu/courses/media-arts-and-sciences/mas-961-ambient-intelligence-spring-2005/lecture-notes/", "id": 26, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"syllabus\"]/table", "revised": true, "link": "http://d.ucsd.edu/class/grad-IxD/2015/", "id": 61, "IfContainSyllabus": true}
+]
+}

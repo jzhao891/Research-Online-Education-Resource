@@ -1,0 +1,12 @@
+start=8/29/2016, 5:18:14 AM
+end=8/29/2016, 5:18:38 AM
+time[0][link]=https://www.coursera.org/learn/object-oriented-java
+time[0][time]=
+time[1][link]=https://www.coursera.org/specializations/java-object-oriented
+time[1][time]=
+time[2][link]=http://mooc.fi/courses/2013/programming-part-1/
+time[2][time]=
+time[3][link]=http://web.stanford.edu/class/cs108/
+time[3][time]=
+time[4][link]=https://www.lynda.com/Java-tutorials/Foundations-Programming-Object-Oriented-Design/96949-2.html
+time[4][time]=

@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+import json
+
+Dir = '/Users/jessicazhao/Documents/workspace/workspace-python/data/Information_Retrieval_course.json'
+
+file1 = dict()
+with open(Dir) as data_file_1:
+    data1 = json.load(data_file_1)
+links=data1["links"]
+
+for link in links:
+    file1[link["link"]]=link
+file2=dict()
+Dir = '/Users/jessicazhao/Documents/workspace/workspace-python/data/Information_Retrival_Syllabus.json'
+with open(Dir) as data_file_2:
+    data2=json.load(data_file_2)
+newlinks=data2["links"]
+for link in newlinks:
+    if not (link["link"] in ):
+        file2[link["link"]] = link
+with open('/Users/jessicazhao/Documents/workspace/workspace-python/data/Information_Retrival_new.json','w') as jsonFile:
+    jsonFile.write('{\n"links":[\n')
+    cont=0
+    for key in file2.keys():
+        cont=cont+1
+        json.dump(file2[key],jsonFile)
+        if(cont!=len(file2)):
+            jsonFile.write(",\n")
+    jsonFile.write(']}')

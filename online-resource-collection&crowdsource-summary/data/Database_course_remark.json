@@ -1,0 +1,7 @@
+
+{"lists":[
+{"xpath": "//*[@id=\"accordian-container\"]", "revised": false, "link": "https://mva.microsoft.com/en-US/training-courses/database-fundamentals-8243", "id": 3, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"section-0\"]/div/ul[2]", "revised": false, "link": "http://saylor.org/course/cs403/", "id": 19, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"course_inner_section\"]/div[1]/table", "revised": true, "link": "http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/lecture-notes/", "id": 4, "IfContainSyllabus": true},
+{"xpath": "//*[@id=\"course_inner_section\"]/div[1]/table", "revised": true, "link": "http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/readings/", "id": 4, "IfContainSyllabus": true}
+]}

@@ -1,0 +1,21 @@
+{"lists":
+[
+{"xpath": "//*[@id=\"readme\"]/article/table", "revised": true, "link": "https://github.com/iit-cs429/main/blob/master/Schedule.md", "id": 64},
+{"xpath": "//*[@id=\"main\"]/section/ul", "revised": true, "link": "http://sifaka.cs.uiuc.edu/~wang296/Course/IR_Fall/lectures.html", "id": 33},
+{"xpath": "//*[@id=\"AutoNumber1\"]", "revised": true, "link": "http://berlin.csie.ntnu.edu.tw/Courses/Information%20Retrieval%20and%20Extraction/2015S_IR_Main.htm", "id": 130},
+{"xpath": "//*[@id=\"content\"]/ol", "revised": true, "link": "http://courses.ischool.berkeley.edu/i240/s13/schedule.php", "id": 11},
+{"xpath": "//*[@id=\"material\"]/ul[2]", "revised": true, "link": "http://www.isical.ac.in/~debapriyo/teaching/ir2015/#material", "id": 102},
+{"xpath": "//*[@id=\"table1\"]", "revised": false, "link": "http://cecs.wright.edu/~tkprasad/courses/cs499/cs4699.html", "id": 7},
+{"xpath": "//*[@id=\"sites-canvas-main-content\"]/table/tbody/tr/td/div/table", "revised": false, "link": "https://sites.google.com/a/unal.edu.co/information-retrieval-2013-1/", "id": 10},
+{"xpath": "//*[@id=\"content\"]/ul", "revised": true, "link": "http://www.cs.virginia.edu/~hw5x/Course/IR2015/_site/lectures/", "id": 43},
+{"xpath": "//*[@id=\"frame\"]/table/tbody/tr[2]/td/table[1]", "revised": false, "link": "http://www.win.tue.nl/~mpechen/courses/2ID25/", "id": 12},
+{"xpath": "//*[@id=\"content\"]/div/div/div[2]/ul[1]", "revised": true, "link": "https://www2.kbs.uni-hannover.de/260.html", "id": 125},
+{"xpath": "//*[@id=\"content\"]/ul[2]", "revised": false, "link": "https://ad-wiki.informatik.uni-freiburg.de/teaching/InformationRetrievalWS1516", "id": 112},
+{"xpath": "//*[@id=\"c8877\"]/div[2]/table", "revised": false, "link": "https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/teaching/winter-semester-201516/information-retrieval-and-data-mining/", "id": 51},
+{"xpath": "//*[@id=\"sites-canvas-main-content\"]/table/tbody/tr/td/div", "revised": true, "link": "http://mmir.iupr.com/lectures-1", "id": 118},
+{"xpath": "//*[@id=\"content-primary\"]/p", "revised": true, "link": "https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/materials.html", "id": 23},
+{"xpath": "//*[@id=\"node-256\"]/div/table","revised": true, "link": "https://www.systems.ethz.ch/courses/fall2012/ir/lectures", "id": 56},
+{"xpath": "//*[@id=\"main-content\"]/div/div/div/div[3]/table", "revised": true, "link": "http://www.cs.ucy.ac.cy/courses/EPL660/lectures.html", "id": 47},
+{"xpath": "//*[@id=\"portfolio\"]/div/div/div/div/table", "revised": false, "link": "http://www.l3s.de/~anand/tir14/", "id": 126},
+{"xpath": "//*[@id=\"c18013\"]/ul", "revised": false, "link": "http://dws.informatik.uni-mannheim.de/en/teaching/courses-for-master-candidates/ie663websearchandinformationretrieval/", "id": 31}
+]}
