@@ -1,0 +1,63 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>UniqueIP</servlet-name>
+  	<display-name>UniqueIP</display-name>
+  	<description></description>
+  	<servlet-class>UniqueIP</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AutoRun</servlet-name>
+  	<display-name>AutoRun</display-name>
+  	<description></description>
+  	<servlet-class>AutoRun</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>timeStore</servlet-name>
+  	<display-name>timeStore</display-name>
+  	<description></description>
+  	<servlet-class>timeStore</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>test</servlet-name>
+  	<display-name>test</display-name>
+  	<description></description>
+  	<servlet-class>test</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>test1</servlet-name>
+  	<display-name>test1</display-name>
+  	<description></description>
+  	<servlet-class>test1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UniqueIP</servlet-name>
+  	<url-pattern>/UniqueIP</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AutoRun</servlet-name>
+  	<url-pattern>/AutoRun</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>timeStore</servlet-name>
+  	<url-pattern>/timeStore</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>test</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>test1</servlet-name>
+  	<url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+   
+  <listener>
+    <listener-class>SysContextListener</listener-class>
+</listener>
+
+</web-app>

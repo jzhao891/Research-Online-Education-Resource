@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- global variables -->
+<input type="hidden" name="userIP"></input>
+<input type="hidden" name="starttime"></input>
+<input type="hidden" name="SubsetIndex"></input>
+<!-- global variables -->
+
+<div class="main"><h1>Educational Resource LinkMarking</h1>
+<h3><mark>NOTE</mark></h3>
+<h4>Please choose a query in the list below, and mark the relevant links from search results on the right(select the checkbox). If the link dosen't lead to a page that contains a syllabus or course schedule, please provide a revised link. Thank You!</h4>
+</br>
+<h3>Example:</h3>
+<img alt="example" src="img/example.png" width="600px">
+</div>
+<div class="main">
+<table>
+<td></br><h3>Search Query:<input id="queryitem" class="queryitem" type="text" value="Human Computer Interaction course" readonly width="700px"><input type="hidden" name="starttime" value="test"></input></input></h3></td>
+</tr>
+
+<tr>
+<td>
+</br>
+<h3 id="head">Search Results:</h3></br>
+<div id="linklist"></div>
+<div><input id="submit" type="submit" value="submit" onclick="submit()" disabled="disabled"></input></div>
+
+
+
+</td>
+
+
+</tr>
+
+</table></div>
+<div class="dialog">
+  <p>Submit successfully!<br>
+  Your UUID is "<span id="userID"></span>". Please put it into "UUID" TextBox on the survey-link page when you are ready to submit this HIT!
+  </p>
+  <input type="button" value="OK" onclick="OK()"></input>
+</div>
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip">
+//get user ip
+</script>
+<script>
+
+function Go(query){
+	var Data={
+			"query":query,
+			"ip":document.getElementsByName("userIP").value
+	};
+	$.ajax({
+	      type:"GET",
+	      url:"LoadLinkList",
+	      data:Data,
+	      dataType:'json',
+	      cache:false,
+	      success: function(data){
+	    	  var d=eval(data);
+	    	  var main=document.getElementById('linklist');
+	    	  $("#linklist").empty();
+	    	  if(d.error=="-1"){
+	    		  var h2=document.createElement('h2');
+	    		  h2.innerHTML="No Search Reasult!";
+	    		  main.appendChild(h2);
+	    	  }
+	    	  else if(d.error=="-2"){
+	    		  /*var h2=document.createElement('h2');
+	    		  h2.innerHTML="This HIT is avaliable only to unique user. A user using this IP already submited all tasks in this HIT!";
+	    		  main.appendChild(h2);*/
+	    		  window.alert("This HIT is avaliable only to unique user. A user using this IP already submited all tasks in this HIT!");
+	    	  }
+	    	  else{
+	    		  //enable submit button
+	    		  var submit=document.getElementById("submit");
+	    			if(submit.getAttribute('disabled')){
+	    				submit.disabled=false;
+	    			}
+	    		//display the result list
+	    		  console.log(d.links)
+					document.getElementsByName("SubsetIndex").value=d.index;
+		    	  	var lks=d.links;
+					for(var i=0;i<lks.length;i++){
+						var subdiv=document.createElement('div');
+						subdiv.className="subdiv";
+						var h3=document.createElement('h3');
+						var a=document.createElement('a');//link
+						a.onmousedown="return rwt(this,'','','','1','AFQjCNFOBDgDYFpVZXE_nTneyKK2PE_t0g','xVCoxFIBrrIwfaIKSIsrGg','0ahUKEwjU7MWe76fNAhUHNJQKHU7qCUoQFggcMAA','','',event)";
+						a.target="_blank";
+						a.href=lks[i].link;
+						a.innerHTML=lks[i].name;
+						console.log(lks[i].link+"///"+lks[i].name);
+						a.className="SearchResult";
+						a.onclick=function(){
+							var link=$(this).attr("href");
+							var end=new Date();
+							document.getElementById(link).value=end.toLocaleString();
+							
+							
+						};
+						
+						var time=document.createElement('input');
+						time.type="hidden";
+						time.name="clicktime";
+						time.id=lks[i].link;
+						a.appendChild(time);
+						h3.appendChild(a);
+						subdiv.appendChild(h3);
+						//////////
+						var checkbox1=document.createElement('input');//checkbox button
+						checkbox1.type="checkbox";
+						checkbox1.className="isCourseweb";
+						checkbox1.name=lks[i].ID;
+						checkbox1.value=lks[i].ID;
+						var myText1=document.createTextNode("Is a course website ");
+						subdiv.appendChild(checkbox1);
+						subdiv.appendChild(myText1);
+						var checkbox2=document.createElement('input');
+						checkbox2.type="checkbox";
+						checkbox2.className="containSyllabus";
+						checkbox2.name=lks[i].ID;
+						
+						var myText2=document.createTextNode("Contains well-built content/syllabus ");
+						subdiv.appendChild(checkbox2);
+						subdiv.appendChild(myText2);
+						//main.appendChild(checkbox);
+						var textbox=document.createElement('input');//revised input
+						textbox.className="textinput";
+						textbox.type="text";
+						textbox.name="RevisedLink";
+						textbox.value="";
+						textbox.placeholder="Input a revised link where the course schedule shows";
+						var textbox1=document.createElement('input');//xpath input
+						textbox1.className="textinput";
+						textbox1.type="text";
+						textbox1.name="xpath";
+						textbox1.value="";
+						textbox1.placeholder="Input the Xpath of the syllabus table";
+						//main.appendChild(textbox);
+						subdiv.appendChild(textbox);
+						subdiv.appendChild(textbox1);
+						main.appendChild(subdiv);
+					} 
+					var idModuel=query+'-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+					    var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+					    return v.toString(16);
+					});
+					console.log(idModuel);
+					var userid=document.getElementById("userID");
+					console.log(userid);
+					userid.innerHTML=idModuel;
+	    	  }
+	    	  	
+	      }
+	    });
+	
+}
+
+function submit(){
+	
+	var userid=document.getElementById("userID").innerHTML;
+	//var check=document.getElementsByName("isRelevant");
+	var check2=document.getElementsByClassName("containSyllabus");
+	var check1=document.getElementsByClassName("isCourseweb");
+	var results=document.getElementsByClassName("SearchResult");
+	var revised=document.getElementsByName("RevisedLink");
+	var xpath=document.getElementsByName("xpath");
+	var userip=document.getElementsByName("userIP").value;
+	var list=[];//linkmark list
+	for(var i=0;i<check1.length;i++){
+		if(check1[i].checked==true){
+			var l;
+			console.log(results[i].href);
+			console.log(xpath[i].value);
+			console.log(check1[i].checked);
+			if((check2[i].checked&&xpath[i].value==="")||(!check2[i].checked&&xpath[i].value!=="")){
+				window.alert("valid data: checkbox \"Contains well-built content/syllabus\" or a xpath should be completed!");
+				return
+			}
+			console.log(revised[i].value);
+			if(revised[i].value === ""){
+				
+				l={
+						"id":check1[i].value,
+						"link":results[i].href,
+						"reviesd":false,
+						"IfContainSyllabus":check2[i].checked,
+						"xpath":xpath[i].value
+						
+				}
+			}
+			else{
+				var revisedlink=revised[i].value;
+				l={
+						"id":check1[i].value,
+						"link":revisedlink,
+						"reviesd":true,
+						"IfContainSyllabus":check2[i].checked,
+						"xpath":xpath[i].value
+				}
+			}
+			list.push(l);
+		}
+	}
+	var timelist=[];//timelist
+	var end=new Date();
+	var clicktimes=document.getElementsByName("clicktime");
+	for(var i=0;i<clicktimes.length;i++){
+		console.log(clicktimes[i])
+		var t={
+				"link":clicktimes[i].id,
+				"time":clicktimes[i].value
+		}
+		timelist.push(t);
+	}
+	var T={
+			"uuid":userid,
+			"start":document.getElementsByName("starttime").value,
+			"end":end.toLocaleString(),
+			"time":timelist
+	}
+	var Data={
+			
+			"userip":userip,
+			"userid":userid,
+			"query":document.getElementById("queryitem").value.replace(/\s+/g,"_"),
+			"subsetIndex":document.getElementsByName("SubsetIndex").value,
+			"list":list
+			
+	}
+	console.log(T.uuid);
+	$.ajax({
+      url: "submit",
+      dataType: 'json',
+      type: 'POST',
+      data:Data,
+      success: function(data) {
+    	  var d=eval(data);
+    	  if(d.reply==1){
+    		  //window.alert("submit successfully!");
+    		 $('.dialog').slideFadeToggle();
+    		  document.getElementById("linklist").innerHTML="";//clear div
+    		  document.getElementById("submit").disabled="disabled";//disable the submit button
+    	  }
+    	  else{
+    		  window.alert("submit failed!");
+    		  
+    	  }
+      }
+    });
+	$.ajax({
+	      url: "timeStore",
+	      dataType: 'json',
+	      type: 'POST',
+	      data: T,
+	      success: function(data) {
+	      }
+	    });
+}
+
+$.fn.slideFadeToggle = function(easing, callback) {
+	  return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+	};
+
+function OK(){
+	$('.dialog').slideFadeToggle();  
+}
+function get(obj){
+	alert(obj);
+}
+
+
+</script>
+<script>
+//store date
+var start=new Date();
+document.getElementsByName("starttime").value=start.toLocaleString();
+//get ip
+document.getElementsByName("userIP").value=userip;
+var query=document.getElementById("queryitem").value;
+console.log(query);
+query=query.replace(/\s+/g,"_");
+Go(query);
+/*Data={
+		"ip":userip,
+		"query":query
+}
+$.ajax({
+	type:"GET",
+	url:"UniqueIP",
+	data:Data,
+	dataType:'json',
+	cache:false,
+	success:function(data){
+		var d=eval(data);
+		var ifUnique=d.value;
+		if(!ifUnique){
+			window.alert("This HIT is avaliable only to unique user. A user using this IP already submited all tasks in this HIT!");
+		}
+		else{
+			//create UUID
+			var idModuel=query+'-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			    var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+			    return v.toString(16);
+			});
+			console.log(idModuel);
+			var userid=document.getElementById("userID");
+			console.log(userid);
+			userid.innerHTML=idModuel;
+			//window.alert("Your UUID is "+idModuel+". Please put it into \"UUID\" TextBox on the survey-link page when you are ready to submit this HIT! Thank you!");
+			Go(query);
+
+		}
+	}
+})*/
+</script>
+
+
+</body>
+</html>

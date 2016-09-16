@@ -1,0 +1,256 @@
+body
+{
+background-size:cover;
+background-repeat:no-repeat;
+background-attachment:fixed;
+margin:0;
+}
+h1
+{
+font-family:'Patua One';
+font-size:50px;
+text-align: center;
+color:white;
+text-shadow: 0 0 20px black;
+}
+h2
+{
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size:35px;
+text-align:center;
+color:Gray;
+text-shadow: 1 20px 20px gray;
+margin: 0 0 0px;
+padding: 0;
+}
+h3
+{
+	margin: 0 0 3px;
+	padding: 0;
+}
+h4
+{
+	margin: 0 0 3px;
+	padding: 0;
+	color: gray;
+}
+/*nav*/
+
+.nav-menu
+{
+	margin:0;
+	height:50px;
+	width:100%;
+	vertical-align:center;
+	text-align:center;
+}
+/*nav*/
+.center
+{
+	text-align:center;
+	width:100%;
+}
+.right
+{
+	text-align:right;
+	width:100%;
+}
+.left
+{
+	text-align:left;
+	width:100%;
+}
+
+.brand
+{
+ padding-right: 10px;
+ padding-left: 10px;
+ margin: 10px 0;
+ height:100%;
+ width:100%
+}
+/*Input*/
+.c-text
+{
+	height:40px;
+	font-size:20px;
+	text-align:center;
+}
+.c-submit
+{
+	height:45px;
+	width:120px;
+	border：none;
+	font-size:20px;
+	font-weight:bold;
+	border:none;
+	padding:6px 10px;
+	text-decoration: none;
+	background-color: #FF8C00;
+	color:white;
+}
+.c-submit:hover
+{
+	background-color: black;
+	opacity:0.6;
+}
+/*Input*/
+/*div*/
+.container
+{
+	height:100%;
+	width:100%;
+	overflow: hidden;
+	position:absolute;
+}
+.container-head
+{
+	position:fixed!important;
+	height:60px;
+	width:100%;
+	z-index: 10000000;
+	background-color:dimgrey;
+}
+.container .container-content
+{
+	height:100%;
+	width:100%;
+	position:relative;
+}
+.subdiv
+{
+	height:70px;
+	position:relative;
+	margin-bottom:25px;
+}
+.main
+{
+	margin:0px 120px 0px 120px;
+}
+.row
+{
+	height:auto;
+	width:auto;
+}
+#content{
+	overflow: hidden;
+	position:absolute;
+	z-index: 1;
+	width:100%;
+	margin:70px 0 0 0;
+}
+#myprofile div
+{
+	display:inline-block;
+	*display:inline;
+	*zoom:1
+}
+.dialog
+{
+	background-color:lightgrey;
+  border:1px solid #999999;
+  cursor:default;
+  display:none;
+  margin-top: 15px;
+  position:relative;
+  text-align:left;
+  width:394px;
+  z-index:50;
+  padding: 25px 25px 20px;
+}
+.dialog p, .dialog.div {
+  border-bottom: 1px solid #EFEFEF;
+  margin: 8px 0;
+  padding-bottom: 8px;
+}
+a.selected {
+  background-color:#1F75CC;
+  color:black;
+  z-index:200;
+}
+/*div*/
+/*table*/
+table
+{
+	width:100%;
+	height:100%;
+}
+.td-1
+{
+	width:10%;
+	height:100%;
+}
+.td-2
+{
+	width:20%;
+	height:100%;
+}
+.td-3
+{
+	width:30%;
+	height:100%;
+}
+.td-4
+{
+	width:40%;
+	height:100%;
+}
+.td-5
+{
+	width:50%;
+	height:100%;
+}
+.td-6
+{
+	width:60%;
+	height:100%;
+}
+.td-7
+{
+	width:70%;
+	height:100%;
+}
+.td-8
+{
+	width:80%;
+	height:100%;
+}
+.td-9
+{
+	width:90%;
+	height:100%;
+}
+.td-10
+{
+	width:100%;
+	height:100%;
+}
+/*table*/
+/*ifram*/
+.Redirection
+{
+	frameborder:0;
+	marginheight:0;
+	marginwidth:0;
+	width:100%;
+	height:100%;
+	scrolling:auto
+}
+/*ifram*/
+
+.textinput
+{
+	width:70%;
+}
+.textinput-xpath
+{
+	width:70%;
+	border-color:#FF0000;     
+    border-style:solid;
+}
+.queryitem
+{
+	width:70%;
+	height:25px;
+	font-size:15px;
+}
