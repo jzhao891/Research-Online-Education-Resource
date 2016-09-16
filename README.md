@@ -4,5 +4,6 @@ Sharing is a goal of the Internet development. As more and more educational reso
 ## 2. project structure
 ### collecting training data
 - collect relevant online educational resources for specific courses no matter whether it is useful or not.
-- crawler for collecting raw data; link-mark system for collecting positive/negitive samples as training data
+- crawler for collecting raw data; link-mark system for collecting positive/negitive samples as training data.
+
 ### identifing syllabus/course schedule segments in course webpage and extracting course outline/materials
