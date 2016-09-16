@@ -1,0 +1,12 @@
+{
+"userid":"Human_Computer_Interaction_course-0343-440f-b231-78a753ce6955",
+"list":[
+{
+"id":68,"link":"http://www.gla.ac.uk/coursecatalogue/course/?code","revised":true,"IfContainSyllabus":false,"xpath":""
+},
+{
+"id":25,"link":"http://www.cs.tufts.edu/~jacob/171/syllabus.html","revised":true,"IfContainSyllabus":true,"xpath":"/html/body/div[7]/div[2]"
+}
+],
+"link_count":2
+}

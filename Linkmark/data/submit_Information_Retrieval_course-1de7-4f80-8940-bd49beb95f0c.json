@@ -1,0 +1,12 @@
+{
+"userid":"Information_Retrieval_course-1de7-4f80-8940-bd49beb95f0c",
+"list":[
+{
+"id":93,"link":"http://www.cs.colorado.edu/~martin/csci5417/lectures_and_readings.html","revised":true,"xpath":"//*[@id"
+},
+{
+"id":94,"link":"http://web.simmons.edu/~benoit/lis466/syllabus.html","revised":true,"xpath":"/html/body/table/tbody"
+}
+],
+"link_count":2
+}

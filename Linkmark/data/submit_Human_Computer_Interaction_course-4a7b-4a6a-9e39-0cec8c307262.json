@@ -1,0 +1,12 @@
+{
+"userid":"Human_Computer_Interaction_course-4a7b-4a6a-9e39-0cec8c307262",
+"list":[
+{
+"id":100,"link":"http://www.csun.edu/~renzo/cs485/","revised":true,"IfContainSyllabus":true,"xpath":"/html/body/li[5]/ul[1]"
+},
+{
+"id":135,"link":"http://www.uio.no/studier/emner/matnat/ifi/INF3260/index-eng.html","revised":false,"IfContainSyllabus":false,"xpath":""
+}
+],
+"link_count":2
+}

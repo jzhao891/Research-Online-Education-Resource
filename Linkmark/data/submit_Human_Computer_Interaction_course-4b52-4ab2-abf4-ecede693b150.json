@@ -1,0 +1,15 @@
+{
+"userid":"Human_Computer_Interaction_course-4b52-4ab2-abf4-ecede693b150",
+"list":[
+{
+"id":50,"link":"http://profs.info.uaic.ro/~busaco/teach/courses/hci/hci-film.html","revised":true,"IfContainSyllabus":true,"xpath":"/html/body/article"
+},
+{
+"id":63,"link":"http://www.athabascau.ca/syllabi/comp/comp482.php","revised":false,"IfContainSyllabus":false,"xpath":""
+},
+{
+"id":34,"link":"http://www.ccs.neu.edu/course/is4300f15/schedule.htm","revised":true,"IfContainSyllabus":true,"xpath":"/html/body/center/table"
+}
+],
+"link_count":3
+}

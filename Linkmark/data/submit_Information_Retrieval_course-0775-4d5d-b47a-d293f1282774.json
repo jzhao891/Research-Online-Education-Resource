@@ -1,0 +1,15 @@
+{
+"userid":"Information_Retrieval_course-0775-4d5d-b47a-d293f1282774",
+"list":[
+{
+"id":68,"link":"http://www.dcs.bbk.ac.uk/~dell/teaching/ir/","revised":false,"xpath":"/html/body/table[2]"
+},
+{
+"id":69,"link":"http://www.cs.tut.fi/~klap/SGN-9206/","revised":false,"xpath":"/html/body/ul[1]"
+},
+{
+"id":70,"link":"http://ace.cs.ohiou.edu/~razvan/courses/ir6860/","revised":false,"xpath":"/html/body/ol"
+}
+],
+"link_count":3
+}

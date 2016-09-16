@@ -1,0 +1,12 @@
+{
+"userid":"Database_course-f316-47bb-9fc9-ffc7fbb5d07e",
+"list":[
+{
+"id":3,"link":"https://mva.microsoft.com/en-US/training-courses/database-fundamentals-8243","revised":false,"IfContainSyllabus":true,"xpath":"//*[@id"
+},
+{
+"id":4,"link":"http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/lecture-notes/;http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/readings/","revised":true,"IfContainSyllabus":true,"xpath":"//*[@id"
+}
+],
+"link_count":2
+}

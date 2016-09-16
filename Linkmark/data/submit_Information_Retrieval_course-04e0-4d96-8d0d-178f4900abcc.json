@@ -1,0 +1,12 @@
+{
+"userid":"Information_Retrieval_course-04e0-4d96-8d0d-178f4900abcc",
+"list":[
+{
+"id":2,"link":"http://web.stanford.edu/class/cs276/","revised":false,"xpath":"/html/body/div[2]/div/table"
+},
+{
+"id":4,"link":"https://www.cs.utexas.edu/~mooney/ir-course/","revised":false,"xpath":"/html/body/ol"
+}
+],
+"link_count":2
+}
