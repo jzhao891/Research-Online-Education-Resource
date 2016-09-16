@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items><item><coursetitle>IR</coursetitle><chapter><value>Introduction to Course &amp; IR history</value><value>Key Concepts in IR</value><value>IR Models: Boolean and Extensions &amp;&amp; Vector Space </value><value>IR Models: Vector Space Cont. &amp; Probabilistic </value><value>IR Models: Probabilistic Models</value><value>Probabilistic Cont. : Introduction to Evaluation</value><value>Evaluation and Measures</value><value>IR Components Introduction: Relevance Feedback and LSI</value><value> Web and Graph Search </value><value>Spring Break: No Class</value><value> NLP and Geographic IR </value><value>Geographic IR &amp; Web IR</value><value>TBA</value><value>MapReduce &amp; Web IR</value><value> Mini-TREC reports and Wrapup </value><value> RRR WEEK </value><value>Final papers due</value></chapter><father><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Introduction to Course &amp;amp; IR history&lt;/strong&gt; -- &lt;span class="dates"&gt;(Jan 23)&lt;/span&gt; --
+   Readings: Preface in Manning
+   Papers by Joyce and Needham &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Joyce_needham_1958.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Luhn &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Luhn_1961.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Doyle &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Doyle_1962.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;in &lt;em&gt;Readings&lt;/em&gt;. Extra reading: &lt;a href="https://sherlock.ischool.berkeley.edu/wells/world_brain.html"&gt;The World Brain&lt;/a&gt;
+   by H.G. Wells 
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 1 &lt;a href="Lectures/Lecture_01.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Key Concepts in IR&lt;/strong&gt; -- &lt;span class="dates"&gt;(Jan 28, 30)&lt;/span&gt; -- 
+   Readings: Chapter 2, 3, 4 in Manning; Maron and
+   Kuhns &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Maron_Kuhns_1960.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Cleverdon &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Cleverdon_1967.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Salton and Lesk &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_Lesk_1968.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Hutchins &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Hutchins_1978.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Saracevic &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Saracevic_1975.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt; in Readings
+   from Lecture 3
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;p&gt;Slides from Lecture 2 &lt;a href="Lectures/Lecture_02.pptx"&gt;download&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+
+ &lt;li&gt;&lt;p&gt;Slides from Lecture 3 &lt;a href="Lectures/Lecture_03.pptx"&gt;download&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+
+ &lt;li&gt;&lt;p&gt;Unix for Poets by Ken Church
+   &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/kwc-unix-for-poets.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;IR Models: Boolean and Extensions &amp;amp;&amp;amp; Vector Space &lt;/strong&gt; -- &lt;span class="dates"&gt;(Feb 4, 6)&lt;/span&gt; -- 
+   Readings: Ch. 1, 2, 3, 4, 5 in Manning; - McCune, Tong &amp;amp; Dean "RUBRIC..." &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Mccune_Tong_Dean_1985.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;p&gt;Slides from Lecture 4 &lt;a href="Lectures/Lecture_04.pptx"&gt;download&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+
+ &lt;li&gt;&lt;p&gt;Slides from Lecture 5 &lt;a href="Lectures/Lecture_05.pptx"&gt;download&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+
+ &lt;li&gt;&lt;p&gt;Porter Stemmer code &lt;a href="stemmer.zip"&gt;download zip&lt;/a&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;IR Models: Vector Space Cont. &amp;amp; Probabilistic &lt;/strong&gt; -- &lt;span class="dates"&gt;(Feb 11, 13)&lt;/span&gt; -- 
+   Readings:
+   Ch. 6, 7 in Manning; - Salton, Wong &amp;amp; Yang  "A Vector Space Model..." &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_Wong_Yang_1975.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Salton &amp;amp; Buckley "Term-Weighting Approaches..." &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_Buckley_1988.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Salton &amp;amp; McGill "SMART and SIRE..." &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_McGill_1983.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; &lt;strong&gt; Additional Readings:&lt;/strong&gt; Salton (Science) &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_Science_91.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Singhal, Buckley &amp;amp; Mitra (Pivoted) &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Singhal_Pivot_1996.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Raghavan &amp;amp; Wong &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Raghavan_Wong_1986.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 6 &lt;a href="Lectures/Lecture_06.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Mini-TREC database and previous queries made available (Feb 11)
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Download trec_eval source &lt;a href="trec_eval.8.0.tar.gz"&gt;download gzip tar file&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 7 - Fred Gey - Probabilistic models &lt;a href="Lectures/Lecture_07.ppt"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;IR Models: Probabilistic Models&lt;/strong&gt;  -- &lt;span class="dates"&gt;(Feb 18, 20)&lt;/span&gt; -- 
+   Readings:  Ch. 11 in Manning; - Robertson "The Probability Ranking Principle
+   in IR"&lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Robertson_1990.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Belkin, et al. "ASK for IR"&lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Belkin_Oddy_1982.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Croft &amp;amp; Harper "Using
+   Probabilistic..." &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Croft_Harper_1979.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Turtle &amp;amp; Croft "Inference Networks" &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Turtle_Croft_1990.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Cooper, Gey, Dabney "Staged Logistic Regression"
+   &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/cooper_dabney_gey.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; 
+   &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/ponte98language.pdf"&gt;
+   Ponte &amp;amp; Croft&lt;/a&gt; ;&lt;a href="https://courses.ischool.berkeley.edu/i240/s07/lavrenko01relevancebased.pdf" target="PDF Paper"&gt;Lavrenko &amp;amp; Croft&lt;/a&gt;; &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Hiemstra_Robertson_Zaragoza_SIGIR04.pdf" target="PDF Paper"&gt;Hiemstra, Robertson &amp;amp; Zaragoza&lt;/a&gt;  &lt;br&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Monday Feb. 18 is President's Day Holiday
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Fred Gey Lecture &lt;a href="http://www.ccs.neu.edu/home/jaa/CSG339.06F/Lectures/inferenceNet.pdf"&gt;Inference Networks&lt;/a&gt; &lt;a href="http://www.cse.psu.edu/~sub194/Talks/lm.pdf"&gt;Language Models&lt;/a&gt; &lt;a href="Lectures/Lecture_08.ppt"&gt;RRL Slides Download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Probabilistic Cont. : Introduction to Evaluation&lt;/strong&gt; -- &lt;span class="dates"&gt;(Feb 25, 27)&lt;/span&gt; -- 
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 9 &lt;a href="Lectures/Lecture_09.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 10 &lt;a href="Lectures/Lecture_10.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Evaluation and Measures&lt;/strong&gt; -- &lt;span class="dates"&gt;(Mar 4, 6)&lt;/span&gt; -- 
+   Readings:  Ch. 8 in Manning;  Blair and Maron "An Evaluation of Retrieval Effectiveness for a Full-Text Document-Retrieval System" &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/p289-blair.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; Armstrong, Moffat, Webber and Zobel "Improvements that don't add up: Ad-Hoc Retrieval Results Since 1998"
+   &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/armstrong_moffat_webber_zobel_Improvements.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; 
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Monday: Mini-TREC group reports on system setup*
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 11 &lt;a href="Lectures/Lecture_11.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Wed.: Mini-TREC new queries for evaluation*
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 12 &lt;a href="Lectures/Lecture_12.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;IR Components Introduction: Relevance Feedback and LSI&lt;/strong&gt; -- &lt;span class="dates"&gt;(Mar 11, 13)&lt;/span&gt; -- 
+   Readings: Ch. 8 in Manning &amp;amp; Salton and
+   Buckley &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Salton_Buckley_1990.pdf" target="PDF Paper"&gt;"...Relevance Feedback..."&lt;/a&gt;, Griffiths, Luckhurst and Willett &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Griffiths_Luckhurst_Willett_1986.pdf" target="PDF Paper"&gt;"Using Interdocument Similarity..."&lt;/a&gt;.
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 13 &lt;a href="Lectures/Lecture_13.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 14 &lt;a href="Lectures/Lecture_14.pptx"&gt;download&lt;/a&gt; Additional Slides on LSI,PLSA &lt;a href="https://courses.ischool.berkeley.edu/i240/s13/intro-to-lsa-lda.pptx" target="LSI"&gt;(Powerpoint Slides&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt; Web and Graph Search &lt;/strong&gt; -- &lt;span class="dates"&gt;(Mar 18, 20)&lt;/span&gt; -- 
+   Readings: Ch. 16 and 17 in Manning;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 15 &lt;a href="Lectures/Lecture_15.pptx"&gt;download&lt;/a&gt; 
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Wed.: Mike Curtiss of Facebook on Social Graph Searching *
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Spring Break: No Class&lt;/strong&gt; -- &lt;span class="dates"&gt;(Mar 25, 27)&lt;/span&gt; --
+   Readings: Ch. ?
+&lt;/p&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt; NLP and Geographic IR &lt;/strong&gt; -- &lt;span class="dates"&gt;(Apr 1, 3) &lt;/span&gt; -- 
+   Readings: Ch. 18 in Manning;  David Ferucci, et al. "Building Watson: An overview of the DeepQA Project" &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/AIMagzine-DeepQA.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;; John Markoff "A Fight to Win the Future: Computers vs. Humans (NYT)" &lt;a href="https://courses.ischool.berkeley.edu/i240/s07/Watson_NYT.pdf" target="PDF Paper"&gt;(PDF)&lt;/a&gt;.
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 16 &lt;a href="Lectures/Lecture_16.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 17 &lt;a href="Lectures/Lecture_17.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Geographic IR &amp;amp; Web IR&lt;/strong&gt; --  -- &lt;span class="dates"&gt;(Apr 8, 10)&lt;/span&gt; --
+   Readings: Ch. 19, 20, 21 in Manning; &lt;a href="http://www-db.stanford.edu/~backrub/google.html" target="Google"&gt;Google Description&lt;/a&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 18 &lt;a href="Lectures/Lecture_18.pptx"&gt;download&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 19 &lt;a href="Lectures/Lecture_19.pptx"&gt;download&lt;/a&gt; &lt;a href="https://courses.ischool.berkeley.edu/i240/s13/06b-nutch.ppt" target="PPT"&gt;Added Slides on Nutch&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;TBA&lt;/strong&gt; -- &lt;span class="dates"&gt;(Apr 15, 17)&lt;/span&gt; --
+&lt;/p&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;MapReduce &amp;amp; Web IR&lt;/strong&gt; -- &lt;span class="dates"&gt;(Apr 22, 24)&lt;/span&gt; --
+   Readings: Ch. 18 in Manning;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Special Guest Lecture Apr. 15 - Benjamin Goldenberg - Yelp
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Slides from Lecture 21 &lt;a href="Lectures/Lecture_21.pptx"&gt;download&lt;/a&gt; 
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Mini-TREC results of runs due Monday!&lt;/em&gt;
+   &lt;em&gt;Mini-TREC Results and system rankings returned Wednesday. &lt;/em&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt; Mini-TREC reports and Wrapup &lt;/strong&gt; -- &lt;span class="dates"&gt;(Apr 29, May 1)&lt;/span&gt; --
+   Readings: Ch. 15 in Manning;
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Slides from Lecture 22 &lt;a href="Lectures/Lecture_22.pptx"&gt;download&lt;/a&gt; 
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Mini-TREC: Group reports Apr 29th&lt;/em&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt; RRR WEEK &lt;/strong&gt; -- &lt;span class="dates"&gt;(May 6, 8)&lt;/span&gt; --
+   Readings:
+   &lt;em&gt;No Class Meetings in RRR Week -- work on your paper&lt;/em&gt;
+&lt;/p&gt;
+
+ &lt;/li&gt;</value><value>&lt;li&gt;&lt;p&gt;&lt;strong&gt;Final papers due&lt;/strong&gt; -- &lt;span class="dates"&gt;(May 13)&lt;/span&gt; --
+   Readings: Ch. ?
+&lt;/p&gt;
+
+ &lt;/li&gt;</value></father></item></items>
