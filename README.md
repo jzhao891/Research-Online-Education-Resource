@@ -7,5 +7,6 @@ Sharing is a goal of the Internet development. As more and more educational reso
 - crawler for collecting raw data; link-mark system for collecting positive/negitive samples as training data.
 
 ### identifing syllabus/course schedule segments in course webpage and extracting course outline/materials
+- Results(screen shots)
  ![image](https://github.com/jzhao891/Research-on-Online-Education-Resource/blob/master/img/Snip20160917_20.png)
  
