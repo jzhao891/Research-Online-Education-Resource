@@ -2,13 +2,19 @@ import urllib2
 from BeautifulSoup import BeautifulSoup 
 import os
 import re
+import csv
 
-activeAddress=['http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/readings/','https://usfca.instructure.com/courses/1215994/assignments/syllabus']
+#activeAddress=['http://www.aw-bc.com/DTUI3/syllabi/cs546.html']
+activeAddress=[]
 inactAddress=['http://www.sqlcourse.com/','https://www.class-central.com/mooc/1580/stanford-openedx-db-introduction-to-databases']
 #xpath_syllabus=[]
 keywords_table=['date','week','chap','schedule','reading','topic','lecture']
 #negtivewords=['homework','quiz']
 positivewords=['introduction']
+
+
+
+
 class Block():
     def __init__(self):
         self.significant=0
@@ -38,9 +44,13 @@ class Blocking():
 
 
     def analyze_page(self):
+        with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/data_2.txt','r') as f:
+            for row in f:
+                activeAddress.append(row)
         for add in activeAddress:
-            #rq=urllib2.Request(add)
-            rq = urllib2.Request('https://www.cs.utexas.edu/~mooney/ir-course/')
+            print add
+            rq=urllib2.Request(add)
+            #rq = urllib2.Request('https://www.cs.utexas.edu/~mooney/ir-course/')
             rq.add_header("User-Agent", "Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101")
             html = urllib2.urlopen(rq)
             soup = BeautifulSoup(html)
@@ -108,16 +118,18 @@ class Blocking():
             ######################################################
             ### sort block list according to the significant value
             ######################################################
-            blocklist=sorted(blocklist,key=lambda block:block.significant,reverse=True)
-            print blocklist[0].document_html
-            with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html','a') as f:
-                #f.write('\n<h2>the syllabus in test </h2>\n')
-                f.write('\n<h2>the syllabus in '+add+'</h2>\n')
-            if blocklist[0].significant!=0:
-                with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html',
+            if len(blocklist)>0:
+                blocklist=sorted(blocklist,key=lambda block:block.significant,reverse=True)
+                #print blocklist[0].document_html
+                with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html','a') as f:
+                    #f.write('\n<h2>the syllabus in test </h2>\n')
+                    f.write('\n<h2>the syllabus in '+add+'</h2>\n')
+                if blocklist[0].significant!=0:
+                    with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html',
                           'a') as f:
-                    f.write('\n<h3> table</h3>\n')
-                    f.write(str(blocklist[0].document_html))
+                        f.write('\n<h3> table</h3>\n')
+                        f.write(str(blocklist[0].document_html))
+            
 
             ###################
             ###processing ul/ol
@@ -128,13 +140,14 @@ class Blocking():
             ######################################################
             ### sort block list according to the significant value
             ######################################################
-            blocklist = sorted(blocklist, key=lambda block: block.significant, reverse=True)
-            print blocklist[0].document_html
-            if blocklist[0].significant!=0:
-                with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html',
+            if len(blocklist)>0:
+                blocklist = sorted(blocklist, key=lambda block: block.significant, reverse=True)
+                #print blocklist[0].document_html
+                if blocklist[0].significant!=0:
+                    with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html',
                           'a') as f:
-                    f.write('\n<h3> ul/ol</h3>\n')
-                    f.write(str(blocklist[0].document_html))
+                        f.write('\n<h3> ul/ol</h3>\n')
+                        f.write(str(blocklist[0].document_html))
 
         with open('/Users/jessicazhao/Documents/workspace/scrapyTask/downloading/data/temporarydata.html','a') as f:
             f.write('\n</body>\n</html>\n')
