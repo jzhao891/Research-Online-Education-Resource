@@ -9,4 +9,11 @@ Sharing is a goal of the Internet development. As more and more educational reso
 ### identifing syllabus/course schedule segments in course webpage and extracting course outline/materials
 - Results(screen shots)
  ![image](https://github.com/jzhao891/Research-on-Online-Education-Resource/blob/master/img/Snip20160917_20.png)
+
+### connecting units of syllbus with each chapter of textbook, reorganize materials 
+- 1. According to the course syllabus/schedules, get course syllabus structure. Results in IR.xml/IR-2.xml
+- 2. download materials of each units, extract words in materials for furhter analysis.
+download materials in data/material
+
+
  
