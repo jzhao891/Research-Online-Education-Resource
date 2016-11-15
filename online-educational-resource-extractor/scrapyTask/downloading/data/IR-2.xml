@@ -1,0 +1,856 @@
+<coursename name="Information Retrieval">
+
+  <course no='015'>
+    <url>http://www.csee.umbc.edu/~ian/irF02/syllabus.html</url>
+    <textbook>MIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>	Introduction to IR, course overview</title>
+    		<chpter>	Ch. 1</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/01IR-Intro.pdf</slide_url>
+
+    		<reading>
+          <name>As We May Think</name>
+          <reading_url>http://www.theatlantic.com/unbound/flashbks/computer/bushf.htm</reading_url>
+        </reading>
+        <reading>
+          <name>The Seven Ages of Information Retrieval</name>
+          <reading_url>http://www.ifla.org/VI/5/op/udtop5/udtop5.htm</reading_url>
+        </reading>
+        <reading>
+          <name>Information Retrieval,2nd Edition,Chapter 1</name>
+          <reading_url>http://www.dcs.gla.ac.uk/Keith/Chapter.1/Ch.1.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>User vs. System-centered IR,Text processing</title>
+    		<chpter>	Sec. 7.1-2</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/02Users-System.pdf</slide_url>
+        <slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/03Text-Processing.pdf</slide_url>
+
+    		<reading>
+          <name>Information Retrieval: Data Structures and Algorithms</name>
+          <reading_url>http://www.dcc.uchile.cl/~rbaeza/iradsbook/irbook.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Inverted indices</title>
+    		<chpter>	Sec. 8.1-2</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/04Search-Inverted-Files.pdf</slide_url>
+
+    		<reading>
+          <name>Ternary Search Trees</name>
+          <reading_url>http://www.ddj.com/articles/1998/9804/9804a/9804a.htm?topic=algorithms</reading_url>
+        </reading>
+        <reading>
+          <name>Prefix B-Trees</name>
+          <reading_url>http://doi.acm.org/10.1145/320521.320530</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Compression of indices and text</title>
+    		<chpter>Ch.7</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/05Compression-for-IR.pdf</slide_url>
+        <reading>
+          <name>Managing Gigabytes</name>
+          <reading_url>http://www.cs.mu.oz.au/mg/</reading_url>
+        </reading>
+    		<reading>
+          <name>Compression of inverted indexes For fast query evaluation</name>
+          <reading_url>http://doi.acm.org/10.1145/564376.564416</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>IR Models: Boolean</title>
+    		<chpter>Ch.2</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/06Models-Boolean.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>IR Models: Vector Space</title>
+    		<chpter>Ch.2</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/07Models-VSM.pdf</slide_url>
+
+    		<reading>
+          <name>Exploring the Similarity Space</name>
+          <reading_url>http://www.cs.rmit.edu.au/~jz/fulltext/sigirforum98.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>IR Models: Probabilistic Model</title>
+    		<chpter>Ch.2</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/08Models-Prob.pdf</slide_url>
+
+    		<reading>
+          <name>Some simple effective approximations to the 2-Poisson model for probabilistic weighted retrieval</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=188490.188561&amp;coll=portal&amp;dl=ACM&amp;type=series&amp;idx=SERIES278&amp;part=series&amp;WantType=Proceedings&amp;title=Annual%20ACM%20Conference%20on%20Research%20and%20Development%20in%20Information%20Retrieval&amp;CFID=4807273&amp;CFTOKEN=97270160#</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Evaluation, Test Collections</title>
+    		<chpter>Ch.3</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/09Evaluation.pdf</slide_url>
+        <slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/10Test-Collections.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Relevance feedback,Relevance feedback</title>
+    		<chpter>Ch.5</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/11Relevance-Feedback.pdf</slide_url>
+        <slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/12LSI.pdf</slide_url>
+        <reading>
+          <name>Improving Retrieval Performance by Relevance Feedback</name>
+          <reading_url>http://www3.interscience.wiley.com/cgi-bin/fulltext?ID=10049567&amp;PLACEBO=IE.pdf</reading_url>
+        </reading>
+    		<reading>
+          <name>Indexing by Latent Semantic Analysis</name>
+          <reading_url>http://www3.interscience.wiley.com/cgi-bin/fulltext?ID=10049585&amp;PLACEBO=IE.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Web Search</title>
+    		<chpter>Ch.13</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/13Web-Search.pdf</slide_url>
+
+    		<reading>
+          <name>"Graph Structure on the Web"</name>
+          <reading_url>http://www.almaden.ibm.com/cs/k53/www9.final/</reading_url>
+        </reading>
+        <reading>
+          <name>"The Connectivity Server"</name>
+          <reading_url>http://www7.scu.edu.au/programme/fullpapers/1938/com1938.htm</reading_url>
+        </reading>
+        <reading>
+          <name>"The Anatomy of a Large-Scale Hypertextual Web Search Engine"</name>
+          <reading_url>http://dbpubs.stanford.edu:8090/pub/1998-8/</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Information Filtering,Collaborative Filtering</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/14Information-Filtering.pdf</slide_url>
+        <slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/15Collaborative-Filtering.pdf</slide_url>
+
+    		<reading>
+          <name>Information Filtering and Information Retrieval: Two sides of the same coin?</name>
+          <reading_url>http://doi.acm.org/10.1145/138859.138861</reading_url>
+        </reading>
+        <reading>
+          <name>Social Information Filtering: Algorithms for Auotmating 'Word of Mouth'</name>
+          <reading_url>http://delivery.acm.org/10.1145/230000/223931/p210-shardanand.html?key1=223931&amp;key2=2291460301&amp;coll=portal&amp;dl=ACM&amp;CFID=4106246&amp;CFTOKEN=53154003</reading_url>
+        </reading>
+        <reading>
+          <name>The Science of the Sleeper"</name>
+          <reading_url>http://www.gladwell.com/1999/1999_10_04_a_sleeper.htm</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Distributed IR,Agent-based IR</title>
+    		<chpter>Ch.9</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/16Parallel-Distributed-IR.pdf</slide_url>
+
+    		<reading>
+          <name>Distributed Information Retrieval</name>
+          <reading_url>http://www-2.cs.cmu.edu/~callan/Papers/ciir00.ps.gz</reading_url>
+        </reading>
+        <reading>
+          <name>Generalizing GlOSS to Vector-Space Databases and Broker Hierarchies.</name>
+          <reading_url>http://www-db.stanford.edu/pub/gravano/1995/stan.cs.tn.95.21.ps</reading_url>
+        </reading>
+        <reading>
+          <name>Methodologies for Distributed Information Retrieval</name>
+          <reading_url>http://www.cs.rmit.edu.au/~jz/fulltext/icdcs98.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>User interfaces for IR</title>
+    		<chpter>Ch.10</chpter>
+    		<slide_url>http://www.csee.umbc.edu/~ian/irF02/lectures/17User-Interfaces.pdf</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no='016'>
+    <url>http://www.eng.utah.edu/~cs7961/schedule.html</url>
+    <textbook>IIR</textbook>
+    <units>
+      <unit>
+        <no>1</no>
+        <title>Overview; Introduction to IR</title>
+        <chpter>Ch.1</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>2</no>
+        <title>Term Vocabulary, Postings, and Tolerant Retrieval</title>
+        <chpter>ch.2,ch.3</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>3</no>
+        <title>Index Construction and Compression</title>
+        <chpter>ch.4,ch.5</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>4</no>
+        <title>Vector Space Model; Term Weighting</title>
+        <chpter>ch.6</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>5</no>
+        <title>Scoring, Ranking, and Evaluation	</title>
+        <chpter>ch.7,ch.8</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>6</no>
+        <title>Relevance Feedback and Query Expansion</title>
+        <chpter>ch.9</chpter>
+        <slide_url></slide_url>
+
+        <reading>
+          <name>Xu &amp; Croft, SIGIR-96</name>
+          <reading_url>http://www.eng.utah.edu/~cs7961/papers/XuCroft-SIGIR96.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>7</no>
+        <title>Probabilistic Information Retrieval</title>
+        <chpter>ch.11</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>8</no>
+        <title>Language Models for IR</title>
+        <chpter>ch.12</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>9</no>
+        <title>Text Classification and Naive Bayes</title>
+        <chpter>ch.13</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+      <unit>
+        <no>10</no>
+        <title>	Vector Space Classification</title>
+        <chpter>ch.14</chpter>
+        <slide_url></slide_url>
+
+        <reading>
+          <name>Liere &amp; Tadepalli, AAAI-97</name>
+          <reading_url>http://www.eng.utah.edu/~cs7961/papers/liere-aaai97.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>11</no>
+        <title>	Flat Clustering</title>
+        <chpter>ch.16</chpter>
+        <slide_url></slide_url>
+
+        <reading>
+          <name>Hearst and Pedersen, SIGIR-96</name>
+          <reading_url>http://www.eng.utah.edu/~cs7961/papers/hearst-pedersen-sigir96.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>12</no>
+        <title>	Hierarchical Clustering</title>
+        <chpter>ch.17</chpter>
+        <slide_url></slide_url>
+
+        <reading>
+          <name>Treeratpituk and Callan, DigitalGovt-06</name>
+          <reading_url>http://www.eng.utah.edu/~cs7961/papers/callan-diggov06.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>13</no>
+        <title>Latent Semantic Indexing</title>
+        <chpter>ch.18</chpter>
+        <slide_url></slide_url>
+
+        <reading>
+          <name>Schuetze and Silverstein, SIGIR-97</name>
+          <reading_url>http://www.eng.utah.edu/~cs7961/papers/schutze-sigir97.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>14</no>
+        <title>Web Search, Link Analysis, PageRank</title>
+        <chpter>ch.19,ch.20</chpter>
+        <slide_url></slide_url>
+
+      </unit>
+    </units>
+  </course>
+
+  <course no='017'>
+    <url>http://www.cs.uccs.edu/~jkalita/work/CS5880/2012/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Introduction</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name></name>
+          <reading_url></reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Boolean Retrieval</title>
+    		<chpter>ch.1</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>Salton, Gerard, Edward Fox and Harry Wu, Extended Boolean Information Retrieval</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=358466</reading_url>
+        </reading>
+        <reading>
+          <name>Parameterised Compression for Sparse Bitmaps by Moffat and Zobel</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=133210</reading_url>
+        </reading>
+        <reading>
+          <name>Fast Phrase Querying with Combined Indexes by Williams et al.</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1028102</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Term Vocabulary</title>
+    		<chpter>ch.2</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>Term Vocabulary and Postings Lists, Chapter 2 from Information Retrieval by Manning et al. 2008.</name>
+          <reading_url>http://www.cs.uccs.edu/~jkalita/work/CS5880/2012/handouts/presentations/2TextProcessing.pdf</reading_url>
+        </reading>
+        <reading>
+          <name> An algorithm for suffix stripping by Porter.</name>
+          <reading_url>http://www.cs.odu.edu/~jbollen/IR04/readings/readings5.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Dictionaries and Spelling correction</title>
+    		<chpter>ch.3</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>Dictionaries and Tolerant Retrieval, Chapter 3 from Information Retrieval by Manning et al. 2008</name>
+          <reading_url>http://www.cs.uccs.edu/~jkalita/work/CS5880/2012/handouts/presentations/3tolerantRetrieval.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Automatic Spelling Correction in Scientific and Scholarly Text by Pollock and Zamora,</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=358048</reading_url>
+        </reading>
+        <reading>
+          <name> Syntactic Normalization of Twitter Messages by Kaufmann and Kalita, International Conference on Computational Linguistics (ICON) 2010;</name>
+          <reading_url>http://www.cs.uccs.edu/~kalita/work/reu/REUFinalPapers2010/Kaufmann.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>tRuCasIng by Lita et al. from ACL 2003</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1075116</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Index construction</title>
+    		<chpter>ch.4</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>Index Construction, Chapter 4 from Introduction to Information Retrieval by Manning et a</name>
+          <reading_url>http://www.cs.uccs.edu/~jkalita/work/CS5880/2012/handouts/presentations/4IndexConstruction.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Term weighting and Vector space model</title>
+    		<chpter>ch.6</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>"Inverted Index Compression Using Word-Aligned Binary Codes" by Anh and Moffat</name>
+          <reading_url>http://www.springerlink.com/content/j66851228120170t/</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Scores in a search system</title>
+    		<chpter>ch.7</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Evaluation</title>
+    		<chpter>ch.8</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Relevance feedback and query expansion</title>
+    		<chpter>ch.9</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Language models for information retrieval</title>
+    		<chpter>ch.12</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Text classification and Naive Bayes</title>
+    		<chpter>ch.13</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Vector space classification</title>
+    		<chpter>ch.14</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>SVMs and machine learning on documents</title>
+    		<chpter>ch.15</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>14</no>
+    		<title>Clustering</title>
+    		<chpter>ch.16</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Hierarchical clustering</title>
+    		<chpter>ch.17</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Latent semantic indexing</title>
+    		<chpter>ch.18</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>17</no>
+    		<title>Web search basics</title>
+    		<chpter>ch.19,ch.20</chpter>
+    		<slide_url></slide_url>
+
+    		<reading>
+          <name>Detecting Spam Web Pages through Content Analysis</name>
+          <reading_url>http://infolific.com/downloads/research-papers/detecting-spam-web-pages-through-content-analysis.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Combating Web Spam with TrustRank</name>
+          <reading_url>http://ilpubs.stanford.edu:8090/770/1/2004-52.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Mercator: A scalable, extensible Web crawler</name>
+          <reading_url>http://www.springerlink.com/content/x52270wmu460582r/</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no='018'>
+    <url>http://www.pitt.edu/~peterb/2140-002/materials.html</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Information System Design</title>
+    		<chpter>ch.1</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture1.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Search, Document, Query</title>
+    		<chpter>ch.2</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture2.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Models of Information Retrieval</title>
+    		<chpter>sec 3.1-3.3,sec 4.1-4.4</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture3.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Models II</title>
+    		<chpter>sec 3.4-3.8,sec 4.5-4.12</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture4.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Retrieval Effectiveness</title>
+    		<chpter>ch.8</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture5.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Text Analysis</title>
+    		<chpter>ch.5</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture6.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Data Structures and Algorithms</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Output presentation and visualization</title>
+    		<chpter>ch.11,ch.7</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture8.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Improving Effectiveness</title>
+    		<chpter>ch.9</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture9.ppt</slide_url>
+        <slide_url>http://www.scils.rutgers.edu/~belkin/um97oh/</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Adapting to the user</title>
+    		<chpter>ch.6</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture10.ppt</slide_url>
+        <slide_url>http://www.scils.rutgers.edu/~belkin/um97oh/</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Alternative retrieval techniques	</title>
+    		<chpter>sec 10.1-1.4</chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture11.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Multimedia IR and digital libraries</title>
+    		<chpter>sec 10.5-10.6</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>Web IR and other modern problems of information retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.pitt.edu/~peterb/2140-002/Lecture13.ppt</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no='020'>
+    <url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Boolean Retrieval</title>
+    		<chpter>ch.1</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch01.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>The Term Vocabulary and Postings Lists</title>
+    		<chpter>ch.2</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch02.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Dictionaries and Tolerant Retrieval</title>
+    		<chpter>ch.3</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch03.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Near-Duplicates and Shingling</title>
+    		<chpter>ch.19</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch19_6.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Index Compression</title>
+    		<chpter>ch.5</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch05.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Scoring, Term Weighting, and the Vector Space Model</title>
+    		<chpter>ch.6</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch06.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Computing Scores in a Complete Search System</title>
+    		<chpter>ch.7</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch07.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Evaluation in Information Retrieval</title>
+    		<chpter>ch.8</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch08.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Relevance Feedback and Query Expansion</title>
+    		<chpter>ch.9</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch09.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Suffix Trees</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_suffixtrees.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>A Brief Introduction to Probability and Statistics</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_probstat.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Probabilistic Information Retrieval</title>
+    		<chpter>ch.11</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch11.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>Language Models for Information Retrieval</title>
+    		<chpter>ch.12</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch12.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>14</no>
+    		<title>Text Classification &amp; Naive Bayes</title>
+    		<chpter>ch.13</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch13.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Vector Space Classification</title>
+    		<chpter>ch.14</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch14.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Flat Clustering</title>
+    		<chpter>ch.16</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch16.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>17</no>
+    		<title>Hierarchical Clustering</title>
+    		<chpter>ch.17</chpter>
+    		<slide_url>http://www.dcs.bbk.ac.uk/~dell/teaching/ir/dell_ir_ch17.pdf</slide_url>
+
+    	</unit>
+
+
+    </units>
+  </course>
+
+  <course no='021'>
+    <url>https://www.cs.purdue.edu/homes/clifton/cs54701/</url>
+    <textbook>IIR</textbook>
+    <units>
+      <unit>
+        <no>1</no>
+        <title>Introductory lecture, discussion of areas and applications of Information Retrieval</title>
+        <chpter>ch.1,ch.2</chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/CourseOverview.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>2</no>
+        <title>Retrieval Models: Vector Space Model, Latent Semantic Indexing</title>
+        <chpter>ch.6</chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/RetrievalModels_0121.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>3</no>
+        <title>Probabilistic Retrieval Models</title>
+        <chpter>ch.11</chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/ProbabilityReview_0126.pdf</slide_url>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/ProbRetrieval_0128.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>4</no>
+        <title>Relevance Feedback</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/RelevanceFeedback_0202.pdf</slide_url>
+        <reading>
+          <name>Lafferty SIGIR'01</name>
+          <reading_url>http://doi.acm.org/10.1145/383952.383970</reading_url>
+        </reading>
+        <reading>
+          <name>Zhai SIGIR'02</name>
+          <reading_url>http://doi.acm.org/10.1145/564376.564387</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>5</no>
+        <title>Language Models (cont.)</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/LanguageModels_0209.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>6</no>
+        <title>Link Analysis for Retrieval</title>
+        <chpter>ch.21</chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/LinkAnalysis_0216.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>7</no>
+        <title>Collaborative Filtering,Text Categorization</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/CollaborativeFiltering_0223.pdf</slide_url>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/TextCategorization_0225.pdf</slide_url>
+        <reading>
+          <name>Yang JIR 1999</name>
+          <reading_url>http://www.springerlink.com/content/x3n6633584015p59/</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>8</no>
+        <title>Text Categorization (cont.)</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/TextCategorization_0303.pdf</slide_url>
+        <reading>
+          <name>McCallum 1998</name>
+          <reading_url>http://www.cs.umass.edu/~mccallum/papers/multinomial-aaai98w.ps</reading_url>
+        </reading>
+        <reading>
+          <name>Lewis 1994</name>
+          <reading_url>http://delivery.acm.org/10.1145/190000/188495/p3-lewis.pdf?key1=188495&amp;key2=7972160611&amp;coll=GUIDE&amp;dl=&amp;CFID=3064461&amp;CFTOKEN=41651411</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>9</no>
+        <title>Text Categorization，Federated Search</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/TextCategorization_0308.pdf</slide_url>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/FederatedSearch_0310.pdf</slide_url>
+        <reading>
+          <name>Burges 1998</name>
+          <reading_url>http://www.springerlink.com/content/q87856173126771q/</reading_url>
+        </reading>
+        <reading>
+          <name>Shokouhi and Si, 2011</name>
+          <reading_url>http://www.cs.purdue.edu/homes/lsi/FnTIR_2011.pdf</reading_url>
+        </reading>
+      </unit>
+      <unit>
+        <no>10</no>
+        <title>Federated Search，Text Clustering</title>
+        <chpter>ch.16</chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/FederatedSearch_0322.pdf</slide_url>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/TextClustering_0324.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>11</no>
+        <title>Question Answering，Natural Language Processing in IR</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/QA.pdf</slide_url>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/NLP_0407.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>12</no>
+        <title>Sentiment Analysis</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/SentimentAnalysis_0412.pdf</slide_url>
+        <slide_url>https://www.cs.uic.edu/~liub/FBS/Sentiment-Analysis-tutorial-AAAI-2011.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>13</no>
+        <title>Search engine optimization，Cross-Lingual IR</title>
+        <chpter></chpter>
+        <slide_url>https://www.cs.purdue.edu/homes/clifton/cs54701/SEO_0419.pdf</slide_url>
+        <slide_url>http://www.cis.lmu.de/~hs/teach/14s/ir/pdf/clir.pdf</slide_url>
+
+      </unit>
+
+    </units>
+  </course>
+
+</coursename>

@@ -1,0 +1,411 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>The Web Robots Pages</title>
+<link id="css" rel="stylesheet" type="text/css" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="bodypart">
+      <div id="skipnav">
+	<a href="#content" accesskey="s">skip to content</a>
+      </div>
+      <div class="header">
+ <div class="inheaderlabel">Advertisement</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9311532361854131";
+//728x90, created 11/8/07
+google_ad_slot = "9811015679";
+google_ad_width = 728;
+google_ad_height = 90;
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+      </div>
+      <div class="main">
+	<div class="navcol">
+	  <div class="navbox" id="logodiv">
+	    <a href="/" accesskey="h">
+	      <img
+	      src="/static/robotstxtwrap.png"
+	      alt="robotstxt.org logo" border="0"/>
+	    </a>
+	  </div>
+          <div class="navbox">
+	    <div class="navboxtitle">Navigation</div>
+            <div class="navboxitems">
+	      <ul>
+		<li><a href="/robotstxt.html">The /robots.txt</a></li>
+		<li><a href="/meta.html">&lt;META&gt; tags</a></li>
+		<li><a href="/faq.html">Frequently Asked Questions</a></li>
+		<li><a href="/mailinglist.html">Mailing list</a></li>
+		<li><a href="/other.html">Other Sites</a></li>
+		<li><a href="/about.html">About robotstxt.org</a></li>
+	      </ul>
+	    </div>
+	  </div>
+          <div class="navbox">
+	    <div class="navboxtitle">Tools</div>
+            <div class="navboxitems">
+	      <ul>
+		<li><a href="/checker.html">/robots.txt checker</a></li>
+		<li><a href="/db.html">Robots Database</a></li>
+		<li><a href="/iplookup.html">IP lookup</a></li>
+	      </ul>
+            </div>
+          </div>
+          <div class="navbox" id="leftcolad">
+	    <div class="navboxtitle">Advertisement</div>
+          </div>
+        </div>
+      <div class="rightcol">
+        <div class="navbox">
+ <script type="text/javascript"><!--
+google_ad_client = "pub-9311532361854131";
+//160x600, created 11/8/07
+google_ad_slot = "0512796426";
+google_ad_width = 160;
+google_ad_height = 600;
+//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+
+        </div>
+      </div>
+      <div class="maincol">    
+	<div class="maincolwithfooter">
+	  <div id="content" class="content">
+<h2>
+A Standard for Robot Exclusion
+</h2>
+
+Table of contents:
+
+<ul>
+<li>
+
+<a href="#status">
+Status of this document
+</a>
+
+<li>
+
+<a href="#introduction">
+Introduction
+</a>
+
+<li>
+
+<a href="#method">
+Method
+</a>
+
+<li>
+
+<a href="#format">
+Format
+</a>
+
+<li>
+
+<a href="#examples">
+Examples
+</a>
+
+<li>
+
+<a href="#code">
+Example Code
+</a>
+
+<li>
+
+<a href="#author">
+Author's Address
+</a>
+
+</ul>
+
+<h3><a name="status">Status of this document</a></h3>
+
+This document represents a consensus on 30 June 1994 on the robots
+mailing list (robots-request@nexor.co.uk), between the majority of
+robot authors and other people with an interest in robots. It has also
+been open for discussion on the Technical World Wide Web mailing list
+(www-talk@info.cern.ch). This document is based on a previous working
+draft under the same title.
+
+<p>
+
+It is not an official standard backed by a standards body,
+or owned by any commercial organisation.
+
+It is not enforced by anybody, and there no guarantee that
+all current and future robots will use it.
+
+Consider it a common facility the majority of robot authors
+offer the WWW community to protect WWW server against
+unwanted accesses by their robots.</p>
+
+<p>
+
+The latest version of this document can be found on
+<a href="http://www.robotstxt.org/wc/robots.html">
+http://www.robotstxt.org/wc/robots.html</a>.</p>
+
+<h3><a name="introduction">Introduction</a></h3>
+
+WWW Robots (also called wanderers or spiders) are programs
+that traverse many pages in the World Wide Web by
+recursively retrieving linked pages. For more information
+see <a href="http://www.robotstxt.org/">the robots page</a>.
+
+<p>
+
+In 1993 and 1994 there have been occasions where robots
+have visited WWW servers where they weren't welcome for
+various reasons. Sometimes these reasons were robot specific,
+e.g. certain robots swamped servers with rapid-fire
+requests, or retrieved the same files repeatedly.
+In other situations robots traversed parts of WWW servers
+that weren't suitable, e.g. very deep virtual trees,
+duplicated information, temporary information, or
+cgi-scripts with side-effects (such as voting).</p>
+
+<p>
+
+These incidents indicated the need for established
+mechanisms for WWW servers to indicate to robots which parts
+of their server should not be accessed. This standard
+addresses this need with an operational solution.</p>
+
+<h3><a name="method">The Method</a></h3>
+
+The method used to exclude robots from a server is to
+create a file on the server which specifies an access
+policy for robots.
+
+This file must be accessible via HTTP on the local URL
+"<code>/robots.txt</code>".
+The contents of this file are specified <a href="#format">below</a>.
+
+<p>
+
+This approach was chosen because it can be easily
+implemented on any existing WWW server, and a robot can find
+the access policy with only a single document retrieval.</p>
+
+<p>
+
+A possible drawback of this single-file approach is that only a
+server administrator can maintain such a list, not the
+individual document maintainers on the server. This can be
+resolved by a local process to construct the single file
+from a number of others, but if, or how, this is done is
+outside of the scope of this document.</p>
+
+<p>
+
+The choice of the URL was motivated by several criteria:</p>
+
+<ul>
+<li>
+
+The filename should fit in file naming restrictions of all
+common operating systems.
+
+<li>
+
+The filename extension should not require extra server
+configuration.
+
+<li>
+
+The filename should indicate the purpose of the file
+and be easy to remember.
+
+<li>
+
+The likelihood of a clash with existing files should
+be minimal.
+
+</ul>
+
+<h3><a name="format">The Format</a></h3>
+
+The format and semantics of the "<code>/robots.txt</code>" file
+are as follows:
+
+<p>
+
+The file consists of one or more records separated by one or
+more blank lines (terminated by CR,CR/NL, or NL). Each
+record contains lines of the form
+"<code>&lt;field&gt;:&lt;optionalspace&gt;&lt;value&gt;&lt;optionalspace&gt;</code>".
+The field name is case insensitive.</p>
+
+<p>
+
+Comments can be included in file using UNIX bourne shell
+conventions: the '<code>#</code>' character is used to
+indicate that preceding space (if any) and the remainder of
+the line up to the line termination is discarded.
+Lines containing only a comment are discarded completely,
+and therefore do not indicate a record boundary.</p>
+
+<p>
+The record starts with one or more <code>User-agent</code>
+lines, followed by one or more <code>Disallow</code> lines,
+as detailed below. Unrecognised headers are ignored.</p>
+
+<dl>
+<dt>User-agent</dt>
+<dd>
+
+The value of this field is the name of the robot the
+record is describing access policy for.
+
+<p>
+If more than one User-agent field is present the record
+describes an identical access policy for more
+than one robot. At least one field needs to be present
+per record.</p>
+
+<p>
+The robot should be liberal in interpreting this field.
+A case insensitive substring match of the name without
+version information is recommended.</p>
+
+<p>
+
+If the value is '<code>*</code>', the record describes
+the default access policy for any robot that has not
+matched any of the other records. It is not allowed to
+have multiple such records in the "<code>/robots.txt</code>"
+file.</p></dd>
+
+<dt>Disallow</dt>
+<dd>
+
+The value of this field specifies a partial URL that is not
+to be visited. This can be a full path, or a partial
+path; any URL that starts with this value will not be
+retrieved. For example, <code>Disallow: /help</code>
+disallows both <code>/help.html</code> and
+<code>/help/index.html</code>, whereas
+<code>Disallow: /help/</code> would disallow
+<code>/help/index.html</code>
+but allow <code>/help.html</code>.
+
+<p>
+
+Any empty value, indicates that all URLs can be
+retrieved. At least one Disallow field needs to
+be present in a record.</p></dd>
+
+</dl>
+
+The presence of an empty "<code>/robots.txt</code>" file
+has no explicit associated semantics, it will be treated
+as if it was not present, i.e. all robots will consider
+themselves welcome.
+
+<h3><a name="examples">Examples</a></h3>
+
+The following example "<code>/robots.txt</code>" file specifies
+that no robots should visit any URL starting with
+"<code>/cyberworld/map/</code>" or
+"<code>/tmp/</code>", or <code>/foo.html</code>:
+
+<pre>
+# robots.txt for http://www.example.com/
+
+User-agent: *
+Disallow: /cyberworld/map/ # This is an infinite virtual URL space
+Disallow: /tmp/ # these will soon disappear
+Disallow: /foo.html
+</pre>
+
+This example "<code>/robots.txt</code>" file specifies
+that no robots should visit any URL starting with
+"<code>/cyberworld/map/</code>", except the robot called
+"<code>cybermapper</code>":
+
+<pre>
+# robots.txt for http://www.example.com/
+
+User-agent: *
+Disallow: /cyberworld/map/ # This is an infinite virtual URL space
+
+# Cybermapper knows where to go.
+User-agent: cybermapper
+Disallow:
+</pre>
+
+This example indicates that no robots should visit
+this site further:
+
+<pre>
+# go away
+User-agent: *
+Disallow: /
+</pre>
+
+<h3><a name="code">Example Code</a></h3>
+
+Although it is not part of this specification, some example code
+in Perl is available in norobots.pl.  It
+is a bit more flexible in its parsing than this document
+specificies, and is provided as-is, without warranty.
+
+<p>
+
+<blockquote>
+<strong>Note:</strong>
+This code is no longer available. 
+Instead I recommend using the robots exclusion code
+in the Perl libwww-perl5 library, available from
+<a href="http://www.cpan.org/">CPAN</a> in the
+<a href="http://www.cpan.org/modules/by-module/LWP/">LWP directory</a>.
+</blockquote>
+
+<h3><a name="author">Author's Address</a></h3>
+
+<address>
+<a href="http://www.greenhills.co.uk/mak/mak.html">Martijn Koster</a>
+</address>
+
+	  </div>
+        </div>
+        <div class="outsidefooter">
+ 	  <div class="outsidefooterlabel">        
+	    Advertisement<br/>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9311532361854131";
+//468x60, created 11/8/07
+google_ad_slot = "8696051710";
+google_ad_width = 468;
+google_ad_height = 60;
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	  </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="pagefooter">
+<a href="/about.html">About this site</a>
+|
+<a href="/privacy.html">Privacy and cookies policy</a>
+|
+<a href="/contact.html">Contact us</a>
+|
+<a href="/copyrights.html">&#169; 2007. All rights reserved.</a>
+    </div>
+  </body>
+</html>
+

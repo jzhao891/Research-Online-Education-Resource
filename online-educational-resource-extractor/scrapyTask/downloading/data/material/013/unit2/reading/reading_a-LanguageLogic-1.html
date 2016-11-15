@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="description" content="Language to Logic Natural Language  and IR Reasoning with language Much knowledge is available (only) encoded as natural language How can we reason with this knowledge? Implausible: develop inference mechanisms for reasoning directly with natural language More plausible: translate natural language into a logical language and use existing inference mechanisms Getting from language to logic Problems: Ambiguity Lexical: saw can be a verb or a noun Syntactic: John saw a monkey with a banana. Semantic: A woman is loved by every man. Discourse: John pushed Bill.  He fell. Too much assumed commonsense knowledge Representational requirements push us to first-order logic (or beyond) Reasoning: A broader perspective Logical reasoning tasks: Model-checking, satisfiability, theorem-proving Appear as linguistic reasoning tasks: Consistency- and informativity-checking Parsing and semantic construction as inference But, there are non-logical tasks,as well… Reasoning: A broader perspective Consider determining whether these are spam: You are approved for a 4.8% mortgage rate up to $400,000 … ATTN: Chairman/CEO.  I do foresee the surprise this letter will bring to you … Parsing, semantic interpretation, and logical inference: Overkill; much too inefficient to be useful Unlikely to work: require a consistent logical model of user’s email preferences Statistical methods, though, do quite well Trying to bridge language and computers leads to IR and other fields: Statistical methods for relevance and similarity at a coarse grain (i.e., documents) Surface structure-based methods for entailment and extraction at a finer grain Methods for reasoning about particular domains And using logic for reasoning both with language and about it Language-related fields: 1: Reasoning about documents Information retrieval: the vector-space model and the language modeling approach 2: Reasoning about snippets of text Question answering and textual entailment 3: Reasoning about entities and events Information extraction 4: Reasoning about time and events Issues in temporal representation 5: From language to logic Computational semantics Counting words as reasoning The simplest form of reasoning with language is statistical Comparing counts of words Purely statistical linguistic reasoning is best for coarse-grained applications E.g., information retrieval (IR) In this lecture, we look at two statistical approaches to IR: Vector-space Language modeling Zipf’s law The frequency of a word is inversely proportional to its rank: f ∝1/r word freq word rank Significance: the long tail—almost all words are rare Reasoning about documents Question: Which documents are relevant? To an immediate query: ad-hoc retrieval To a standing information need: text categorization, filtering Ad-hoc retrieval: User presents query; system returns list of relevant documents Boolean retrieval Relevance as containment: User query: terms joined with Boolean operators System returns exact matches Document representation—inverted index: Each word associated with list of documents containing it, plus frequency and position Position info makes efficient phrase lookup possible Many indexing schemes and optimizations Problem: large collections ⇒ unwieldy results Probability ranking principle Ranking documents in decreasing probability of relevance is optimal (Cooper via Robertson) Assumes independence of documents Assumes independence of queries Requires estimation of relevance: Vector-space model Probabilistic models Evaluation basics Basic measures: Precision: proportion of documents returned that are relevant Recall: proportion of relevant documents that are returned Usually, there is a trade off b/t precision and recall: F-measure: 1/(α/P + (1 - α)/R) for 0 ≤ α ≤ 1	 Measures that take ranking into account: Precision at cutoff (5, 10, 20, 100, etc.) Average precision: average of precision computed at rank of each relevant document (0s for unretrieved relevant documents) Documents as vectors Represent each document (and query) as a vector in a high-dimensional space. Ideally, dimensions are orthogonal concepts. Relevance is estimated by vector similarity. Two types of choices must be made: Dimensions? Similarity measure? Vector-space model     Java Microsoft Starbucks      Q  D1 D3 D2 D4 α Similarity in a vector space One measure of similarity between two vectors is the angle between the vectors: 0o: overlapping vectors ⇒ identical 90o: orthogonal vectors ⇒ totally dissimilar D4 is most similar to Q b/c the angle α is smallest Cosine of angle varies monotonically from 0 to 1 as angle varies from 90o to 0o. For unit-length vectors, cosine is dot product: Cosine: non-normalized vectors Dot product measures vector correlation Denominator normalizes for length Also called normalized correlation coefficient Equivalence of rank order Euclidean distance and cosine for unit vecs. Dimensions in document space Terms instead of concepts: Terms are ambiguous and not orthogonal But: terms are straightforward to count Which terms? Removing stop words (common function words) Stop words account for a disproportionate amount of space in an index (Zipf’s law) Stemming Standardizing morphological variants; stripping endings, etc. eat, eating, eats, eater ⇒ eat Can introduce ambiguity by conflating distinct words gallery, galling ⇒ gall Weighting: tf and df Magnitude of a document d in a dimension t is affected by two factors: Term frequency (tft,d): the number of occurrences of t in d Sailence of t in d Document frequency (dft): the number of documents t appears in Informativeness of t From a corpus of New York Times articles insurance: more focused; correlated to topic try: less focused; not restricted by topic Frequency versus df Word	Frequency	df insurance	10440	3997 try	10422	8760 Weighting: tf.idf Basic tf.idf weight for term t document d: tft,d × log(N/dft) N is collection size, log used to dampen idf Two issues: Damping tf: first occurrence of a term more important than subsequent occurrences Normalization: dot product correlation biased toward longer documents Cosine measure has built-in normalization The tf.idf family of weights The Smart system (Salton and Buckley): Similarity measure: dot product 6-dimensional weighting scheme: ABC.DEF ABC for document; DEF for query A/D: term frequency weight (document/query) B/E: idf weight (document/query) C/F: normalization The tf.idf family of weights A/D (term frequency): b (boolean): 1 if t occurs in d; 0 o/w n (natural): tft,d l (logarithmic): 1 + log(tft,d) a (augmented): 0.5 + (0.5 tft,d)/maxt’ tft’,d The tf.idf family of weights B/E (document frequency): n (no document frequency): 1 t (full): log(N/dft) C/F (normalization): n (no normalization): 1 c (cosine): The tf.idf family of weights Instantiation of A-F yields a weighting scheme: E.g., ltc.lnn (logarithmic term weighting for document and query; idf and cosine normalization for document only) is commonly used Other related schemes include pivoted normalization Takes average document length into account The tf.idf family of weights Many possible weighting schemes: No clear best: Depends on collection and queries Must be determined experimentally Some heuristics: Use idf for documents If document length varies, normalize documents If documents all short, use boolean tf for documents Don’t normalize queries Don’t use undamped tf for queries Upshot: Vector-space model Criticisms: Ad hoc Unwarranted orthogonality assumptions Reliance on terms: Ambiguous: many terms have more than one meaning (affects precision) Synonymy: many concepts can be expressed by more than one term (affects recall) Nevertheless effective Extensions: From terms to concepts Latent semantic indexing Dimensionality reduction (Singular Value Decomposition) Project vectors in document-by-term space onto lower-dimensionality document-by-concept space Leverages term co-occurrence in documents to approximate “latent concepts” Blind relevance feedback Another way to leverage term co-occurrence Add terms from top documents to new query Break Double-click to edit Estimating relevance for IR Vector-space model: Simple spatial metaphor Ad-hoc scoring schemes But, effective Probabilistic models: Term distribution models [not discussed] Probabilistic language models What is a language model? A probability distribution over strings of a language For Dutch: p1 &gt; p2 &gt; p3 &gt; p4 p1 = P(“ik kom eraan”), p2 = P(“kom ik eraan”) p3 = P(“eraan ik kom”), p4 = P(“I’m coming”) A generative model Can be used to generate (or predict) text Or to answer the question: How likely is string s to have been randomly generated from language l? Language models provide a principled, general framework for reasoning about language. Language modeling apps Language identification Speech recognition How do you wreck a nice beach? versus How do you recognize speech? Contextual spelling correction I think they’re ok versus I think there ok versus I think their ok Probabilistic parsing Text categorization Each category defines a separate language Language modeling for IR Query generation: Each document defines a language LD LM specifies probability P(q | LD) that a query q is generated from a document D Documents are ranked according to these probabilities Estimating a LM: Discrimination versus reliability Number of strings in a language is potentially boundless To generate estimates, data must be grouped into equivalence classes Necessitating possibly unwarranted independence assumptions More classes: Better discrimination (fewer independence assumptions) Worse reliability (less data for each class) Basic LMs: Unigrams Generate a string by generating each word (or character) independently Each word (or character) is a unigram Probability of a sequence of words is the product of the unigram probabilities: P(w1 w2 … wn) = P(w1)P(w2)⋅⋅⋅P(wn) Total number of parameters equal to vocabulary size Each unigram probability is a parameter to be estimated Higher-order models: n-grams Markov assumption: each word depends only on a limited context n-gram: a sequence of n words In an n-gram model, generation probability of a word depends only on previous n-1 words: Unigrams are n-grams for n = 1 Number of parameters exponential in n Example: from Jane Austen Four n-gram models (Manning and Schütze) 1-, 2-, 3-, and 4-gram Training corpus of five novels: 617091 word tokens 14585 word types Maximum Likelihood Estimator used: Jane Austen: 1-grams In person	she		was		inferior		to		both		sisters	 	P(⋅)		P(⋅)		P(⋅)		P(⋅)		P(⋅)		P(⋅)	 1	the	.034	the	.034	the	.034	the	.034	the	.034	the	.034 2	to	.032	to	.032	to	.032	to	.032	to	.032	to	.032 3	and	.030	and	.030	and	.030			and	.030	and	.030 4	of	.029	of	.029	of	.029			of	.029	of	.029 8	was	.015	was	.015	was	.015			was	.015	was	.015 13	she	.011			she	.011			she	.011	she	.011 254					both	.0005			both	.0005	both	.0005 435					sisters	.0003					sisters	.0003 1701					inferior	.00005						 Jane Austen: 2-grams In person	she		was		inferior		to		both		sisters	 	P(⋅| person)	P(⋅ | she)	P(⋅| was)	P(⋅| inferior)	P(⋅| to)	P(⋅| both) 1	and	.099	had	.141	not	.065	to	.212	be	.111	of	.066 2	who	.099	was	.122	a	.052			the	.057	to	.041 3	to	.076			the	.033			her	.048	in	.038 4	in	.045			to	.031			have	.027	and	.025 23	she	.0009			…	…			Mrs	.006	she	.009 41					…	…			what	.004	sisters	.006 293					…	…			both	.0004		 N/A					inferior	0						 Jane Austen: 3-grams In person	she		was		inferior		to	both		sisters	 	P(⋅| In person)	P(⋅ | person she)	P(⋅| she was)	P(⋅| was inferior)	P(⋅| inferior to)	P(⋅| to both) 1	UNSEEN	did	.5	not	.057	UNSEEN	the	.286	to	.222 2	was	.5	very	.038	Maria	.143	Chapter	.111 3		in	.030	cherries	.143	Hour	.111 4		to	.026	her	.143	Twice	.111 N/A		inferior	0	both	0	sisters	0 Jane Austen: 4-grams In person	she		was		inferior		to	both		sisters	 	P(⋅| - In person)	P(⋅ | In person she)	P(⋅| person she was)	P(⋅| she was inferior)	P(⋅| was inferior to)	P(⋅| inferior to both) 1	UNSEEN	UNSEEN	in	1.0	UNSEEN	UNSEEN	UNSEEN N/A	inferior	0 Maximum Likelihood Estimation Use relative frequencies of n-grams in training text to estimate probability MLE assigns highest probability to training corpus … … among all possible parameter choices, i.e., given independence assumptions of model No probability mass wasted on unseen events! Unbiased estimator No prior distribution assumed Unseen events If an event is not in the training data An MLE-based LM assigns zero probability mass to that event … … and any set of events involving that event Remember Zipf’s law: rare events are common in language Remember, too: number of parameters of an n-gram model is exponential in n Methods needed to smooth estimates What should the probability of an unseen event be? Discounting methods Laplace correction (adding one) Add 1 to every count, renormalize (Equivalent to a Bayesian estimator w/uniform prior) W/large vocabs: probs of existing words drop too low Lidstone’s law Add λ to every count, renormalize (Linear interpolation between MLE and uniform prior) Discounting methods Absolute discounting Subtract δ from each non-zero count Distribute extra frequency over zero counts Leave-one-out A variety of cross-validation Using each part of the training data in turn as sample test data to optimize parameters Remove each word wi in turn and compute P(wi | L) Adjust discounting parameter to maximize overall likelihood Discounting methods Good-Turing Estimate probability of zero frequency instances using probability of singletons, and so on Nr = # of words with r training instances N0 = number of zero frequency words N1 = number of singletons N = total number of training instances GT-adjusted count r* = (r + 1)(Nr+1/Nr) PGT = r*/N But: r* unreliable for large r (0 for most frequent inst.) Further smoothing w/regression Or, use MLE for large r Combining methods: Interpolation and backoff Problem with discounting methods: All unseen events treated uniformly But not all unseen events are the same Combine estimators: E.g., back-off from 3-grams to 2-grams to unigrams E.g., interpolate document estimates with collection estimates (example follows) LM for IR: Query generation Unigram models of document languages Not enough data for estimation of higher-order models for each document Even with unigrams, smoothing crucial Basic formula: Note conditioning on language (implicit in other examples w/only one language considered) Smoothing versus tf.idf Smoothing for IR involves combining a document LM with a background LM: ps = distribution for words in document pu = distribution for words not in document pu(wi | Ld) = αd p(wi | LC), where LC is the language of the collection 3 smoothing methods for IR Simplified Jelinek-Mercer (linear interpolation) Bayesian estimation with Dirichlet priors 3 smoothing methods for IR Absolute discounting 3 smoothing methods for IR For short queries: Dirichlet &gt; absolute &gt; Jelinek-Mercer For long queries: Jelinek-Mercer &gt; Dirichlet &gt; absolute Smoothing seems to play two roles: Improving document language models (as seen in short queries) “Explaining” common, non-informative words (as seen in long queries), i.e., as a query model Perhaps these roles could be separated? Two-stage smoothing Mixture model (linear interpolation) of Bayesian estimator w/Dirichlet and query model (LU) Bayesian estimate of query generated by document LU for prior belief in query generated by user  Leave-one-out used to estimate μ Expectation-maximization used to compute λ Collection model used as query model Note: μ = 0 ⇒ J-M; λ = 0 ⇒ Dirichlet Performs as well as hand-tuned Dirichlet Summary Two approaches to IR: Vector-space model: Represent documents as term vectors Estimate relevance as vector similarity A variety of weighting schemes Language modeling approach Treat each document as a separate language Use unigram document model to estimate likelihood of query generation A variety of smoothing options"/>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+//      <![CDATA[
+            var images = new Array (366);
+            images[0] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.001-001.png";
+            images[1] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.002-001.png";
+            images[2] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.002-002.png";
+            images[3] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.002-003.png";
+            images[4] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.002-004.png";
+            images[5] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.002-005.png";
+            images[6] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-001.png";
+            images[7] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-002.png";
+            images[8] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-003.png";
+            images[9] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-004.png";
+            images[10] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-005.png";
+            images[11] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-006.png";
+            images[12] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-007.png";
+            images[13] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-008.png";
+            images[14] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.003-009.png";
+            images[15] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-001.png";
+            images[16] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-002.png";
+            images[17] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-003.png";
+            images[18] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-004.png";
+            images[19] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-005.png";
+            images[20] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-006.png";
+            images[21] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.004-007.png";
+            images[22] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-001.png";
+            images[23] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-002.png";
+            images[24] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-003.png";
+            images[25] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-004.png";
+            images[26] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-005.png";
+            images[27] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-006.png";
+            images[28] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-007.png";
+            images[29] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.005-008.png";
+            images[30] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.006-001.png";
+            images[31] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.006-002.png";
+            images[32] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.006-003.png";
+            images[33] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.006-004.png";
+            images[34] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.006-005.png";
+            images[35] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-001.png";
+            images[36] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-002.png";
+            images[37] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-003.png";
+            images[38] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-004.png";
+            images[39] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-005.png";
+            images[40] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-006.png";
+            images[41] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-007.png";
+            images[42] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-008.png";
+            images[43] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-009.png";
+            images[44] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-010.png";
+            images[45] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.007-011.png";
+            images[46] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-001.png";
+            images[47] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-002.png";
+            images[48] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-003.png";
+            images[49] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-004.png";
+            images[50] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-005.png";
+            images[51] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-006.png";
+            images[52] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-007.png";
+            images[53] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.008-008.png";
+            images[54] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.009-001.png";
+            images[55] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.009-002.png";
+            images[56] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-001.png";
+            images[57] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-002.png";
+            images[58] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-003.png";
+            images[59] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-004.png";
+            images[60] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-005.png";
+            images[61] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.010-006.png";
+            images[62] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-001.png";
+            images[63] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-002.png";
+            images[64] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-003.png";
+            images[65] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-004.png";
+            images[66] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-005.png";
+            images[67] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-006.png";
+            images[68] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-007.png";
+            images[69] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-008.png";
+            images[70] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.011-009.png";
+            images[71] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-001.png";
+            images[72] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-002.png";
+            images[73] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-003.png";
+            images[74] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-004.png";
+            images[75] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-005.png";
+            images[76] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-006.png";
+            images[77] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.012-007.png";
+            images[78] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-001.png";
+            images[79] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-002.png";
+            images[80] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-003.png";
+            images[81] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-004.png";
+            images[82] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-005.png";
+            images[83] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-006.png";
+            images[84] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-007.png";
+            images[85] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-008.png";
+            images[86] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.013-009.png";
+            images[87] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-001.png";
+            images[88] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-002.png";
+            images[89] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-003.png";
+            images[90] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-004.png";
+            images[91] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-005.png";
+            images[92] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-006.png";
+            images[93] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.014-007.png";
+            images[94] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.015-001.png";
+            images[95] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.015-002.png";
+            images[96] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-001.png";
+            images[97] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-002.png";
+            images[98] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-003.png";
+            images[99] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-004.png";
+            images[100] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-005.png";
+            images[101] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-006.png";
+            images[102] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-007.png";
+            images[103] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.016-008.png";
+            images[104] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.017-001.png";
+            images[105] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.017-002.png";
+            images[106] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.017-003.png";
+            images[107] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.017-004.png";
+            images[108] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.018-001.png";
+            images[109] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.018-002.png";
+            images[110] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.018-003.png";
+            images[111] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-001.png";
+            images[112] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-002.png";
+            images[113] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-003.png";
+            images[114] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-004.png";
+            images[115] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-005.png";
+            images[116] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-006.png";
+            images[117] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-007.png";
+            images[118] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-008.png";
+            images[119] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-009.png";
+            images[120] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-010.png";
+            images[121] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-011.png";
+            images[122] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.019-012.png";
+            images[123] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-001.png";
+            images[124] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-002.png";
+            images[125] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-003.png";
+            images[126] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-004.png";
+            images[127] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-005.png";
+            images[128] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.020-006.png";
+            images[129] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.021-001.png";
+            images[130] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.021-002.png";
+            images[131] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.021-003.png";
+            images[132] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.021-004.png";
+            images[133] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-001.png";
+            images[134] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-002.png";
+            images[135] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-003.png";
+            images[136] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-004.png";
+            images[137] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-005.png";
+            images[138] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-006.png";
+            images[139] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-007.png";
+            images[140] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.022-008.png";
+            images[141] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-001.png";
+            images[142] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-002.png";
+            images[143] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-003.png";
+            images[144] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-004.png";
+            images[145] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-005.png";
+            images[146] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-006.png";
+            images[147] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-007.png";
+            images[148] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-008.png";
+            images[149] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.023-009.png";
+            images[150] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-001.png";
+            images[151] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-002.png";
+            images[152] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-003.png";
+            images[153] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-004.png";
+            images[154] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-005.png";
+            images[155] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.024-006.png";
+            images[156] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-001.png";
+            images[157] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-002.png";
+            images[158] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-003.png";
+            images[159] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-004.png";
+            images[160] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-005.png";
+            images[161] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-006.png";
+            images[162] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-007.png";
+            images[163] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.025-008.png";
+            images[164] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.026-001.png";
+            images[165] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.026-002.png";
+            images[166] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.026-003.png";
+            images[167] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.026-004.png";
+            images[168] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.026-005.png";
+            images[169] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-001.png";
+            images[170] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-002.png";
+            images[171] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-003.png";
+            images[172] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-004.png";
+            images[173] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-005.png";
+            images[174] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-006.png";
+            images[175] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-007.png";
+            images[176] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-008.png";
+            images[177] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-009.png";
+            images[178] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-010.png";
+            images[179] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.027-011.png";
+            images[180] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-001.png";
+            images[181] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-002.png";
+            images[182] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-003.png";
+            images[183] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-004.png";
+            images[184] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-005.png";
+            images[185] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-006.png";
+            images[186] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-007.png";
+            images[187] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.028-008.png";
+            images[188] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-001.png";
+            images[189] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-002.png";
+            images[190] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-003.png";
+            images[191] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-004.png";
+            images[192] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-005.png";
+            images[193] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-006.png";
+            images[194] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-007.png";
+            images[195] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.029-008.png";
+            images[196] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.030-001.png";
+            images[197] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.030-002.png";
+            images[198] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-001.png";
+            images[199] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-002.png";
+            images[200] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-003.png";
+            images[201] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-004.png";
+            images[202] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-005.png";
+            images[203] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-006.png";
+            images[204] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-007.png";
+            images[205] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.031-008.png";
+            images[206] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-001.png";
+            images[207] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-002.png";
+            images[208] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-003.png";
+            images[209] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-004.png";
+            images[210] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-005.png";
+            images[211] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-006.png";
+            images[212] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-007.png";
+            images[213] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-008.png";
+            images[214] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.032-009.png";
+            images[215] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-001.png";
+            images[216] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-002.png";
+            images[217] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-003.png";
+            images[218] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-004.png";
+            images[219] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-005.png";
+            images[220] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-006.png";
+            images[221] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-007.png";
+            images[222] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-008.png";
+            images[223] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.033-009.png";
+            images[224] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.034-001.png";
+            images[225] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.034-002.png";
+            images[226] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.034-003.png";
+            images[227] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.034-004.png";
+            images[228] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.034-005.png";
+            images[229] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-001.png";
+            images[230] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-002.png";
+            images[231] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-003.png";
+            images[232] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-004.png";
+            images[233] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-005.png";
+            images[234] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-006.png";
+            images[235] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.035-007.png";
+            images[236] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-001.png";
+            images[237] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-002.png";
+            images[238] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-003.png";
+            images[239] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-004.png";
+            images[240] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-005.png";
+            images[241] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-006.png";
+            images[242] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.036-007.png";
+            images[243] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-001.png";
+            images[244] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-002.png";
+            images[245] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-003.png";
+            images[246] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-004.png";
+            images[247] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-005.png";
+            images[248] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-006.png";
+            images[249] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.037-007.png";
+            images[250] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-001.png";
+            images[251] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-002.png";
+            images[252] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-003.png";
+            images[253] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-004.png";
+            images[254] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-005.png";
+            images[255] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-006.png";
+            images[256] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-007.png";
+            images[257] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-008.png";
+            images[258] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.038-009.png";
+            images[259] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.039-001.png";
+            images[260] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.040-001.png";
+            images[261] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.041-001.png";
+            images[262] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.042-001.png";
+            images[263] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-001.png";
+            images[264] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-002.png";
+            images[265] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-003.png";
+            images[266] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-004.png";
+            images[267] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-005.png";
+            images[268] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-006.png";
+            images[269] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.043-007.png";
+            images[270] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-001.png";
+            images[271] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-002.png";
+            images[272] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-003.png";
+            images[273] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-004.png";
+            images[274] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-005.png";
+            images[275] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-006.png";
+            images[276] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-007.png";
+            images[277] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.044-008.png";
+            images[278] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-001.png";
+            images[279] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-002.png";
+            images[280] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-003.png";
+            images[281] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-004.png";
+            images[282] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-005.png";
+            images[283] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-006.png";
+            images[284] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-007.png";
+            images[285] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-008.png";
+            images[286] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.045-009.png";
+            images[287] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-001.png";
+            images[288] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-002.png";
+            images[289] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-003.png";
+            images[290] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-004.png";
+            images[291] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-005.png";
+            images[292] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-006.png";
+            images[293] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-007.png";
+            images[294] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-008.png";
+            images[295] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.046-009.png";
+            images[296] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-001.png";
+            images[297] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-002.png";
+            images[298] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-003.png";
+            images[299] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-004.png";
+            images[300] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-005.png";
+            images[301] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-006.png";
+            images[302] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-007.png";
+            images[303] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-008.png";
+            images[304] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-009.png";
+            images[305] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-010.png";
+            images[306] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-011.png";
+            images[307] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.047-012.png";
+            images[308] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-001.png";
+            images[309] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-002.png";
+            images[310] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-003.png";
+            images[311] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-004.png";
+            images[312] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-005.png";
+            images[313] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-006.png";
+            images[314] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.048-007.png";
+            images[315] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-001.png";
+            images[316] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-002.png";
+            images[317] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-003.png";
+            images[318] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-004.png";
+            images[319] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-005.png";
+            images[320] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-006.png";
+            images[321] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.049-007.png";
+            images[322] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-001.png";
+            images[323] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-002.png";
+            images[324] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-003.png";
+            images[325] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-004.png";
+            images[326] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-005.png";
+            images[327] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-006.png";
+            images[328] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-007.png";
+            images[329] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-008.png";
+            images[330] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.050-009.png";
+            images[331] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.051-001.png";
+            images[332] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.051-002.png";
+            images[333] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.051-003.png";
+            images[334] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.051-004.png";
+            images[335] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.051-005.png";
+            images[336] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.052-001.png";
+            images[337] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.052-002.png";
+            images[338] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-001.png";
+            images[339] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-002.png";
+            images[340] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-003.png";
+            images[341] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-004.png";
+            images[342] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-005.png";
+            images[343] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-006.png";
+            images[344] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-007.png";
+            images[345] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-008.png";
+            images[346] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.053-009.png";
+            images[347] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-001.png";
+            images[348] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-002.png";
+            images[349] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-003.png";
+            images[350] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-004.png";
+            images[351] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-005.png";
+            images[352] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-006.png";
+            images[353] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-007.png";
+            images[354] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-008.png";
+            images[355] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.054-009.png";
+            images[356] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-001.png";
+            images[357] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-002.png";
+            images[358] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-003.png";
+            images[359] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-004.png";
+            images[360] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-005.png";
+            images[361] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-006.png";
+            images[362] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-007.png";
+            images[363] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-008.png";
+            images[364] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-009.png";
+            images[365] = "a-LanguageLogic-1.html_files/a-LanguageLogic-1.055-010.png";
+            var index = 0;
+            function WindowLoaded(evt)
+            {
+                document.body.onselectstart = function () { return false; };
+            }
+            function Step(i)
+            {
+                GoTo(index + i)
+            }
+            function GoTo(newIndex)
+            {
+                if(newIndex >= 0 && newIndex < images.length)
+                {
+                    index = newIndex;
+                    document.Slideshow.src = images[index];
+                }
+            }
+//      ]]>
+    </script>
+</head>
+<body bgcolor="black" onload='WindowLoaded(event);'>
+    <p align="center">
+        <br/>
+        <br/>
+        <img name="Slideshow" alt="" src="a-LanguageLogic-1.html_files/a-LanguageLogic-1.001-001.png" onclick="Step(1)"/>
+        <br/>
+        <br/>
+        <input type="image" src="a-LanguageLogic-1.html_files/home.png" onclick="GoTo(0)"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="image" src="a-LanguageLogic-1.html_files/prev.png" onclick="Step(-1)"/>
+        <input type="image" src="a-LanguageLogic-1.html_files/next.png" onclick="Step(1)"/>
+    </p>
+</body>
+</html>

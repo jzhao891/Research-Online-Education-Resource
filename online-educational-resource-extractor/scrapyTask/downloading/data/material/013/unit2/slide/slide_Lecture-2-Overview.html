@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="description" content="Information Retrieval Week 2 : Information Retrieval, LIS466 Week 2 Snow day last week! We missed intro so today must cover a lot topics but in brief. Questions?  Please review IR journals, conferences, sites (TOIS) What is Information Retrieval? “Information Retrieval is a field concerned with the structure, analysis, organization, storage, searching, and retrieval of information” - Salton, 1968 1. Structure How are data structured for a computer? “Structured” (RDBMS) - in relations &amp; attributes Great for boolean and similar matching but for known data Not so good for answering questions, such as “why did X happen”? Designed for computational efficiency - fast retrieving of data that match the user’s query 1. Structure “Semi-structured” XML Semantic tags (human understandable) But an xml file is all text And carries lots of data about itself and the data! DOM (Document Object Model) nodes in a tree Used in XSLT Computer treats file like “full-text” or as SQL or both?! 1. Structure Full-text No inherent structure to the document “Bag of words” 2.  Analysis For the computer How efficient? [E.g., Big-O, other] How to measure “informative” data How to measure how “similar” documents are to user queries? For humans How effective? How to measure how “informative” data are? Relevance feedback 3.  Organization Computational efficiency Inverted files Lookup tables Compression algorithms Very important Humans Data presented on the screen Interactivity 4.  Searching Like Organization, how efficient is the machine? What to search for? (What is being matched and how?) What’s the justification for what we search for and how do we measure the similarity? How do humans think (or think they think) about searching? “User model”, “System model”, “Systems model of the user’s model” (seriously) 4.  Searching For known items?  (Like call numbers, titles) What else? Answering questions? Referring to collections of things? Finding something else (non-text) or reasons why Browsing User-directed searching? Guided searching? 5.  Retrieving What do we retrieval?  What issues? Matching patterns Clustering Filtering Ranking by “relevance” to the query (very cause and effect) Text and other things Yes, text … from documents, records, representations of other data (e.g., metadata records of multimedia files) What to search? Document collections Own computer, web-based documents, relational database data, etc. - anything really! Images? Convert to data … and find patterns (e.g., n-nearest neighbor) All revolves around the idea of a user who needs data that’ll help him in the world [aka information] Project Why a project? [Can’t cover all; hands-on useful] Search Engines - most popular aspect of IR Google, Bing, Yahoo OpenSource [Lucene, Lemur, Galago, others] Specific needs projects Financial data and similar - time-dependent data Topic dependent - medicine, “who’s trending now” IR &amp; Modeling Effective ranking Evaluation (testing and measuring) Information needs (user-interaction) Search Engines are either parters to or parts of IR Performance [efficient search &amp; indexing] Incorporating new data [coverage &amp; freshness] Scalability [growing with data &amp; users] Adaptability [tuning applications] Specific problems [such as spam] Architecture Baeza-Yates’, Croft’s Document Collection: parse it to create collection “Index vocabulary” Metadata (for context and content) Controlled vocabularies (for semantics) Ranking helpers Log data (use evidence) Parsing issues Is “Apple” the same as “apple” Is “la pomme” or “苹果” Stop words [the, an, a, other common terms] Phrases (“united” + “states” or “united states”) Parts-of-speech Hyperlink data URLs, computer code) Parsing Issues Small words (j lo, el paso, xp, ben e king) Hyphenated forms (e-bay, t-shirts) “bush” the plant vs. “Bush” [the other plant] Apostrophes (for possessives or for contractions?) Numbers (IDs, license #, patents, etc., e.g., 993827) Periods (IBM or I.B.M.) Internationalization Monolingual or Multilingual searching Word segmentation 长笛, 龙 vs. 龍 Index creation Document statistics: word frequency in doc and collection “Weighting” Propensities in language applicable to parsing? How will people “talk” to the parsed collection? Boolean operators or natural language? How often should the data be updated? Automatic updating (will change above).  By people? Query Do we just accept queries as they are? [Stemming; Porter algorithm, Porter2] Do we add or delete terms from searching? If query is “cat” do we search for “cat” only? Or “conflate query” with “gato”, “chat”, “kitty”… Ranking results Why rank? How to rank? Based on what? Document Conversions Different formats (PDF, XML, ODF, etc.) Encodings (stored as UTF-24 vs. display in UTF-8) Do we use RDBMS or text inverted files? How to link documents to the search? What about “noise”? What about collecting data about the document? Metadata in the file; or the context of its source? Much more about docs soon. Evaluating data Very up-in-the air! Zipf’s “law” - probability of occurrence x rank How big are collections?  Example: Collection has 84,478 documents Total # of words: 39,749,179 Vocabulary size: 198,763 Words appearing &gt; 1000 times: 4,169 Words appearing once: 70,064 What’s the probability that the term appears? What’s the probability the term might match the query? Summary IR + Search Engines + Interface for full-text Need a model for understanding, explaining, sources of evidence How are we treating Query? Conflating? Translating? Etc. How are we treating Document Collection? What to parse, stem; probability, proximity, phrases; by weighting schema (idf•tf or tw, other) … and Matching Function? … and Interface and Relevance Feedback? Probability of matching or Actual Project Discussion Divide project into groups Query Interface Evaluation Retrieval Modeling [I have ideas for projects but depends on students’ backgrounds.]"/>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+//      <![CDATA[
+            var images = new Array (113);
+            images[0] = "Lecture-2-Overview.html_files/Lecture-2-Overview.001-001.png";
+            images[1] = "Lecture-2-Overview.html_files/Lecture-2-Overview.002-001.png";
+            images[2] = "Lecture-2-Overview.html_files/Lecture-2-Overview.002-002.png";
+            images[3] = "Lecture-2-Overview.html_files/Lecture-2-Overview.002-003.png";
+            images[4] = "Lecture-2-Overview.html_files/Lecture-2-Overview.003-001.png";
+            images[5] = "Lecture-2-Overview.html_files/Lecture-2-Overview.003-002.png";
+            images[6] = "Lecture-2-Overview.html_files/Lecture-2-Overview.003-003.png";
+            images[7] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-001.png";
+            images[8] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-002.png";
+            images[9] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-003.png";
+            images[10] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-004.png";
+            images[11] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-005.png";
+            images[12] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-006.png";
+            images[13] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-007.png";
+            images[14] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-008.png";
+            images[15] = "Lecture-2-Overview.html_files/Lecture-2-Overview.004-009.png";
+            images[16] = "Lecture-2-Overview.html_files/Lecture-2-Overview.005-001.png";
+            images[17] = "Lecture-2-Overview.html_files/Lecture-2-Overview.006-001.png";
+            images[18] = "Lecture-2-Overview.html_files/Lecture-2-Overview.006-002.png";
+            images[19] = "Lecture-2-Overview.html_files/Lecture-2-Overview.006-003.png";
+            images[20] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-001.png";
+            images[21] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-002.png";
+            images[22] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-003.png";
+            images[23] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-004.png";
+            images[24] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-005.png";
+            images[25] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-006.png";
+            images[26] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-007.png";
+            images[27] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-008.png";
+            images[28] = "Lecture-2-Overview.html_files/Lecture-2-Overview.007-009.png";
+            images[29] = "Lecture-2-Overview.html_files/Lecture-2-Overview.008-001.png";
+            images[30] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-001.png";
+            images[31] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-002.png";
+            images[32] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-003.png";
+            images[33] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-004.png";
+            images[34] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-005.png";
+            images[35] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-006.png";
+            images[36] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-007.png";
+            images[37] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-008.png";
+            images[38] = "Lecture-2-Overview.html_files/Lecture-2-Overview.009-009.png";
+            images[39] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-001.png";
+            images[40] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-002.png";
+            images[41] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-003.png";
+            images[42] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-004.png";
+            images[43] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-005.png";
+            images[44] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-006.png";
+            images[45] = "Lecture-2-Overview.html_files/Lecture-2-Overview.010-007.png";
+            images[46] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-001.png";
+            images[47] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-002.png";
+            images[48] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-003.png";
+            images[49] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-004.png";
+            images[50] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-005.png";
+            images[51] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-006.png";
+            images[52] = "Lecture-2-Overview.html_files/Lecture-2-Overview.011-007.png";
+            images[53] = "Lecture-2-Overview.html_files/Lecture-2-Overview.012-001.png";
+            images[54] = "Lecture-2-Overview.html_files/Lecture-2-Overview.012-002.png";
+            images[55] = "Lecture-2-Overview.html_files/Lecture-2-Overview.012-003.png";
+            images[56] = "Lecture-2-Overview.html_files/Lecture-2-Overview.012-004.png";
+            images[57] = "Lecture-2-Overview.html_files/Lecture-2-Overview.013-001.png";
+            images[58] = "Lecture-2-Overview.html_files/Lecture-2-Overview.014-001.png";
+            images[59] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-001.png";
+            images[60] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-002.png";
+            images[61] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-003.png";
+            images[62] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-004.png";
+            images[63] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-005.png";
+            images[64] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-006.png";
+            images[65] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-007.png";
+            images[66] = "Lecture-2-Overview.html_files/Lecture-2-Overview.015-008.png";
+            images[67] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-001.png";
+            images[68] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-002.png";
+            images[69] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-003.png";
+            images[70] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-004.png";
+            images[71] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-005.png";
+            images[72] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-006.png";
+            images[73] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-007.png";
+            images[74] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-008.png";
+            images[75] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-009.png";
+            images[76] = "Lecture-2-Overview.html_files/Lecture-2-Overview.016-010.png";
+            images[77] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-001.png";
+            images[78] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-002.png";
+            images[79] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-003.png";
+            images[80] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-004.png";
+            images[81] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-005.png";
+            images[82] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-006.png";
+            images[83] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-007.png";
+            images[84] = "Lecture-2-Overview.html_files/Lecture-2-Overview.017-008.png";
+            images[85] = "Lecture-2-Overview.html_files/Lecture-2-Overview.018-001.png";
+            images[86] = "Lecture-2-Overview.html_files/Lecture-2-Overview.018-002.png";
+            images[87] = "Lecture-2-Overview.html_files/Lecture-2-Overview.018-003.png";
+            images[88] = "Lecture-2-Overview.html_files/Lecture-2-Overview.019-001.png";
+            images[89] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-001.png";
+            images[90] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-002.png";
+            images[91] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-003.png";
+            images[92] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-004.png";
+            images[93] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-005.png";
+            images[94] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-006.png";
+            images[95] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-007.png";
+            images[96] = "Lecture-2-Overview.html_files/Lecture-2-Overview.020-008.png";
+            images[97] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-001.png";
+            images[98] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-002.png";
+            images[99] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-003.png";
+            images[100] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-004.png";
+            images[101] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-005.png";
+            images[102] = "Lecture-2-Overview.html_files/Lecture-2-Overview.021-006.png";
+            images[103] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-001.png";
+            images[104] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-002.png";
+            images[105] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-003.png";
+            images[106] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-004.png";
+            images[107] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-005.png";
+            images[108] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-006.png";
+            images[109] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-007.png";
+            images[110] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-008.png";
+            images[111] = "Lecture-2-Overview.html_files/Lecture-2-Overview.022-009.png";
+            images[112] = "Lecture-2-Overview.html_files/Lecture-2-Overview.023-001.png";
+            var index = 0;
+            function WindowLoaded(evt)
+            {
+                document.body.onselectstart = function () { return false; };
+            }
+            function Step(i)
+            {
+                GoTo(index + i)
+            }
+            function GoTo(newIndex)
+            {
+                if(newIndex >= 0 && newIndex < images.length)
+                {
+                    index = newIndex;
+                    document.Slideshow.src = images[index];
+                }
+            }
+//      ]]>
+    </script>
+</head>
+<body bgcolor="black" onload='WindowLoaded(event);'>
+    <p align="center">
+        <br/>
+        <br/>
+        <img name="Slideshow" alt="" src="Lecture-2-Overview.html_files/Lecture-2-Overview.001-001.png" onclick="Step(1)"/>
+        <br/>
+        <br/>
+        <input type="image" src="Lecture-2-Overview.html_files/home.png" onclick="GoTo(0)"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="image" src="Lecture-2-Overview.html_files/prev.png" onclick="Step(-1)"/>
+        <input type="image" src="Lecture-2-Overview.html_files/next.png" onclick="Step(1)"/>
+    </p>
+</body>
+</html>

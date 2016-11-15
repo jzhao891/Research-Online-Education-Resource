@@ -1,0 +1,439 @@
+<HEAD>
+<TITLE>Modern Information Retrieval - Porter's Algorithm</TITLE>
+<META NAME=keywords VALUE="">
+<META NAME=description VALUE="">
+</HEAD>
+
+<BODY BGCOLOR=#FFFFFF>
+
+<TABLE BORDER=0 WIDTH=100\% CELLSPACING=10>
+<TR><TD>
+<A NAME=top>
+<b><font face=arial,helvetica size=+2>Modern Information Retrieval</font><br></b>
+</A>
+<font face=arial,helvetica size=+1><font color=#306060>Appendix: Porter's algorithm</font></font><BR><BR>
+</TD>
+
+
+<TD valign=top align=center>
+<A HREF=./index.html#contents>
+<img src=icn/home.jpg height=54 width=100 border=1></A><BR>
+<font size=1><A HREF=./index.html#contents>Contents</A></font>
+</TD>
+
+</TABLE>
+
+
+<HR>
+
+<P>
+The rules in the Porter algorithm are separated into five distinct
+phases numbered from 1 to 5. They are applied to the words in the text
+starting from phase 1 and moving on to phase 5. Further, they are
+applied sequentially one after the other as commands in a
+program. Thus, in the immediately following, we specify the Porter
+algorithm in a pseudo programming language whose commands take the form of 
+rules for suffix substitution (as above). This pseudo language adopts 
+the  following (semi-formal) conventions:
+<BLOCKQUOTE>
+-&nbsp;&nbsp; a consonant variable is represented by the symbol <I>C</I> which
+is used to refer to any letter other than <EM>a,e,i,o,u</EM> and other than the
+letter <EM>y</EM> preceded by a consonant; <BR>
+-&nbsp;&nbsp; a vowel variable is represented by the symbol <I>V</I> which is used
+to refer to any letter which is not a consonant; <BR>
+-&nbsp;&nbsp; a generic letter (consonant or vowel) is represented by the
+symbol <I>L</I>; <BR>
+-&nbsp;&nbsp; the symbol 1#1
+is used to refer to an empty string (i.e., one
+with no letters); <BR>
+-&nbsp;&nbsp; combinations of <I>C</I>, <I>V</I>, and <I>L</I> are used to define <EM>patterns</EM>; <BR>
+-&nbsp;&nbsp; the symbol * is used to refer to zero or more
+repetitions of a given pattern; <BR>
+-&nbsp;&nbsp; the symbol + is used to refer to one or more repetitions of 
+a given pattern; <BR>
+-&nbsp;&nbsp; matched parenthesis are used to subordinate a sequence of variables to
+the operators * and +; <BR>
+-&nbsp;&nbsp; a generic pattern is a combination of symbols, matched parenthesis, and the
+operators * and +; <BR>
+-&nbsp;&nbsp; the substitution rules are treated as commands which are
+separated by a semicolon punctuation mark; <BR>
+-&nbsp;&nbsp; the substitution rules are applied to the suffixes in the
+current word; <BR>
+-&nbsp;&nbsp; a conditional <I>if</I> statement is expressed as <I>``if
+(pattern) rule''</I> and the rule is executed only if the 
+pattern in the condition matches the current word; <BR>
+-&nbsp;&nbsp; a line which starts with a % is treated as a comment; <BR>
+-&nbsp;&nbsp; curled brackets are used to form compound commands; <BR>
+-&nbsp;&nbsp; a <I>``select rule with longest suffix''</I> statement selects a single rule for
+execution among all the rules in a compound command. The rule selected
+is the one with the largest matching suffix.
+</BLOCKQUOTE>Thus, the expression (<I>C</I>)<SUP>*</SUP> refers to a sequence of zero or more
+consonants while the expression 
+<!-- MATH: $((V)^{*}(C)^{*})^{*}$ -->
+((<I>V</I>)<SUP>*</SUP>(<I>C</I>)<SUP>*</SUP>)<SUP>*</SUP> refers to a
+sequence of zero or more vowels followed by zero or more consonants
+which can appear zero or more times. It is important to distinguish
+the above from the sequence (<I>V</I>*<I>C</I>) which states that a sequence must
+be present and that this sequence necessarily starts with a vowel,
+followed by a subsequence of zero or more letters, and finished by a
+consonant. Finally, the command
+<BLOCKQUOTE>
+<I>if (</I>*<I>V</I>*<I>L</I><I>) then ed </I>
+<!-- MATH: $\longrightarrow$ -->
+2#21#1
+</BLOCKQUOTE> 
+states that the substitution of the suffix <I>ed</I> by nil (i.e., the
+removal of the suffix <I>ed</I>) only
+occurs if the current word contains a vowel and at least one additional letter. 
+
+<P>
+The Porter algorithm is applied to each word in the text (simple
+formulation) and is given by the following procedure. 
+<BLOCKQUOTE>
+% <EM>Phase 1: Plurals and past participles</EM>. <BR>
+<I>select rule with longest suffix</I> { 
+<BLOCKQUOTE>
+sses 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ss; <BR>
+ies 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+i; <BR>
+ss 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ss; <BR>
+s 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+} <BR>
+</BLOCKQUOTE><I>select rule with longest suffix</I> { 
+<BLOCKQUOTE>
+<I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})^{+}(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP>(<I>V</I>)<SUP>*</SUP>eed) <I>then</I> 
+eed 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ee; <BR>
+<I>if</I> (*V*ed or *V*ing) <I>then</I> { 
+<BLOCKQUOTE>
+<I>select rule with longest suffix</I> {
+<BLOCKQUOTE>
+ed 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ing 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+}
+</BLOCKQUOTE><I>select rule with longest suffix</I> { 
+<BLOCKQUOTE>
+at 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ate; <BR>
+bl 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ble; <BR>
+iz 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ize; <BR>
+<I>if</I> ((*
+<!-- MATH: $C_{1}C_{2}$ -->
+<I>C</I><SUB>1</SUB><I>C</I><SUB>2</SUB>) and (
+<!-- MATH: $C_{1} = C_{2}$ -->
+<I>C</I><SUB>1</SUB> = <I>C</I><SUB>2</SUB>) and (
+<!-- MATH: $C_{1} \not \in$ -->
+3#3
+{l,s,z})) <I>then</I>
+
+<!-- MATH: $C_{1}C_{2}$ -->
+<I>C</I><SUB>1</SUB><I>C</I><SUB>2</SUB> 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+<I>C</I><SUB>1</SUB>; <BR>
+<I>if</I> ((
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})C_{1}V_{1}C_{2}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<I>C</I><SUB>1</SUB><I>V</I><SUB>1</SUB><I>C</I><SUB>2</SUB>) and
+(
+<!-- MATH: $C_{2} \not \in$ -->
+4#4
+{w,x,y})) <I>then</I> 
+
+<!-- MATH: $C_{1}V_{1}C_{2}$ -->
+<I>C</I><SUB>1</SUB><I>V</I><SUB>1</SUB><I>C</I><SUB>2</SUB> 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+
+<!-- MATH: $C_{1}V_{1}C_{2}$ -->
+<I>C</I><SUB>1</SUB><I>V</I><SUB>1</SUB><I>C</I><SUB>2</SUB>e; } 
+</BLOCKQUOTE> }
+</BLOCKQUOTE> }
+</BLOCKQUOTE><I>if</I> (*V*y) <I>then</I>
+y 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+i; <BR>
+<I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})^{+}(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP>(<I>V</I>)<SUP>*</SUP>) <I>then</I> <BR>
+<I>select rule with longest suffix</I> {
+<BLOCKQUOTE>
+ational 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ate; <BR>
+tional 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+tion; <BR>
+enci 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ence; <BR>
+anci 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ance; <BR>
+izer 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ize; <BR>
+abli 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+able; <BR>
+alli 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+al; <BR>
+entli 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ent; <BR>
+eli 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+e; <BR>
+ousli 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ous; <BR>
+ization 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ize; <BR>
+ation 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ate; <BR>
+ator 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ate; <BR>
+alism 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+al; <BR>
+iveness 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ive; <BR>
+fulness 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ful; <BR>
+ousness 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ous; <BR>
+aliti 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+al; <BR>
+iviti 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ive; <BR>
+biliti 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ble; }
+</BLOCKQUOTE><I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})^{+}(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP>(<I>V</I>)<SUP>*</SUP>) <I>then</I> <BR>
+<I>select rule with longest suffix</I> {
+<BLOCKQUOTE>
+icate 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ic; <BR>
+ative 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+alize 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+al; <BR>
+iciti 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ic; <BR>
+ical 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+ic; <BR>
+ful 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ness 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+}
+</BLOCKQUOTE><I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})((V)^{+}(C)^{+})^{+}(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP>(<I>V</I>)<SUP>*</SUP>) <I>then</I> <BR>
+<I>select rule with longest suffix</I> {
+<BLOCKQUOTE>
+al 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ance 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ence 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+er 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ic 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+able 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ible 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ant 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ement 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ment 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ent 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ou 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ism 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ate 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+iti 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ous 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ive 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+ize 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+<I>if</I> (*s or *t) <I>then</I> 
+ion 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+}
+</BLOCKQUOTE><I>select rule with longest suffix</I> {
+<BLOCKQUOTE>
+<I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})((V)^{+}(C)^{+})^{+}(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP>(<I>V</I>)<SUP>*</SUP>) <I>then</I> 
+e 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+1#1;
+<BR>
+<I>if</I> ((
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})(V)^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)(<I>V</I>)<SUP>*</SUP>) and not ((
+<!-- MATH: $*C_{1}V_{1}C_{2}$ -->
+*<I>C</I><SUB>1</SUB><I>V</I><SUB>1</SUB><I>C</I><SUB>2</SUB>) and
+(
+<!-- MATH: $C_{2} \not \in$ -->
+4#4
+{w,x,y}))) <I>then</I> 
+e 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+<I>nil</I>; } 
+</BLOCKQUOTE><I>if</I> (
+<!-- MATH: $(C)^{*}((V)^{+}(C)^{+})((V)^{+}(C)^{+})^{+}V^{*}$ -->
+(<I>C</I>)<SUP>*</SUP>((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)((<I>V</I>)<SUP>+</SUP>(<I>C</I>)<SUP>+</SUP>)<SUP>+</SUP><I>V</I><SUP>*</SUP>ll) <I>then</I> 
+ll 
+<!-- MATH: $\longrightarrow$ -->
+2#2
+l; 
+</BLOCKQUOTE>
+<P>

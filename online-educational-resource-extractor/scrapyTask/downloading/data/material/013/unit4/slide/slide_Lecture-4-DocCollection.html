@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="description" content="IR: Week 4 Document Collection Representation GBenoit Today’s events... Q&amp;A about last week - Query Representation This week - the Document Collection Representation Readings for today: Document Collections Croft’s “Processing text” chapter Other online readings (optional but useful) What do we have to work with? Document Collections “Content Creators” Books Journals Conference publications Theses Patents, Standards Multimedia Web pages Raw numeric data and Full-text documents Other sources?  [Hidden and known metadata] Properties of the collection Represent concepts - but how? Sets of words {“vacation” represented by …? } Other data from the records? Example: Dublin Core record &lt;meta name=”DC.Title” content=”Life on Mars”&gt; &lt;meta name=”DC.Creator” content=”David Bowie”&gt; &lt;meta name=”DC.Language” content=”English”&gt; &lt;meta name=”DC.Description” content=”monograph”&gt; Properties of the collection Enumerative classification schemes and other 641.5  Cooking ND  Painting  disciplines or fields of discourse, such as CHEMISTRY      BT   Science      NT   Physical chemistry      NT   Thermodynamics Generic relationships; Part-Whole; Polyhierarchical (more than one category) Properties of the Collection Abstracts Length of abstract Amount of detail and type of language Judgments, critical analyses or neutral description Informative abstract (active voice, past tense, discusses research) Indicative abstract (passive, present tense, discusses the article that discuses the research) Automatic created document? Web pages as sources Crawlers can be set to a single site or domain “Focused” or “topical” crawlers try to classify the document and restrict inclusion only of preferred topics Such as finding parts of a document about medicine Age or “Freshness” News Feeds (RSS) Data from “stateless” websites Web pages - linking Collecting websites requires a “seed” - set of URLs or perhaps even a topic Can follow a thread and use links that point to other pages and follow that thread and so on … Use these links as a form of evidence of the importance of a document … Reduces noise Raises the ranking of the document with the most documents pointing to it.  [See PageRank algorithm] Web-crawler example Project example - Catalog data What sources can be used to build the collection? Cataloguing data parsed as full-text? Cataloguing and similar data with context data {t|c} where t ∈ T, c ∈ C, T is the set of all Terms from the document, C is the set of metadata concepts in this collection Project: XML Data What sources can be used to build the collection? XML records parsed as full-text? Like DB data {t|x} where t ∈ T, x ∈ X, T is the set of all Terms from the document, X is the set of XML metadata tags in this collection Project: Multilanguages Should a project be modeled regardless of human language in favor of a flexible, independent model? Should the document collection interfile all terms regardless of human language or include a look-up dictionary on the side? Or let user select language in the query (via the interface or some preference file)? Project: Multimedia Document collections are usually text … Icons, images, music can be represented by their metadata or from the data themselves (to a degree) or need a separate retrieval model, such as n-nearest neighbor or some other pattern matching, perhaps byte streams (similar to some CLIR techniques) Project: Full-text What to extract? Should we parse? Should we create phrases (for proximity) Should we add terms to the collection? Should we reduce the set by mapping all terms to preferred terms? Should we create weights? Based on what evidence? In a phrase: any IR project must create a model of the user and possible queries. Project:  Let’s sketch on the board where we are and answer questions End the day on a model and documentation of our knowledge of IR and project’s demo of IR techniques. Project Model Examining the potential queries and potential collection helps determine what model to use: Set theoretic Boolean, Fuzzy Set, Extended Boolean Latent Semantic Indexing Neural Network Probabilistic Something else? Three sets of terms Ka, Kb, and Kc Three terms (cc1, cc2, cc3) that belong to these groups Want some way to determine a value between 0 (no relationship) and 1 (perfect relationship) Then assign a value to the query and see what documents’ values are closest. Example: Fuzzy Set Queries and docs represented by sets of index terms: matching is approximate from the start This vagueness can be modeled using a fuzzy framework, as follows: with each term is associated a fuzzy set each doc has a degree of membership in this fuzzy set This interpretation provides the foundation for many models for IR based on fuzzy theory Example from Ogawa, Morita, and Kobayashi (1991) Fuzzy Set Example - 2 Framework for representing classes whose boundaries are not well defined Key idea is to introduce the notion of a degree of membership associated with the elements of a set This degree of membership varies from 0 to 1 and allows modeling the notion of marginal membership Thus, membership is now a gradual notion, contrary to the crispy notion enforced by classic Boolean logic E.g.: query “cat” = document “cat” [value = 1] query “kitty” ≈ document “cat” [value = .8] Fuzzy Set - Ex. of theorizing Definition A fuzzy subset A of U is characterized by a membership function µ(A,u) : U → [0,1] that associates with each element u of U a number µ(u)  in the interval [0,1]	 Definition Let A and B be two fuzzy subsets of U. Also, let ¬A be the complement of A. Then,  µ(¬A,u) = 1 -  µ(A,u)   µ(A∪B,u) = max(µ(A,u), µ(B,u))  µ(A∩B,u) = min(µ(A,u), µ(B,u)) Fuzzy Set - Ex. of resource files Fuzzy sets are modeled based on a thesaurus.  This thesaurus is built as follows: Let vec(c) be a term-term correlation matrix Let c(i,l) be a normalized correlation factor for (ki,kl): c(i,l) =  n(i, l) ni + ni - n(i,l)  ni = number of documents containing term i nl = number of documents with term l n(i,l) = number of documents with both  Now we have the notion of proximity among index terms.  Fuzzy, con’t. µ(i,j) = 1 - ∏        (1 - c(i,l))        ki ∈ dj µ(i,j) = membership of document dj in fuzzy subset associated with ki If doc dj contains a term kl which is closely related to ki, we have c(i,l) ~ 1 µ(i,j) ~ 1 Index ki is a good fuzzy index for document Summary Determine sources for the collection Determine how you’ll parse What to keep (e.g., tags) and what to drop (stop words) Determine if you’ll use helper resources Phrase dictionaries, proximity data Search as “words” and operators Search as bites &amp; bytes? Language or languages? Determine a model how query + documents will be matched"/>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+//      <![CDATA[
+            var images = new Array (83);
+            images[0] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.001-001.png";
+            images[1] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.002-001.png";
+            images[2] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-001.png";
+            images[3] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-002.png";
+            images[4] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-003.png";
+            images[5] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-004.png";
+            images[6] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-005.png";
+            images[7] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-006.png";
+            images[8] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-007.png";
+            images[9] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-008.png";
+            images[10] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-009.png";
+            images[11] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-010.png";
+            images[12] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.003-011.png";
+            images[13] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.004-001.png";
+            images[14] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.004-002.png";
+            images[15] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.004-003.png";
+            images[16] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.005-001.png";
+            images[17] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.005-002.png";
+            images[18] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.005-003.png";
+            images[19] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.005-004.png";
+            images[20] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-001.png";
+            images[21] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-002.png";
+            images[22] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-003.png";
+            images[23] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-004.png";
+            images[24] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-005.png";
+            images[25] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-006.png";
+            images[26] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-007.png";
+            images[27] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.006-008.png";
+            images[28] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-001.png";
+            images[29] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-002.png";
+            images[30] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-003.png";
+            images[31] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-004.png";
+            images[32] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-005.png";
+            images[33] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-006.png";
+            images[34] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-007.png";
+            images[35] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.007-008.png";
+            images[36] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.008-001.png";
+            images[37] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.008-002.png";
+            images[38] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.008-003.png";
+            images[39] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.008-004.png";
+            images[40] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.009-001.png";
+            images[41] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.010-001.png";
+            images[42] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.010-002.png";
+            images[43] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.010-003.png";
+            images[44] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.010-004.png";
+            images[45] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.010-005.png";
+            images[46] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.011-001.png";
+            images[47] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.011-002.png";
+            images[48] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.011-003.png";
+            images[49] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.011-004.png";
+            images[50] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.011-005.png";
+            images[51] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.012-001.png";
+            images[52] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.012-002.png";
+            images[53] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.012-003.png";
+            images[54] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.012-004.png";
+            images[55] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-001.png";
+            images[56] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-002.png";
+            images[57] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-003.png";
+            images[58] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-004.png";
+            images[59] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-005.png";
+            images[60] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.013-006.png";
+            images[61] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-001.png";
+            images[62] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-002.png";
+            images[63] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-003.png";
+            images[64] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-004.png";
+            images[65] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-005.png";
+            images[66] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-006.png";
+            images[67] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-007.png";
+            images[68] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-008.png";
+            images[69] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.014-009.png";
+            images[70] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.015-001.png";
+            images[71] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.016-001.png";
+            images[72] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.017-001.png";
+            images[73] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.017-002.png";
+            images[74] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.017-003.png";
+            images[75] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.017-004.png";
+            images[76] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.017-005.png";
+            images[77] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.018-001.png";
+            images[78] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.019-001.png";
+            images[79] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.020-001.png";
+            images[80] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.021-001.png";
+            images[81] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.022-001.png";
+            images[82] = "Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.023-001.png";
+            var index = 0;
+            function WindowLoaded(evt)
+            {
+                document.body.onselectstart = function () { return false; };
+            }
+            function Step(i)
+            {
+                GoTo(index + i)
+            }
+            function GoTo(newIndex)
+            {
+                if(newIndex >= 0 && newIndex < images.length)
+                {
+                    index = newIndex;
+                    document.Slideshow.src = images[index];
+                }
+            }
+//      ]]>
+    </script>
+</head>
+<body bgcolor="black" onload='WindowLoaded(event);'>
+    <p align="center">
+        <br/>
+        <br/>
+        <img name="Slideshow" alt="" src="Lecture-4-DocCollection.html_files/Lecture-4-DocCollection.001-001.png" onclick="Step(1)"/>
+        <br/>
+        <br/>
+        <input type="image" src="Lecture-4-DocCollection.html_files/home.png" onclick="GoTo(0)"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="image" src="Lecture-4-DocCollection.html_files/prev.png" onclick="Step(-1)"/>
+        <input type="image" src="Lecture-4-DocCollection.html_files/next.png" onclick="Step(1)"/>
+    </p>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML SYSTEM "html.dtd">
+<HTML>
+<TITLE>
+Notes on Clustering Algorithms
+</TITLE>
+<BODY>
+
+<H1>Notes on Clustering Algorithms</H1>
+<small>(<b>Based on Notes from Ed Fox's Course at Virginia Tech., 1995-1996</b>)</small>
+<p><br>
+
+<H2><A HREF=CL-illus.html>Illustrations of Key Clustering Concepts</A></H2>
+
+<P>
+<H2>Applications in IR</H2>
+<UL>
+<LI>Improve search efficiency: similar items are close-by on disk.</LI>
+<LI>Improve search effectiveness: it is likely that similar documents will be similar
+to the same query.
+ <UL>
+    <LI>Precision: if cluster items are all relevant, or all non-relevant</LI>
+    <LI>Recall: if one might not otherwise retrieve all items in a relevant cluster</LI>
+  </UL></LI>
+<LI>Explore the characteristics of a document collection, citation network, etc.  Thus, one can easily find nearest neighbors (NNs), or analyze the classification structure.</LI>
+<LI>Construct a thesaurus based on term-term co-occurrence in documents.</LI>
+</UL>
+
+<P>
+<H2>Checklist of Clustering Issues and Steps</H2>
+<UL>
+<LI>Select features/attributes of objects to use in their representation.</LI>
+<LI>Select clustering method and similarity measure.</LI>
+<LI>Run clustering algorithm, producing clusters (and possibly a cluster hierarchy).</LI>
+<LI>Evaluate the clustering results.</LI>
+<LI>Update the clustering as changes are made.</LI>
+<LI>Search or otherwise use the clusters.</LI>
+</UL>
+
+<P>
+<H2>Similarity measures</H2>
+Heuristics:
+<UL>
+<LI>Similarities should be normalized by length of document vectors.</LI>
+<LI>Term weighting may not be of particular value.<BR>
+(For a cluster centroid, weights might even
+be re-computed based on ranks.  For example, consider a cluster centroid with <em>t</em> terms, so the one with largest weight has rank <em>1</em> and the term with lowest weight has rank <em>t</em>.  Assume we want a linear decrease in weights, from value <em>1</em> for the rank 1 term down to value (1-c) for the term with rank <em>t</em>, where <em>c</em> might be say 0.9.  Then, we might use the following value for the weight of the term with rank <em>i</em>:<BR>
+1 - c*(i-1)/(t-1) )</LI>
+</UL>
+Common measures:<BR>
+In all cases, the numerator is based on the inner product, and the denominator is a normalization factor.
+<UL>
+<LI>Dice: multiply numerator by 2, and normalize by the sum of both sums of squares</LI>
+<LI>Jaccard: normalize by the sum of both sums of squares, less the inner product</LI>
+<LI>Cosine</LI>
+</UL>
+
+<P>
+<H2>Similarity matrix</H2>
+General comments:
+<UL>
+<LI>Matrix is useful in many clustering algorithms.</LI>
+<LI>Matrix is useful for <em>n</em> nearest neighbor (NN) computations.</LI>
+<LI>Naive algorithm is O(n**2).</LI>
+<LI>IF-based algorithm can work for sparse matrices or matrix rows.</LI>
+</UL>
+<B>IF-based Algorithm:</B>
+<BR>
+<em>Rationale</em> ---
+<UL>
+<LI>sim is zero if there are no terms in common
+</LI>
+<LI>we can mark docs that have terms in common, with the aid of the IF
+</LI>
+</UL>
+<em>Pseudocode ---</em><BR>
+</TT>
+.......foreach document<BR>
+..............foreach term in document<BR>
+.....................get IF list for term<BR>
+............................mark documents appearing in IF list<BR>
+..............foreach marked document<BR>
+.....................compute sim with doc in outer loop<BR>
+</TT>
+
+<P>
+<H2>Computational complexity</H2>
+<UL>
+<LI><B>Terminology: </B>Assume <em>N</em> documents and <em>M</em> clusters
+</LI>
+<LI><B>Space: </B>Need:
+   <UL>
+     <LI><em>O(N): </em>if store documents / input data set;</LI>
+     <LI><em>O(M): </em>if store clusters / centroids; and</LI>
+     <LI><em>O(N**2): </em>if store doc-doc sim matrix</LI>
+   </UL></LI>
+<LI><B>Time: </B>Need:
+   <UL>
+     <LI><em>O(N): </em>to just examine input data set;</LI>
+     <LI><em>O(NM): </em>for simple reallocation methods; and</LI>
+     <LI><em>O(N**2): </em>to build doc-doc sim matrix</LI>
+   </UL></LI>
+</UL>
+
+<HR>
+<H2><A HREF=CL-alg-details.html>Clustering Algorithm Details</A></H2>
+
+<HR>
+<P>
+<H2>Update</H2>
+In some cases, clustering must start anew if there are any changes.  Sometimes, additions can be made to the most similar cluster (but eventually that may force a regeneration or reclustering).
+<P>
+In other cases, update is part of the clustering algorithm:
+<UL>
+<LI>single link: van Rijsbergen and SLINK algorithms</LI>
+<LI>complete link: CLINK algorithm</LI>
+</UL>
+<P>
+Finally, cluster maintenance may be a part of the algorithm, as in the work of Crouch or that of Can et al.
+
+<P>
+<H2>Evaluation</H2>
+In general, Ward's method, and the group average method, have performed well.
+<P>
+Voorhees found:
+<UL>
+<LI>complete link most effective for larger collections</LI>
+<LI>complete link and group average comparable for smaller collections</LI>
+<LI>single link hierarchies provided the worst retrieval performance</LI>
+</UL>
+<P>
+El-Hamdouchi and WIllett found:
+<UL>
+<LI>group average most suitable for document clustering</LI>
+<LI>complete link not as effective (based on using Defays' CLINK algorithm)</LI>
+</UL>
+
+</BODY></HTML>

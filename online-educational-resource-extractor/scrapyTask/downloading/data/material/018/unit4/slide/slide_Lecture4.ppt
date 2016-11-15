@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<html>
+<head><title>University of Pittsburgh:  Error HTTP 404 - File not found</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <link href="http://technology.pitt.edu/cssd.css" rel="stylesheet" media="screen">
+</head>
+<script> 
+function Homepage(){
+<!--
+// in real bits, urls get returned to our script like this:
+// res://shdocvw.dll/http_404.htm#http://www.DocURL.com/bar.htm 
+
+	//For testing use DocURL = "res://shdocvw.dll/http_404.htm#https://www.microsoft.com/bar.htm"
+	DocURL = document.URL;
+		
+	//this is where the http or https will be, as found by searching for :// but skipping the res://
+	protocolIndex=DocURL.indexOf("://",4);
+	
+	//this finds the ending slash for the domain server 
+	serverIndex=DocURL.indexOf("/",protocolIndex + 3);
+
+		//for the href, we need a valid URL to the domain. We search for the # symbol to find the begining 
+	//of the true URL, and add 1 to skip it - this is the BeginURL value. We use serverIndex as the end marker.
+	//urlresult=DocURL.substring(protocolIndex - 4,serverIndex);
+	BeginURL=DocURL.indexOf("#",1) + 1;
+	
+	urlresult=DocURL.substring(BeginURL,serverIndex);
+				
+	//for display, we need to skip after http://, and go to the next slash
+	displayresult=DocURL.substring(protocolIndex + 3 ,serverIndex);
+
+	InsertElementAnchor(urlresult, displayresult);
+}
+
+function HtmlEncode(text)
+{
+    return text.replace(/&/g, '&amp').replace(/'/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function TagAttrib(name, value)
+{
+    return ' '+name+'="'+HtmlEncode(value)+'"';
+}
+
+function PrintTag(tagName, needCloseTag, attrib, inner){
+    document.write( '<' + tagName + attrib + '>' + HtmlEncode(inner) );
+    if (needCloseTag) document.write( '</' + tagName +'>' );
+}
+
+function URI(href)
+{
+    IEVer = window.navigator.appVersion;
+    IEVer = IEVer.substr( IEVer.indexOf('MSIE') + 5, 3 );
+
+    return (IEVer.charAt(1)=='.' && IEVer >= '5.5') ?
+        encodeURI(href) :
+        escape(href).replace(/%3A/g, ':').replace(/%3B/g, ';');
+}
+
+function InsertElementAnchor(href, text)
+{
+    PrintTag('A', true, TagAttrib('HREF', URI(href)), text);
+}
+
+//-->
+</script>
+
+<body bgcolor="white">
+<a name="top"></a><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td nowrap bgcolor="#000066" width="272"><a href="http://www.pitt.edu"><img src="http://ewi-afs-prod1.cssd.pitt.edu/pitt-common-errors/pittb_01.gif" alt="University of Pittsburgh | " height="49" width="270" border="0"></a></td>
+    <td align="right" nowrap bgcolor="#000066" width="333"><a href="http://accounts.pitt.edu/Public/"><img src="http://ewi-afs-prod1.cssd.pitt.edu/pitt-common-errors/pittb_04.gif" alt="Find People | " height="12" width="69" border="0"></a><a href="http://technology.pitt.edu/Help.html"><img src="http://ewi-afs-prod1.cssd.pitt.edu/pitt-common-errors/pittb_05.gif" alt="Contact Us " height="12" width="63" border="0"></a></td>
+    <td bgcolor="#000066" width="100%">&nbsp;</td></tr>
+
+<tr><td colspan="3" nowrap><br>
+        <br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr><td valign="top" width="30"></td>
+            <td valign="top" width="123">
+<!-- <img src="http://ewi-afs-prod1.cssd.pitt.edu/pitt-common-errors/l2_technology.gif" alt="Information Technology" height="32" width="100" border="0"> -->
+</td>
+	    <td valign="top" width="22"></td>
+            <td valign="top" width="430"> 
+            <!--page title start as header 2 with graphic-->
+            <!-- <img src="http://ewi-afs-prod1.cssd.pitt.edu/pitt-common-errors/webdev.gif" alt="Web Development" height="32" width="366" border="0"> -->
+            <!--page title end--></td></tr>
+
+         <tr><td valign="top" width="30"></td>
+             <td colspan="3" valign="top" width="575"><br>
+             </td></tr>
+
+         <tr><td valign="top" width="30"></td>
+             <td colspan="3" valign="top" width="575">
+
+
+<!--main content start-->
+<h1>Error: 404</H1>
+<h2>The page cannot be found</h2>
+<P>
+The page you are looking for might have been removed, had its named changed, or is temporarily unavailable.</P>
+<P>
+<p>Please try the following:</p>
+
+<ul>
+<li>If you typed the page address in the Address bar, make sure that it is spelled correctly.<br>
+      </li>
+	  
+      <li>Open the 
+	  
+	  <script>
+	  <!--
+	  if (!((window.navigator.userAgent.indexOf("MSIE") > 0) && (window.navigator.appVersion.charAt(0) == "2")))
+	  { 
+	  	Homepage();
+	  }
+	  //-->
+	   </script>
+
+	   home page, and then look for links to the information you want.</li>
+	   
+      <li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<P>
+If you still cannot find the page you are seeking you may want to try the
+<A HREF="http://web.archive.org/">Wayback Machine</A> at the 
+<A HREF="http://www.archive.org">Internet Archive Project</A>.</P>
+
+<!--main content end-->
+<BR>
+             </td></tr>
+
+          <tr><td colspan="4" bgcolor="#000066" width="605"></td></tr>
+
+          <tr><td valign="bottom" width="30"></td>
+              <td valign="bottom" width="123"><a class="dkbluesm" href="#top">Top of Page</a></td>
+              <td valign="bottom" width="22"></td>
+              <td align="right" valign="bottom" width="430"><a class="dkbluesm" href="http://www.pitt.edu">Pitt Home</a> <span class="dkbluesm">|</span> <a class="dkbluesm" href="http://accounts.pitt.edu/Public/">Find People</a><span class="dkbluesm"> |</span> <a class="dkbluesm" href="http://technology.pitt.edu/Help.html">Contact Us</a></td></tr>
+
+           </table></td></tr></table>
+</body>
+</html>

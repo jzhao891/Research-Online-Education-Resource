@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="description" content="Week 8 XML and IR An overview and romp of and in the intersection of XML and information retrieval  Welcome back! Welcome back after Spring Break.  I hope you had a chance to catch up with your work and also to relax a bit. Please read the slides - slowly - and pay close attention to the details and think about the topic.  Seriously ... Today … The only assumption about today’s adventure in XML + IR is that you have some idea of what XML is That XML is but a text file - with some structure, hence it being called “semi-structured data” - and that consequently XML offers intriguing possibilities for information retrieval research and practice That XML is more popular than you might think!  It is applied to user preferences in computer applications, keyboard drivers, iTunes, conversions for MARC records, increasingly as a replacement for HTML (by people who want structure in their data) …  Today... It may be useful to review some fundamentals about XML (in case you don’t know about ‘em) Overview of IR as a research and work arena Some research conferences and proceedings Revising other fields with IR Corporate white papers Read/scan (but with a critical eye, okay?) articles 1.  Overview - Sample XML record There are many research conferences about applying XML in areas of information work that were driven entirely by relational databases or by full-text processing. As you know, in real-world applications we often apply XML-tagged documents to IR situations.  The XML record (text) is parsed to create the usual document/term frequency matrix table but the source tag is often maintained, too, to provide more data about the text.  For instance, here is a couple of lines from an XML record. &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;?xml-stylesheet type=&quot;text/xsl&quot; href= &quot;charactersChoose.xsl&quot; ?&gt; &lt;characters&gt; 	&lt;character age=&quot;99&quot;&gt;Julius Caesar &lt;language&gt;la&lt;/language&gt; &lt;/character&gt; 	&lt;character age=&quot;23&quot;&gt;Anne Boleyn&lt;/character&gt; &lt;language&gt;en&lt;/language&gt;&lt;/character&gt; 	&lt;character age=&quot;50&quot;&gt;Asterix the Gaul &lt;language&gt;fr&lt;/language&gt;&lt;/character&gt; &lt;character age=”28”&gt;明洼 &lt;language&gt;zh&lt;/language&gt;&lt;/character&gt; &lt;/characters&gt; read this line by line! 1.  Overview &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;?xml-stylesheet type=&quot;text/xsl&quot; href= &quot;charactersChoose.xsl&quot; ?&gt; &lt;characters&gt; 	&lt;character age=&quot;99&quot;&gt;Julius Caesar &lt;language&gt;la&lt;/language&gt; &lt;/character&gt; 	&lt;character age=&quot;23&quot;&gt;Anne Boleyn&lt;/character&gt; &lt;language&gt;en&lt;/language&gt;&lt;/character&gt; 	&lt;character age=&quot;50&quot;&gt;Asterix the Gaul &lt;language&gt;fr&lt;/language&gt;&lt;/character&gt; &lt;character age=”28”&gt;明洼 &lt;language&gt;zh&lt;/language&gt;&lt;/character&gt; &lt;/characters&gt; Let’s consider the  structure of the XML record keeping in mind that the  file itself is just text. &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; This is the XML prolog.  It’s recognized by the &lt;?xml The “xml” here looks like an element.  The “version” tag is the attribute.  The “1.0” is the value.   Notice now the “encoding” attribute.  XML requires “UTF-8” as the default file encoding.  This is important to know if you write or use a computer program to parse the text file. 1.  Overview &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;charactersChoose.xsl&quot; ?&gt; &lt;characters&gt; 	&lt;character age=&quot;99&quot;&gt;Julius Caesar &lt;language&gt;la&lt;/language&gt; &lt;/character&gt; 	&lt;character age=&quot;23&quot;&gt;Anne Boleyn&lt;/character&gt; &lt;language&gt;en&lt;/language&gt;&lt;/character&gt; 	&lt;character age=&quot;50&quot;&gt;Asterix the Gaul &lt;language&gt;fr&lt;/language&gt;&lt;/character&gt; &lt;character age=”28”&gt;明洼 &lt;language&gt;zh&lt;/language&gt;&lt;/character&gt; &lt;/characters&gt; The next line (in red) is a reference to an external file. If we were parsing text files, should we keep track of this reference?  The “text/xsl” is a MIME type (MIME = “multipart internet mail extension”); this is the way computers associate a file with the program to run the file or useful data for “interoperability” - the file contains data about itself to inform programmers and applications how to process the file. &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;charactersChoose.xsl&quot; ?&gt; &lt;characters&gt; 	&lt;character age=&quot;99&quot;&gt;Julius Caesar           &lt;language&gt;la&lt;/language&gt;      &lt;/character&gt; 	&lt;character age=&quot;23&quot;&gt;Anne Boleyn&lt;/character&gt; &lt;language&gt;en&lt;/language&gt;&lt;/character&gt; 	&lt;character age=&quot;50&quot;&gt;Asterix the Gaul &lt;language&gt;fr&lt;/language&gt;&lt;/character&gt; &lt;character age=”28”&gt;明洼 &lt;language&gt;zh&lt;/language&gt;&lt;/character&gt; &lt;/characters&gt; We have several bits of data to consider: “Julius Caesar”, “la” (ISO 639-2 for Latin), and age (“99”).    We know also data about the data (characters, character, age, and language).    Notice: they are all text potentially treated exactly the same in IR;  it is only the specific implementation (someone’s specific project) that determines what to do with the text!  All XML processors create hierarchical tree of nodes. The highlighted section here indicates the “root element”, a node (“character” [it is also an element]), another node (“age” is an attribute of character); yet another node (“language”, it’s also an element).            1.1 Processing Nodes XML is considered a hierarchy - a tree with various branches (called nodes and leaves) &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;charactersChoose.xsl&quot; ?&gt; &lt;characters&gt; 	&lt;character age=&quot;99&quot;&gt;Julius Caesar           &lt;language&gt;la&lt;/language&gt;      &lt;/character&gt; 	&lt;character age=&quot;23&quot;&gt;Anne Boleyn&lt;/character&gt; &lt;language&gt;en&lt;/language&gt;&lt;/character&gt; 	&lt;character age=&quot;50&quot;&gt;Asterix the Gaul &lt;language&gt;fr&lt;/language&gt;&lt;/character&gt; &lt;character age=”28”&gt;明洼 &lt;language&gt;zh&lt;/language&gt;&lt;/character&gt; &lt;/characters&gt;       text/xsl 99 Julius Caesar  la root other nodes The circles represent “nodes”.  Text (“99”, “Julius Caesar”, etc.”) are also nodes. The actual text (“Julius…”) is called “Parsed Character Data”, or PC Data. characters character age lang A little more about XML If you do not know much about XML (and even if you do), take 20 minutes to review http://www.w3schools.com/xml/default.asp to learn or to remind yourself about some functions of XML. You should be up to date on the tree, syntax, elements, attributes; in addition you can look at validations and validators, css and xslt.  [The last four aren’t that important in IR.] [I’ll wait … ] Welcome back, again. The w3schools intro’d some main points about XML. If you’re really interested in how XML is created and parsed, take a look at the XML class (LIS466) You should note that XML has a “DTD” (document type definition) expressed in the language of .dtd or another kind of document type definition called XML schema (or .xsd).  They’re both sets of rules using different syntax; both define the type (hence they’re both called D T Ds but only the former is expressed using “.dtd”).   Note, too, that there’s XSL - extensible stylesheet language - that is a set of rules for how to process and .xml file.  The processing is done by a computer program.  This is important: the same way “IR projects” parse text files, so XML parsers parse .xml (text) files.   There are helper tools in programming that recognize XML nodes (because these tools look for the hierarchical structure of XML).  The two approaches are DOM or SAX … [con’t] More about XML nodes &amp; processing DOM is “Document Object Model”.  DOM approach is to create an hierarchical tree of nodes (in the computer’s memory) - so the processing is done in one fell swoop.  Fast, but not efficient for really big XML files.  DOM is built-in to web browsers. SAX is “Simple API for XML Processing”.  SAX approaches let one move up and down the hierarchical tree (through computer code).   Both techniques are implemented in software using “factories.”  Factories are a concept: the way a factory might make shoes or make widgets, so in software the XML Factories process whatever comes their way - in this case, an .xml file.  con’t. More about XML nodes &amp; processing Please point your browser to http://web.simmons.edu/~benoit/LIS469.  I posted lots of demos &amp; code.  So … spend about 20 minutes (again, I’ll wait (grin)) taking a look at .xslt and some .java code for processing XML files.  This is important, IMHO, because if you stop to read the code, you’ll see (1) it isn’t that scary or difficult and (2) you’ll understand better how the full text file is parsed (in other words, you’ll see IR in action).   Here’s an easy .xsl file:  http://web.simmons.edu/~benoit/LIS469/99-DemoFiles-1.html#sheilacharacterschoosexml Here’s the computer code for processing it:  [The site has lots of code and examples; this one demos the use of DOM and makes quite explicit the identification of NODES: http://web.simmons.edu/~benoit/LIS469/99-DemoFiles-1.html#javaindentingparser At this point, you should have spent about 1 hour.  If not, please review! The World of IR + XML This section looks at the world of IR + XML research activities. The first two links point to professional organizations. Be aware that the main professional/research group is ACM SIGIR - Association for Computing Machinery, Special Interest Group in Information Retrieval.  If you’re interested in IR, this is the group to join and these are the authors to read. You will note, too, that while there are many researchers, you’ll see a few leaders - Bruce Croft, Keith Van Rijsbergen (and son), Norbert Fuhr, various Dutch names [grin];  Then you’ll see names within certain domains… Lois Mai Chan and Jane Zhang (for crosswalks) Efthimis Efthimiadis (and many others) for medical records Ed Fox, Suzie Allard, and many others for digital libraries Take a look …  These two links demonstrate the close relationship of industry and professions in IR.  The first link is an example of how professions learn about technologies - it’s sponsored by IBM.  The next is a forum discussion from a SIGIR conference.  [Go visit them now.] https://www.research.ibm.com/haifa/sigir00-xml/ http://www.sigir.org/forum/F2002/maarek.pdf http://portal.acm.org/citation.cfm?id=373705 Please read these: what do you notice? notice the traditional IR ideas?  (Vector model, fuzzy, etc.) notice the issue of visualization? notice, too, the INEX project.  Most big IR projects start as some kind of NSF (National Science Foundation) or other big granting agency-sponsored project.  The biggest IR project is “TREC”. The first reading, notice, suggests the range of participants (AT&amp;T, Cornell) Other work This slide brings two points: How might XML-IR projects be evaluated?  Evaluation is very important and it is important for students to consider the criteria for evaluation.  Most projects are evaluated on how fast a task is performed (regardless, really, of whether the results are relevant). The second point is that much IR work is published in Lecture Notes in Computer Science and similar CS publications.  [Simmons Library doesn’t have access rights to this book; you may have rights to it from other means]. (Your prof published in this last year (!) and is lecturing on this paper next month.) COMPARATIVE EVALUATION OF XML INFORMATION RETRIEVAL SYSTEMS
+Lecture Notes in Computer Science, 2007, Volume 4518/2007, 423-431, DOI: 10.1007/978-3-540-73888-6_40
+What XML-IR Users May Want
+Alan Woodley, Shlomo Geva and Sylvia L. Edwards Other work Our ol’ friend, Roberto Baeza-Yates, is very big in IR.  Take about 10 minutes to read this article - it’s a proceedings of a joint workshop - this, too, is a very common way of presenting research: Baeza-Yates, et al.  Proceedings of the Joint Workshops on XML, IR, and DB  http://homepages.cwi.nl/~arjen/wird04/wird04-proceedings.pdf Please make a point of reading one or two of the articles and scanning the rest.  You should be able to recognize some of the ideas - notice some of the articles emphasize the hierarchical structure of processing XML; notice, too, the use of DB (for storage and retrieval speed) and XML (for describing the data). And (again, IMHO) notice how basic providing “information” is being dominated by computer science: this leads to a conflict between LIS mission and principles and the technical &amp; commercial interests of CS. And other things... XML is parsed as if it were text (in other words, like an IR project) in many ways.  For example, it’s easy to create your own keyboard for your computer by changing the XML encoding.  Say you want the character “F” to show up when you press the letter “a” [who knows why you would but hey …]  By changing the text file that defines a keyboard from KEY: a --&gt; “a” to KEY: a--&gt; “F”  [conceptually, that is; the specifics vary] http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=ukelele Flash (the multimedia software) uses an XML Object for sharing data between a server and the application.  This means we can parse full-text and/or XML records and output them as new XML records and stream them right into existing Flash programs!  [Reflect on this - it’s important and the wave of the future… or the wave of right now!] Here’s a push about the idea  http://www.flashcomponents.net/component/ir_gallery_xml.html Reviving NLP One stream of Information Retrieval that started perhaps in the 1950s is “natural language processing” or NLP.  NLP usually is divided into two groups (depending on who is dividing it):  Machine Translation (MT) or Artificial Intelligence (AI).   MT uses rules; the way the Porter Stemming Algorithm is used AI uses probabilities (for example, using Bayes’s theorem; bi- and n-gram neighbor processing to guess the next token or to correct the next token). Here’s a link to a project at Stanford University.  Stanford, like Brown, Harvard, Cornell, and MIT, has a long history of computational linguistics - the precursor and sibling of IR.  Please visit/read this site now. http://nlp.stanford.edu/IR-book/html/htmledition/xml-retrieval-1.html Notice that this reading is an intro of XML for extremely hard-core computer science folk! Notice, too, how the XML processing is cast as nodes. Finally, did you notice how query-document similarity function is determined?  What’s the basis for weighting? Here... http://nlp.stanford.edu/IR-book/html/htmledition/a-vector-space-model-for-xml-retrieval-1.html Projects “TREC” is one of the oldest international IR research projects.   For IR+XML, there’s INEX.  But there are others, too, often in the form of digital libraries.  Hmmm… Here’s a link (that takes forever to load) about the INEX conference. http://www.inex.otago.ac.nz/data/proceedings/inex2002-preproceedings.pdf Please notice the themes of IR+XML Language models Clustering  The Vector Space (and other traditional) IR models Some main points Traditional IR is about mapping a query to a document representation, often a reference to an entire monograph.  XML + IR permits some “structured document retrieval” (SDR) and points to parts of a book (chapter, page, etc.).  [There are serious epistemological issues with this!] Structure improves precision. Queries can focus on content (called “content-only queries”) or we can look for structure (“look for a paragraph containing a diagram next to a table”) Content-and-structure queries:  “look for sections of an article in the Modern Fishing journal containing data about catfish “ … and return to the user only the title of the articles.   In a phrase, content-oriented XML retrieval has “varying granularity” (parts of the source document) relevant to the user’s info needs with regards to content and structure. Let’s consider IR + XML Usually in IR we parse text and add weights … Then we might adjust some weighting based on our model of IR Let’s look at an example … The following slide is a conceptual model.  Parts of traditional IR are mapped onto this model. Traditional approach: identifying reasons for weighting Now, our model might suggest weighting based on the XML document properties. And the part of the document (the node, e.g., “Title”) might be more important to our particular implementation. What about filtering or removing “doubly-applied” tags? The challenge This is not really answerable at this point - but in reality we base our decisions of how to process records and build an IR system on a concept of how humans communicate [if it is a good system]. There are many models: In computer science, the “discourse” or “communications-oriented” approaches are not favored.  Without a link to real human communicative behavior, then IR is really built upon statistical propensities of the language or its syntax, not the pragmatics of what people do with language. The next slide suggests the noise!  Can the student decide on what model to use?  Actually, no; the topic is so broad and intense that I suggest reading a lot of IR, philosophy of language, epistemology, knowledge management, discourse and communications theory lit, and/or become expert in areas of info work, such as bio-med lit where there is little semantic ambiguity and IR is focused on semantic processing. Summary 1 XML documents are plain text - so the files are treated computationally as if they were full-text files. XML documents provide data about the content - this kind of contextualizing data can be used to disambiguate the use of a term and may be used to improve discrimination - that means term t1 and term t2 that are the same but have different xml tags will be cause the document to rank differently, e.g., &lt;scannedBy&gt;Jon Smith&lt;/scannedBy&gt; vs. &lt;author&gt;Jon Smith&lt;/author&gt;  - we can make “author” Jon Smith rank higher. But only if the computer parser is programmed to identify these nodes and to store the content with the node data And if the interface allows the user to indicate what context s/he wants Summary 2 XML records are supposed to be in UTF-8; that means  we, the designers, must be aware of processing UTF-8 files (which is much different than processing ISO-639-x and other encodings) and, btw, it’s easy to promote UTF-8 to UTF-16 so non-English files, especially CJK (Chinese-Japanese-Korean) records, can be processed reliably (using software libraries called that identify “word segmentation.”) Considering XML in IR means that the traditional idea of “tokens” and parsing emphasizes more possibilities for the future of IR because the integration of context + data in the same “language” (the syntax of the document) facilities greatly the processing of records with certainty of the context.  [Before context had to look for keys in the document, such as “Abstract” or “Results” section headings. Summary 3  XML, being platform and system independent as all SGML implementations are (e.g., HTML), it is designed to be international and multilingual. The usual semantics-level processing of text documents in IR + multilingual documents brings us to the growing area of “cross-language information retrieval” or “CLIR”.  Our TA, Peishan Tsai Bartley, will lecture on this topic at our next session. Q&amp;A Okay … make a point of reviewing our slides, focusing on the details.  Really imagine you are processing a host of XML records.  What kinds of issues can you foresee? From the user need perspective? How will processing XML records affect user query behavior? From the organization’s perspective? How will converting existing records, such as MARC, with full-text records add value and turn all services essentially into an IR function? From the computational perspective? Can you conceptualize (and let yourself go!) the ideal IR system, based on XML records? What do you think is the future of information services and IR? As always, please be encouraged to send questions and ideas.  Personal note: it’s so gratifying the way you all have taken to topic!  Truly!  Bye -GB"/>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+//      <![CDATA[
+            var images = new Array (115);
+            images[0] = "Week8-XMLandIR.html_files/Week8-XMLandIR.001-001.png";
+            images[1] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-001.png";
+            images[2] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-002.png";
+            images[3] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-003.png";
+            images[4] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-004.png";
+            images[5] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-005.png";
+            images[6] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-006.png";
+            images[7] = "Week8-XMLandIR.html_files/Week8-XMLandIR.002-007.png";
+            images[8] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-001.png";
+            images[9] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-002.png";
+            images[10] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-003.png";
+            images[11] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-004.png";
+            images[12] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-005.png";
+            images[13] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-006.png";
+            images[14] = "Week8-XMLandIR.html_files/Week8-XMLandIR.003-007.png";
+            images[15] = "Week8-XMLandIR.html_files/Week8-XMLandIR.004-001.png";
+            images[16] = "Week8-XMLandIR.html_files/Week8-XMLandIR.004-002.png";
+            images[17] = "Week8-XMLandIR.html_files/Week8-XMLandIR.004-003.png";
+            images[18] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-001.png";
+            images[19] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-002.png";
+            images[20] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-003.png";
+            images[21] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-004.png";
+            images[22] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-005.png";
+            images[23] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-006.png";
+            images[24] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-007.png";
+            images[25] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-008.png";
+            images[26] = "Week8-XMLandIR.html_files/Week8-XMLandIR.005-009.png";
+            images[27] = "Week8-XMLandIR.html_files/Week8-XMLandIR.006-001.png";
+            images[28] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-001.png";
+            images[29] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-002.png";
+            images[30] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-003.png";
+            images[31] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-004.png";
+            images[32] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-005.png";
+            images[33] = "Week8-XMLandIR.html_files/Week8-XMLandIR.007-006.png";
+            images[34] = "Week8-XMLandIR.html_files/Week8-XMLandIR.008-001.png";
+            images[35] = "Week8-XMLandIR.html_files/Week8-XMLandIR.009-001.png";
+            images[36] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-001.png";
+            images[37] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-002.png";
+            images[38] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-003.png";
+            images[39] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-004.png";
+            images[40] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-005.png";
+            images[41] = "Week8-XMLandIR.html_files/Week8-XMLandIR.010-006.png";
+            images[42] = "Week8-XMLandIR.html_files/Week8-XMLandIR.011-001.png";
+            images[43] = "Week8-XMLandIR.html_files/Week8-XMLandIR.011-002.png";
+            images[44] = "Week8-XMLandIR.html_files/Week8-XMLandIR.011-003.png";
+            images[45] = "Week8-XMLandIR.html_files/Week8-XMLandIR.011-004.png";
+            images[46] = "Week8-XMLandIR.html_files/Week8-XMLandIR.011-005.png";
+            images[47] = "Week8-XMLandIR.html_files/Week8-XMLandIR.012-001.png";
+            images[48] = "Week8-XMLandIR.html_files/Week8-XMLandIR.012-002.png";
+            images[49] = "Week8-XMLandIR.html_files/Week8-XMLandIR.012-003.png";
+            images[50] = "Week8-XMLandIR.html_files/Week8-XMLandIR.012-004.png";
+            images[51] = "Week8-XMLandIR.html_files/Week8-XMLandIR.012-005.png";
+            images[52] = "Week8-XMLandIR.html_files/Week8-XMLandIR.013-001.png";
+            images[53] = "Week8-XMLandIR.html_files/Week8-XMLandIR.013-002.png";
+            images[54] = "Week8-XMLandIR.html_files/Week8-XMLandIR.013-003.png";
+            images[55] = "Week8-XMLandIR.html_files/Week8-XMLandIR.013-004.png";
+            images[56] = "Week8-XMLandIR.html_files/Week8-XMLandIR.013-005.png";
+            images[57] = "Week8-XMLandIR.html_files/Week8-XMLandIR.014-001.png";
+            images[58] = "Week8-XMLandIR.html_files/Week8-XMLandIR.014-002.png";
+            images[59] = "Week8-XMLandIR.html_files/Week8-XMLandIR.014-003.png";
+            images[60] = "Week8-XMLandIR.html_files/Week8-XMLandIR.014-004.png";
+            images[61] = "Week8-XMLandIR.html_files/Week8-XMLandIR.015-001.png";
+            images[62] = "Week8-XMLandIR.html_files/Week8-XMLandIR.015-002.png";
+            images[63] = "Week8-XMLandIR.html_files/Week8-XMLandIR.015-003.png";
+            images[64] = "Week8-XMLandIR.html_files/Week8-XMLandIR.015-004.png";
+            images[65] = "Week8-XMLandIR.html_files/Week8-XMLandIR.015-005.png";
+            images[66] = "Week8-XMLandIR.html_files/Week8-XMLandIR.016-001.png";
+            images[67] = "Week8-XMLandIR.html_files/Week8-XMLandIR.016-002.png";
+            images[68] = "Week8-XMLandIR.html_files/Week8-XMLandIR.016-003.png";
+            images[69] = "Week8-XMLandIR.html_files/Week8-XMLandIR.016-004.png";
+            images[70] = "Week8-XMLandIR.html_files/Week8-XMLandIR.016-005.png";
+            images[71] = "Week8-XMLandIR.html_files/Week8-XMLandIR.017-001.png";
+            images[72] = "Week8-XMLandIR.html_files/Week8-XMLandIR.017-002.png";
+            images[73] = "Week8-XMLandIR.html_files/Week8-XMLandIR.017-003.png";
+            images[74] = "Week8-XMLandIR.html_files/Week8-XMLandIR.017-004.png";
+            images[75] = "Week8-XMLandIR.html_files/Week8-XMLandIR.018-001.png";
+            images[76] = "Week8-XMLandIR.html_files/Week8-XMLandIR.018-002.png";
+            images[77] = "Week8-XMLandIR.html_files/Week8-XMLandIR.018-003.png";
+            images[78] = "Week8-XMLandIR.html_files/Week8-XMLandIR.019-001.png";
+            images[79] = "Week8-XMLandIR.html_files/Week8-XMLandIR.020-001.png";
+            images[80] = "Week8-XMLandIR.html_files/Week8-XMLandIR.021-001.png";
+            images[81] = "Week8-XMLandIR.html_files/Week8-XMLandIR.022-001.png";
+            images[82] = "Week8-XMLandIR.html_files/Week8-XMLandIR.023-001.png";
+            images[83] = "Week8-XMLandIR.html_files/Week8-XMLandIR.024-001.png";
+            images[84] = "Week8-XMLandIR.html_files/Week8-XMLandIR.025-001.png";
+            images[85] = "Week8-XMLandIR.html_files/Week8-XMLandIR.026-001.png";
+            images[86] = "Week8-XMLandIR.html_files/Week8-XMLandIR.027-001.png";
+            images[87] = "Week8-XMLandIR.html_files/Week8-XMLandIR.028-001.png";
+            images[88] = "Week8-XMLandIR.html_files/Week8-XMLandIR.028-002.png";
+            images[89] = "Week8-XMLandIR.html_files/Week8-XMLandIR.028-003.png";
+            images[90] = "Week8-XMLandIR.html_files/Week8-XMLandIR.028-004.png";
+            images[91] = "Week8-XMLandIR.html_files/Week8-XMLandIR.029-001.png";
+            images[92] = "Week8-XMLandIR.html_files/Week8-XMLandIR.030-001.png";
+            images[93] = "Week8-XMLandIR.html_files/Week8-XMLandIR.030-002.png";
+            images[94] = "Week8-XMLandIR.html_files/Week8-XMLandIR.030-003.png";
+            images[95] = "Week8-XMLandIR.html_files/Week8-XMLandIR.030-004.png";
+            images[96] = "Week8-XMLandIR.html_files/Week8-XMLandIR.030-005.png";
+            images[97] = "Week8-XMLandIR.html_files/Week8-XMLandIR.031-001.png";
+            images[98] = "Week8-XMLandIR.html_files/Week8-XMLandIR.031-002.png";
+            images[99] = "Week8-XMLandIR.html_files/Week8-XMLandIR.031-003.png";
+            images[100] = "Week8-XMLandIR.html_files/Week8-XMLandIR.031-004.png";
+            images[101] = "Week8-XMLandIR.html_files/Week8-XMLandIR.031-005.png";
+            images[102] = "Week8-XMLandIR.html_files/Week8-XMLandIR.032-001.png";
+            images[103] = "Week8-XMLandIR.html_files/Week8-XMLandIR.032-002.png";
+            images[104] = "Week8-XMLandIR.html_files/Week8-XMLandIR.032-003.png";
+            images[105] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-001.png";
+            images[106] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-002.png";
+            images[107] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-003.png";
+            images[108] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-004.png";
+            images[109] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-005.png";
+            images[110] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-006.png";
+            images[111] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-007.png";
+            images[112] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-008.png";
+            images[113] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-009.png";
+            images[114] = "Week8-XMLandIR.html_files/Week8-XMLandIR.033-010.png";
+            var index = 0;
+            function WindowLoaded(evt)
+            {
+                document.body.onselectstart = function () { return false; };
+            }
+            function Step(i)
+            {
+                GoTo(index + i)
+            }
+            function GoTo(newIndex)
+            {
+                if(newIndex >= 0 && newIndex < images.length)
+                {
+                    index = newIndex;
+                    document.Slideshow.src = images[index];
+                }
+            }
+//      ]]>
+    </script>
+</head>
+<body bgcolor="black" onload='WindowLoaded(event);'>
+    <p align="center">
+        <br/>
+        <br/>
+        <img name="Slideshow" alt="" src="Week8-XMLandIR.html_files/Week8-XMLandIR.001-001.png" onclick="Step(1)"/>
+        <br/>
+        <br/>
+        <input type="image" src="Week8-XMLandIR.html_files/home.png" onclick="GoTo(0)"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="image" src="Week8-XMLandIR.html_files/prev.png" onclick="Step(-1)"/>
+        <input type="image" src="Week8-XMLandIR.html_files/next.png" onclick="Step(1)"/>
+    </p>
+</body>
+</html>

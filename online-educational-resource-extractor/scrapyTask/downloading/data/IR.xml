@@ -1,0 +1,2521 @@
+<coursename name="Information Retrieval">
+
+  <course no="001">
+    <url>http://web.stanford.edu/class/cs276/#syllabus</url>
+    <textbook>IIR</textbook>
+    <textbook>MIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Introduction to the course</title>
+    		<chpter>IIR Ch. 1</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture1-intro.ppt</slide_url>
+    		<reading>
+          <name>IIR Ch. 1</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/01bool.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Merge algorithm for proximity queries using a positional index</title>
+    		<chpter>IIR Ch. 2</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture2-dictionary.ppt</slide_url>
+    		<reading>
+          <name>Porter's stemmer (MIR)</name>
+          <reading_url>http://www.sims.berkeley.edu/~hearst/irbook/porter.html</reading_url>
+        </reading>
+        <reading>
+          <name>Porter stemming algorithm (Official) </name>
+          <reading_url>http://www.tartarus.org/~martin/PorterStemmer/</reading_url>
+        </reading>
+        <reading>
+          <name>A skip list cookbook (Pugh 1990) </name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.524</reading_url>
+        </reading>
+        <reading>
+          <name>Fast phrase querying with combined indexes (Williams, Zobel, Bahle 2004)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=1028102</reading_url>
+        </reading>
+        <reading>
+          <name>Efficient phrase querying with an auxiliary index (Bahle, Williams, Zobel 2002)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=564415</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title> Algorithms for postings list compression</title>
+    		<chpter>IIR Ch. 5 </chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture2-dictionary.ppt</slide_url>
+    		<reading>
+          <name>Inverted index compression using word-aligned binary codes (Anh and Moffat 2005)</name>
+          <reading_url>http://www.springerlink.com/content/j66851228120170t/</reading_url>
+        </reading>
+        <reading>
+          <name>compression of inverted indexes for fast query evaluation (Scholer et al. 2002) </name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=564416</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Spelling correction </title>
+    		<chpter>IIR Ch. 3</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture3-tolerant-retrieval.ppt</slide_url>
+    		<reading>
+          <name>Techniques for automatically correcting words in text (Kukich 1992) </name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=146380</reading_url>
+        </reading>
+        <reading>
+          <name>Finding approximate matches in large lexicons (Zobel and Dart 1995)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.18.9400</reading_url>
+        </reading>
+        <reading>
+          <name>Efficient Generation and Ranking of Spelling Error Corrections (Tillenius)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.49.1392</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Probabilistic IR: Binary Independence Mode</title>
+    		<chpter>IIR Ch. 6</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture6-tfidf.ppt</slide_url>
+    		<reading>
+          <name>IIR Ch. 11</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/11prob.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Computing Scores and BM25F </title>
+    		<chpter>IIR Ch. 7</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pptx</slide_url>
+    		<reading>
+          <name>IIR Ch. 7</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/07system.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Recent evaluation, NDCG, using clickthrough; rate queries and results</title>
+    		<chpter>IIR Ch. 8</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture8-evaluation.ppt</slide_url>
+    		<reading>
+          <name>IIR Ch. 8</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/08eval.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Systems issues in efficient retrieval and scoring</title>
+    		<chpter>IIR Ch. 7;IIR Ch. 6 </chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture10-efficient-scoring.ppt</slide_url>
+    		<reading>
+          <name>Efficient Query Evaluation using a Two-Level Retrieval Process (Broder et al 2003)</name>
+          <reading_url>http://cis.poly.edu/westlab/papers/cntdstrb/p426-broder.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Mapreduce with Java </title>
+    		<chpter>IIR 4.4</chpter>
+    		<slide_url>http://research.google.com/archive/mapreduce-osdi04-slides/index.html</slide_url>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Naive Bayes, kNN, decision boundaries</title>
+    		<chpter>IIR Ch. 13</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture12-textcat.ppt</slide_url>
+    		<reading>
+          <name>Machine learning in automated text categorization (Sebastiani 2002)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.6513</reading_url>
+        </reading>
+        <reading>
+          <name>A re-examination of text categorization methods (Yang et al. 1999)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.11.9519</reading_url>
+        </reading>
+        <reading>
+          <name>A Comparison of event models for naive Bayes text classification (McCallum et al. 1998)</name>
+          <reading_url>http://citeseer.ist.psu.edu/mccallum98comparison.html</reading_url>
+        </reading>
+        <reading>
+          <name>Tackling the poor assumptions of Naive Bayes classifier (Rennie et al. 2003)</name>
+          <reading_url>http://www.stanford.edu/class/cs276/handouts/rennie.icml03.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Machine learning in automated text categorization (Sebastiani 2002)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.6513</reading_url>
+        </reading>
+        <reading>
+          <name>A re-examination of text categorization methods (Yang et al. 1999)</name>
+          <reading_url>http://citeseer.ist.psu.edu/yang99reexamination.html</reading_url>
+        </reading>
+        <reading>
+          <name>Evaluating and optimizing autonomous text classification systems (Lewis 1995)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.33.867</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Support vector machines </title>
+    		<chpter>IIR Ch. 15</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture13-SVMs.ppt</slide_url>
+    		<reading>
+          <name>A tutorial on support vector machines for pattern recognition (Burges 1998)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.18.1083</reading_url>
+        </reading>
+        <reading>
+          <name>Inductive learning algorithms and representations for text categorization (Dumaiset a. 1998)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=288651</reading_url>
+        </reading>
+        <reading>
+          <name>A Re-examination of text categorization methods (Yang et al. 1999)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.30.5594</reading_url>
+        </reading>
+        <reading>
+          <name>Text categorization based on regularized linear classification methods (Zhang et al. 2001)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.20.5553</reading_url>
+        </reading>
+        <reading>
+          <name>A loss function analysis for classification methods in text categorization (Li et al. 2003)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.8.2881</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Learning to rank. </title>
+    		<chpter>IIR 6.1.2-3, IIR 15.4</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture14-learning-ranking.ppt</slide_url>
+    		<reading>
+          <name>LETOR benchmark datasets</name>
+          <reading_url>http://research.microsoft.com/users/LETOR/</reading_url>
+        </reading>
+        <reading>
+          <name>Discriminative models for information retrieval (Nallapati 2004)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.2.9065</reading_url>
+        </reading>
+        <reading>
+          <name>Adapting ranking SVM to document retrieval (Cao et al. 2006)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=1148205</reading_url>
+        </reading>
+        <reading>
+          <name>A support vector method for optimizing average precision (Yue et al. 2007)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=1277790</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+        <no>13</no>
+        <title>Link analysis</title>
+        <chpter>IIR Ch. 21</chpter>
+        <slide_url>http://web.stanford.edu/class/cs276/handouts/lecture17-linkanalysis.ppt</slide_url>
+        <reading>
+          <name>Ranking the web frontier (Eiron et al. 2004)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=988714</reading_url>
+        </reading>
+        <reading>
+          <name>The WebGraph framework I: Compression techniques (Boldi et al. 2004)</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.14.6417</reading_url>
+        </reading>
+        <reading>
+          <name>Extrapolation methods for accelerating PageRank computations (Kamvar et al. 2003)</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=775190</reading_url>
+        </reading>
+        <reading>
+          <name>Searching the workplace web (Fagin et al. 2003</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=775152.775204</reading_url>
+        </reading>
+      </unit>
+      <unit>
+    		<no>14</no>
+    		<title>Crawling, near-dups</title>
+    		<chpter>IIR Ch. 19 , IIR Ch. 20</chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture18-crawling.ppt</slide_url>
+    		<reading>
+          <name>Mercator: A scalable, extensible web crawler (Heydon et al. 1999)</name>
+          <reading_url>https://webarchive.jira.com/wiki/download/attachments/5441/1999-Mercator.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>A standard for robot exclusion</name>
+          <reading_url>http://www.robotstxt.org/orig.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Distributed word representations for IR </title>
+    		<chpter></chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/lecture20-distributed-representations.pptx</slide_url>
+    		<reading>
+          <name>GloVe: Global Vectors for Word Representation (Pennington et all, 2014)</name>
+          <reading_url>http://nlp.stanford.edu/pubs/glove.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Distributed Representations of Words and Phrases and their Compositionality (Mikolov et al, 2013)</name>
+          <reading_url>http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Personalization </title>
+    		<chpter></chpter>
+    		<slide_url>http://web.stanford.edu/class/cs276/handouts/personalization-lecture.ppt</slide_url>
+    		<reading>
+          <name>J. Teevan, S. Dumais, E. Horvitz. Potential for personalization. 2010</name>
+          <reading_url>http://research.microsoft.com/pubs/154553/tochi10.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>P. Bennett et al. Inferring and using location metadata to personalize Web search. 2011</name>
+          <reading_url>http://www.cond.org/p50-pitkow.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>J. Teevan, S. Dumais, E. Horvitz. Personalizing search via automated analysis of interests and activities. 2005</name>
+          <reading_url>http://research.microsoft.com/en-us/um/people/sdumais/SIGIR2005-PersonalizedSearch.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>P. Bennett et al. Inferring and using location metadata to personalize Web search. 2011</name>
+          <reading_url>http://research.microsoft.com/pubs/150729/BennettSIGIR2011.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>T. Haveliwala. Topic-sensitive pagerank. 2002.</name>
+          <reading_url>http://www-cs-students.stanford.edu/~taherh/papers/topic-sensitive-pagerank.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>G. Jeh and J. Widom. Scaling personalized Web search. 2003</name>
+          <reading_url>http://infolab.stanford.edu/~glenj/spws.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>M. Curtiss et al. Unicorn: A system for searching the social graph. 2013</name>
+          <reading_url>http://www.vldb.org/pvldb/vol6/p1150-curtiss.pdf</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="002">
+    <url>http://ir.cis.udel.edu/~carteret/CISC689/syllabus.html#schedule</url>
+    <textbook fullname="Search Engines: Information Retrieval in Practice">SE</textbook>
+    <units>
+      <unit>
+        <no>1</no>
+        <title>	Introduction to IR, course overview</title>
+        <chpter>Ch. 1</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture1.pdf</slide_url>
+      </unit>
+      <unit>
+        <no>2</no>
+        <title>	Architecture of a search engine</title>
+        <chpter>Ch. 2	</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture2.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>3</no>
+        <title>Text processing</title>
+        <chpter>	Ch. 2.3.2; Ch. 4.1-4.3</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture3.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>4</no>
+        <title>Indexing: inverted files</title>
+        <chpter>Ch. 5.1-5.3</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture4.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>5</no>
+        <title>Indexing: compression</title>
+        <chpter>Ch. 5.4</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture5.pdf</slide_url>
+
+      </unit>
+
+      <unit>
+        <no>6</no>
+        <title>Indexing: compression; disk storage</title>
+        <chpter>	Ch. 5.4-5.6</chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture6.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>7</no>
+        <title>Retrieval: query processing; models</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture7.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>8</no>
+        <title>Retrieval: probabilistic models</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture8.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>9</no>
+        <title>Retrieval: language models</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture9.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>10</no>
+        <title>Evaluation: relevance; measures</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture10.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>11</no>
+        <title>Evaluation: test collections</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture11.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>12</no>
+        <title>Phrases, fields, and anchor text</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture12.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>13</no>
+        <title>Query languages</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture13.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>14</no>
+        <title>Relevance feedback</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture14.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>15</no>
+        <title>Text classification</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture15.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>16</no>
+        <title>Clustering</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture16.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>17</no>
+        <title>Clustering and LSI</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture18.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>18</no>
+        <title>Parallelization and MapReduce</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture19.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>19</no>
+        <title>PageRank</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture20.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>20</no>
+        <title>Machine Learning for IR</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture21.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>21</no>
+        <title>Metasearch and Machine Learning for IR</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture22.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>22</no>
+        <title>Cross-language IR</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture23.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>23</no>
+        <title>Question answering</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture24.pdf</slide_url>
+
+      </unit>
+      <unit>
+        <no>24</no>
+        <title>Novelty and diversity</title>
+        <chpter></chpter>
+        <slide_url>http://ir.cis.udel.edu/~carteret/CISC689/slides/lecture25.pdf</slide_url>
+
+      </unit>
+    </units>
+  </course>
+
+  <course no="003">
+    <url>https://www.cs.utexas.edu/~mooney/ir-course/syllabus.html</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Goals and history of IR. The impact of the web on IR.</title>
+    		<chpter>ch. 1</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Boolean and vector-space retrieval models; ranked retrieval; text-similarity metrics; TF-IDF (term frequency/inverse document frequency) weighting; cosine similarity.</title>
+    		<chpter>ch. 1 ; ch. 6</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Basic Tokenizing, Indexing, and Implementation of Vector-Space Retrieval</title>
+    		<chpter>ch. 2, 6</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Experimental Evaluation of IR</title>
+    		<chpter>ch. 8</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Query Operations and Languages</title>
+    		<chpter>ch. 9, 3</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Text Representation</title>
+    		<chpter>Section 5.1, 10</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Web Search</title>
+    		<chpter>ch. 19, 20, 21</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Text Categorization</title>
+    		<chpter>ch. 13 , 14.</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Language-Model Based Retrieval</title>
+    		<chpter>ch. 12</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Text Clustering</title>
+    		<chpter>ch. 16 , 17</chpter>
+    		<slide_url></slide_url>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Recommender Systems</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <reading>
+          <name>this paper by Herlocker et al.</name>
+          <reading_url>http://www.grouplens.org/papers/pdf/algs.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Information Extraction and Integration</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="004">
+    <url>http://www.ccs.neu.edu/course/cs6200f12/syllabus.html</url>
+    <textbook fullname="Search Engines: Information Retrieval in Practice">SE</textbook>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Overview of Information Retrieval</title>
+    		<chpter>CRS ch. 1</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-1.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Architecture of a Search Engine</title>
+    		<chpter>CRS ch. 2</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-2.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Acquiring Data</title>
+    		<chpter>CRS ch. 3; IIR ch. 19 and 20</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-3.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Processing Text</title>
+    		<chpter>CRS ch. 4; IIR ch. 2 and 21</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-4.pdf</slide_url>
+        <slide_url>http://www.ccs.neu.edu/course/cs6200f12/pagerank.pdf</slide_url>
+        <slide_url>http://www.ccs.neu.edu/course/cs6200f12/ner.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Ranking with Indexes</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-5.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Queries and Interfaces</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-6.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Retrieval Models</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-7.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Evaluating Search Engines</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-8.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Classification and Clustering</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-9.pdf</slide_url>
+        <slide_url>http://www.ccs.neu.edu/home/jaa/IS4200.12S/Handouts/clustering.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>User Modeling </title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Social Search and bag of words</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-10.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>XML Retrieval, Distributed IR, and Metasearch</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-xml-retrieval.pdf</slide_url>
+        <slide_url>http://www.ccs.neu.edu/course/cs6200f12/cs6200-f12-distributed.pdf</slide_url>
+        <slide_url>http://www.ccs.neu.edu/home/jaa/IS4200.12S/Handouts/distributed.pdf</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no="005">
+    <url>http://www.ccs.neu.edu/course/cs6200f15/syllabus.html</url>
+    <textbook fullname="Search Engines: Information Retrieval in Practice">SE</textbook>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Overview of Information Retrieval </title>
+    		<chpter>SE ch. 1</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-1.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Architecture of a Search Engine</title>
+    		<chpter>SE ch. 2</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-2.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Acquiring Data</title>
+    		<chpter>SE ch. 3; IIR ch. 19 and 20</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-3.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Processing Text</title>
+    		<chpter>SE ch. 4; IIR ch. 2 and 21</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-4.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Ranking with Indexes</title>
+    		<chpter>SE ch. 5; IIR ch. 4-5</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-5.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Queries and Interfaces</title>
+    		<chpter>SE ch. 6</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-6.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Retrieval Models</title>
+    		<chpter>SE ch. 7; IIR ch. 11-12 and for background ch. 1 and 6</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-7.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Evaluating Search Engines</title>
+    		<chpter>SE ch. 8; IIR ch. 8http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-9.pdf9</chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-8.pdf</slide_url>
+    		http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-9.pdf9
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Classification and Clustering</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-9.pdf9</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Social Search: Networks of People and Search Engines</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-10.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Beyond Bag of Words</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ccs.neu.edu/course/cs6200f15/cs6200-f15-11.pdf</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no="006">
+    <url>https://bcourses.berkeley.edu/courses/1247347/assignments/syllabus/</url>
+    <textbook fullname="The discipline of Organizing">TDO</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>	Orientation,  Intro to TDO</title>
+    		<chpter>ch. 1</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>	Case Studies</title>
+    		<chpter>ch. 11</chpter>
+    		<slide_url></slide_url>
+        <reading>
+          <name>As We May Think</name>
+          <reading_url>http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/</reading_url>
+        </reading>
+        <reading>
+          <name>The library of Babel </name>
+          <reading_url>http://jubal.westnet.com/hyperdiscordia/library_of_babel.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Roadmap</title>
+    		<chpter>ch. 10</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Activities 1</title>
+    		<chpter>ch. 2</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>The Moneyball Effect: How smart data is transforming criminal justice, healthcare, music, and even government spending.</name>
+          <reading_url>http://wp.me/p10512-mlw</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>	Activities 2</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Hearst, Marti. Search User Interfaces, 2009. Chapter 3 through 3.4 </name>
+          <reading_url>http://searchuserinterfaces.com/book/sui_ch3_models_of_information_seeking.html</reading_url>
+        </reading>
+        <reading>
+          <name>Morville, Peter and Rosenfeld, Louis. Information Architecture for the World Wide Web, Third Edition, 2006. Sections 5.3 and 5.4 </name>
+          <reading_url>http://proquest.safaribooksonline.com/book/web-development/0596527349</reading_url>
+        </reading>
+        <reading>
+          <name>NPR. For a More Ordered Life, Organize Like a Chef</name>
+          <reading_url>http://www.npr.org/blogs/thesalt/2014/08/11/338850091/for-a-more-ordered-life-organize-like-a-chef</reading_url>
+        </reading>
+        <reading>
+          <name>Tidwell, Jennifer. Designing Interfaces, Second Edition, 2010. Chapter 2 </name>
+          <reading_url>http://proquest.safaribooksonline.com/book/software-engineering-and-development/9781449379711/2dot-organizing-the-content-information-architecture-and-application-structure/organizing_the_content_information_archi</reading_url>
+        </reading>
+        <reading>
+          <name> Enterprise Data Archiving </name>
+          <reading_url>http://public.dhe.ibm.com/software/data/sw-library/data-management/optim/papers/your-enterprise-data-archiving-strategy.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Digitizing the Drawers </name>
+          <reading_url>http://berkeleysciencereview.com/read/fall-2011/digitizing-the-drawers/</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Resources1</title>
+    		<chpter>Sections 3.1-3.4, 3.6</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>How an Army of Sensors Helps Us Track Tsunamis and Score Parking Spots </name>
+          <reading_url>http://www.wired.com/wiredscience/2013/05/sensors-listen-to-world/</reading_url>
+        </reading>
+        <reading>
+          <name>The Internet of Things Will Thrive by 2025.” Pages 1-20 </name>
+          <reading_url>http://www.pewinternet.org/2014/05/14/internet-of-things/</reading_url>
+        </reading>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Resources2</title>
+    		<chpter>Sections 3.5, 8.3.1-8.3.2</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Authenticity in perspective. Authenticity in a digital environment, 2000. Pages 69-75 </name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.36.5694&amp;rep=rep1&amp;type=pdf#page=77</reading_url>
+        </reading>
+        <reading>
+          <name>Library of Congress Recommended Format Specifications for Preservation</name>
+          <reading_url>http://www.loc.gov/preservation/resources/rfs/</reading_url>
+        </reading>
+        <reading>
+          <name>Glushko, Robert and McGrath, Tim. Document Engineering. Chapter 2</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/DocumentEngineeringBookDraft/DEBook/ch2_FINAL.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Ng, Serena and Bensinger, Greg. “The Perils of Pooled Merchandise </name>
+          <reading_url>http://online.wsj.com/news/articles/SB30001424052702303873604579493330157385004</reading_url>
+        </reading>
+        <reading>
+          <name>Olozia, J.. “An Infamous Forger on His Most Convincing Works, NY Times 18 September 2014. </name>
+          <reading_url>http://tmagazine.blogs.nytimes.com/2014/09/18/art-and-craft-documentary-mark-landis-infamous-art-forger-on-his-most-convincing-works/</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>	Resource Description 1</title>
+    		<chpter>Sections 4.1- 4.3</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Recommended Tool for Working with XML Resource Descriptions is XML Spy</name>
+          <reading_url>http://www.altova.com/xmlspy.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Resource Description 2</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Metacrap </name>
+          <reading_url>http://www.well.com/~doctorow/metacrap.htm</reading_url>
+        </reading>
+        <reading>
+          <name>RDF Primer, Sections 1-3 </name>
+          <reading_url>http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/</reading_url>
+        </reading>
+        <reading>
+          <name>For Big-Data Scientists, ‘Janitor Work’ Is Key Hurdle to Insights </name>
+          <reading_url>http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html</reading_url>
+        </reading>
+        <reading>
+          <name>Studying social tagging and folksonomy: A review and framework </name>
+          <reading_url>http://arizona.openrepository.com/arizona/bitstream/10150/105375/1/trant-studyingFolksonomy.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>An Introduction to Duplicate Detection </name>
+          <reading_url>http://www.morganclaypool.com/doi/abs/10.2200/S00262ED1V01Y201003DTM003</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Describing multimedia and non-text</title>
+    		<chpter>Section 4.4</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>The language of images: enhancing access to images by applying metadata schemas and structured vocabularies </name>
+          <reading_url>http://www.getty.edu/research/publications/electronic_publications/intro_aia/harpring.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>How art history is failing at the internet </name>
+          <reading_url>http://www.dailydot.com/opinion/art-history-failing-internet/</reading_url>
+        </reading>
+        <reading>
+          <name>Context data in geo-referenced digital photo collections </name>
+          <reading_url>http://ilpubs.stanford.edu:8090/660/1/2004-43.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>The Music Genome Project </name>
+          <reading_url>http://www.imanet.org/PDFs/Public/SF/2006_12/12tools06.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Help wanted: Public needed to uncover clues in natural history collections</name>
+          <reading_url>http://newscenter.berkeley.edu/2013/05/22/citizen-scientists-help-calbug/</reading_url>
+        </reading>
+        <reading>
+          <name>Masterworks for One and All </name>
+          <reading_url>http://www.nytimes.com/2013/05/29/arts/design/museums-mull-public-use-of-online-art-images.html</reading_url>
+        </reading>
+        <reading>
+          <name>Automated Metadata in Multimedia Information Systems </name>
+          <reading_url>http://www.morganclaypool.com/doi/abs/10.2200/S00167ED1V01Y200812ICR002</reading_url>
+        </reading>
+        <reading>
+          <name>Deep Learning </name>
+          <reading_url>http://www.technologyreview.com/featuredstory/513696/deep-learning/</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Relationships and Structures 1</title>
+    		<chpter>Sections 5.1- 5.4</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name> Wordnet , 2010. (skip sections 10.12-10.15)</name>
+          <reading_url>http://link.springer.com/chapter/10.1007%2F978-90-481-8847-5_10</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Relationships and Structures 2</title>
+    		<chpter>Sections 5.5- 5.7</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Modeling Methods and Artifacts for Crossing the Data/Document Divide</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/glushko_files/GlushkoXML2005.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>	Relationships and Structures 3</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Social Network Analysis: A Brief Introduction </name>
+          <reading_url>http://www.orgnet.com/sna.html</reading_url>
+        </reading>
+        <reading>
+          <name>Problems of citation analysis </name>
+          <reading_url>http://link.springer.com/content/pdf/10.1007%2FBF02129604.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Graphs in libraries: A primer </name>
+          <reading_url>http://ejournals.bc.edu/ojs/index.php/ital/article/download/1867/1705Home</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>14</no>
+    		<title>Relationships and Structures 4</title>
+    		<chpter>Section 5.8</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>The semantic web </name>
+          <reading_url>http://www.cs.umd.edu/~golbeck/LBSC690/SemanticWeb.html</reading_url>
+        </reading>
+        <reading>
+          <name>Linked data: Evolving the web into a global data space </name>
+          <reading_url>http://www.morganclaypool.com/doi/abs/10.2200/s00334ed1v01y201102wbe001</reading_url>
+        </reading>
+        <reading>
+          <name>The Strongest Link: Libraries and Linked Data </name>
+          <reading_url>http://www.dlib.org/dlib/november10/byrne/11byrne.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Categories</title>
+    		<chpter>ch. 6</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Lost in Translation </name>
+          <reading_url>http://online.wsj.com/article/SB10001424052748703467304575383131592767868.html</reading_url>
+        </reading>
+        <reading>
+          <name>Categorization in the wild </name>
+          <reading_url>http://www.sciencedirect.com/science/article/pii/S1364661308000557</reading_url>
+        </reading>
+        <reading>
+          <name>The Analytical Language of John Wilkins  </name>
+          <reading_url>https://ccrma.stanford.edu/courses/155/assignment/ex1/Borges.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Classification 1</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>How Psychiatry Went Crazy </name>
+          <reading_url>http://online.wsj.com/article/SB10001424127887323716304578481222760113886.html</reading_url>
+        </reading>
+        <reading>
+          <name>Semantic minefields </name>
+          <reading_url>http://www.nytimes.com/2010/05/16/opinion/16pubed.html</reading_url>
+        </reading>
+        <reading>
+          <name>Fix the Census’ Archaic Racial Categories </name>
+          <reading_url>http://www.nytimes.com/2013/08/22/opinion/fix-the-census-archaic-racial-categories.html</reading_url>
+        </reading>
+        <reading>
+          <name>From semantic integration to semantics management: case studies and a way forward </name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1041418</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>17</no>
+    		<title>Classification 2</title>
+    		<chpter>Sections 7.3-7.6</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Logic versus usage: the case for activity-centered design </name>
+          <reading_url>https://dl.acm.org/citation.cfm?id=1167978</reading_url>
+        </reading>
+        <reading>
+          <name> Search User Interfaces, 2009. Section 8.6 "Faceted Navigation" </name>
+          <reading_url>http://searchuserinterfaces.com/book/sui_ch8_navigation_and_search.html%22</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>18</no>
+    		<title>Interactions 1</title>
+    		<chpter>Sections 9.1-9.3</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Describing what Businesses do and how they do it, Chapter 4 of Document Engineering  (Sections 4.1-4.2, pages 101-127)</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/DocumentEngineeringBookDraft/DEBook/ch4_FINAL.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Substituting Information for Interaction: A Framework for Personalization in Service Encounters and Service Systems</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/glushko_files/SubstitutingInformationForInteraction.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>19</no>
+    		<title>Interactions 2</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Describing what Businesses do and how they do it,Section 4.4.2, pages 134-144</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/DocumentEngineeringBookDraft/DEBook/ch4_FINAL.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Electronic health records: just around the corner? Or over the cliff? </name>
+          <reading_url>http://annals.org/article.aspx?articleid=718641</reading_url>
+        </reading>
+        <reading>
+          <name>Apple prepares Healthkit rollout amid tangled regulatory web </name>
+          <reading_url>http://www.reuters.com/article/2014/08/12/us-apple-healthcare-exclusive-idUSKBN0GC09K20140812</reading_url>
+        </reading>
+        <reading>
+          <name>Interoperability costs in the US automotive supply chain</name>
+          <reading_url>http://people.ischool.berkeley.edu/~glushko/IS243Readings/InteroperabilityCostsInAutoSupplyChain.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>20</no>
+    		<title>Text Processing, Boolean Model</title>
+    		<chpter>Sections 9.4-9.6</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Manning, Christopher, et al. Introduction to Information Retrieval, 2009. Chapter 1, pages 1-6</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/01bool.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>21</no>
+    		<title>Vector Models</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Manning Chapter 6   (skim or skim sections 6.1 and 6.4)</name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/06vect.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Data-driven approaches to information access </name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.10.458&amp;rep=rep1&amp;type=pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>22</no>
+    		<title>Web Search, Structure Models</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Manning Chapter 19, pages 421-431 </name>
+          <reading_url>http://nlp.stanford.edu/IR-book/pdf/19web.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Hearst, Marti. Search User Interfaces, 2009. Chapter 1 </name>
+          <reading_url>http://searchuserinterfaces.com/book/sui_ch1_design.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>23</no>
+    		<title>NLP, Mobile, and Multimedia Information Retrieval</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>‘Natural’ search user interfaces </name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=2018414</reading_url>
+        </reading>
+        <reading>
+          <name>Talking to machines </name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=2133812</reading_url>
+        </reading>
+        <reading>
+          <name>The Delphi Toolkit: Enabling Semantic Search for Museum Collections </name>
+          <reading_url>http://www.archimuse.com/mw2008/papers/schmitz/schmitz.html</reading_url>
+        </reading>
+        <reading>
+          <name>Quantitative analysis of culture using millions of digitized books </name>
+          <reading_url>http://www.sciencemag.org/content/331/6014/176.short</reading_url>
+        </reading>
+        <reading>
+          <name>Life, translated </name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1978550</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>24</no>
+    		<title>Machine Learning, Image Recognition</title>
+    		<chpter>Sections 6.5, 7.6</chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Techniques and applications for sentiment analysis </name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=2436274</reading_url>
+        </reading>
+        <reading>
+          <name>Rowling and ‘Galbraith’: an authorial analysis </name>
+          <reading_url>http://languagelog.ldc.upenn.edu/nll/?p=5315</reading_url>
+        </reading>
+        <reading>
+          <name>Researchers Announce Advance in Image-Recognition Software</name>
+          <reading_url>http://nyti.ms/11eGJj6</reading_url>
+        </reading>
+        <reading>
+          <name>Step aside Google image search, here’s an algorithm that knows what’s in a picture </name>
+          <reading_url>http://singularityhub.com/2014/07/08/step-aide-google-image-search-heres-an-algorithm-that-understands-whats-going-on-in-photos/</reading_url>
+        </reading>
+        <reading>
+          <name>When a machine learning algorithm studied fine art paintings, it saw things art historians had never noticed </name>
+          <reading_url>https://medium.com/the-physics-arxiv-blog/when-a-machine-learning-algorithm-studied-fine-art-paintings-it-saw-things-art-historians-had-never-b8e4e7bf7d3e</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="007">
+    <url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Web Search Basics</title>
+    		<chpter>ch. 19</chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture01Slides.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture02Slides.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture03Slides.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture04Slides.pdf</slide_url>
+    		<reading>
+          <name>Wikipedia entry on Vannevar Bush</name>
+          <reading_url>http://en.wikipedia.org/wiki/Vannevar_Bush</reading_url>
+        </reading>
+        <reading>
+          <name>As We May Think</name>
+          <reading_url>http://www.theatlantic.com/doc/194507/bush</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Web Search Basics</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Stuff I've seen: A system for personal information retrieval and re-use</name>
+          <reading_url>http://doi.acm.org/10.1145/860435.860451</reading_url>
+        </reading>
+        <reading>
+          <name>Simple, Proven Approaches to Text Retrieval</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.8337</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Web crawling and Evaluation in IR</title>
+    		<chpter>ch. 20,8</chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture05.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture06.pdf</slide_url>
+        <slide_url>http://dg3rtljvitrle.cloudfront.net/slides/chap3.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/chap8.pptx</slide_url>
+    		<reading>
+          <name>The Web As a Graph</name>
+          <reading_url>http://portal.acm.org/citation.cfm?id=335168.335170&amp;coll=ACM&amp;dl=ACM&amp;CFID=5772105&amp;CFTOKEN=18886490</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Index Construction</title>
+    		<chpter>ch. 4</chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture07.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture08.pdf</slide_url>
+        <slide_url>http://dg3rtljvitrle.cloudfront.net/slides/chap5.pdf</slide_url>
+    		<reading>
+          <name>How Google Code Search Worked </name>
+          <reading_url></reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Index Construction and Scoring</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture09.pdf</slide_url>
+        <slide_url>http://www.stanford.edu/class/cs276/handouts/lecture4-indexconstruction.ppt</slide_url>
+        <slide_url>http://www.stanford.edu/class/cs276/handouts/lecture1-intro.ppt</slide_url>
+        <slide_url>http://www.stanford.edu/class/cs276/handouts/lecture6-tfidf.ppt</slide_url>
+    		<reading>
+          <name>The unreasonable effectiveness of data</name>
+          <reading_url>http://research.google.com/pubs/archive/35179.pdf</reading_url>
+        </reading>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Querying, Scoring, Term Weighting and the Vector Space model</title>
+    		<chpter>ch. 1,6</chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture12.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture14.pdf</slide_url>
+        <slide_url>http://www.stanford.edu/class/cs276/handouts/lecture7-vectorspace.ppt</slide_url>
+    		<reading>
+          <name>A vector space model for automatic indexing</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=361220</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Hadoop7</title>
+    		<chpter>Hadoop7</chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Hadoop-AWS.pdf</slide_url>
+    		<reading>
+          <name>"Map Reduce: Simplified Data Processing on Large Clusters"</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1327492</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>	Link Analysis</title>
+    		<chpter>ch. 21</chpter>
+    		<slide_url>http://www.stanford.edu/class/cs276/handouts/lecture17-linkanalysis.ppt</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture16.pdf</slide_url>
+    		<reading>
+          <name>The Anatomy of a Large-Scale Hypertextual Web Search Engine</name>
+          <reading_url>http://www-db.stanford.edu/pub/papers/google.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>	Matrix decompositions and latent semantic indexing</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/LSI.pdf</slide_url>
+    		<reading>
+          <name>Indexing by latent semantic analysis</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.49.7546</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Matrix decompositions and latent semantic indexing</title>
+    		<chpter>ch. 8 </chpter>
+    		<slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/OOPSLA08.pdf</slide_url>
+        <slide_url>http://www.ics.uci.edu/~lopes/teaching/cs221W12/slides/Lecture19New.pdf</slide_url>
+    		<reading>
+          <name> Unsupervised Named-Entity Extraction from the Web: An Experimental Study</name>
+          <reading_url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.124.8829</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="008">
+    <url>http://www.win.tue.nl/~mpechen/courses/2ID25/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Introduction to the course</title>
+    		<chpter>Ch. 1</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Boolean IR and Document indexing</title>
+    		<chpter>Ch. 1,Ch. 2,Ch. 3, </chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Vector space retrieval</title>
+    		<chpter>Ch. 6,Ch. 18, Ch. 9</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Into to ML Module and Classification</title>
+    		<chpter>Ch. 13, Ch. 14, Ch. 15</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Clustering and data/dimensionality reduction</title>
+    		<chpter>Ch. 16, Ch. 17</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Peculiarities of Classification and Clustering in IR/AS</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Pattern mining</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Machine learning for user modelling</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Probabilistic IR and IR Evaluation</title>
+    		<chpter>Ch. 11,Ch. 12,Ch. 8,</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Information retrieval on the Web</title>
+    		<chpter>Ch. 19, Ch. 21</chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>MultiMedia retrieval</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Handouts and Introduction to the Multimedia Retrieval book</name>
+          <reading_url>http://www.springerlink.com/content/v7l8813140718074/fulltext.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Past, Present and Future of IR: Closing Lecture</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no="009">
+    <url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/syllabus.html</url>
+    <textbook></textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Course overview and Language Models</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w0.pdf</slide_url>
+        <slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w1.pdf</slide_url>
+    		<reading>
+          <name>Python Tutorial</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/python_tutorial.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Boolean Retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w2.pdf</slide_url>
+        <reading>
+          <name>Boolean Retrieval</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/cs3245-tut02.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Terms and Postings</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w3.pdf</slide_url>
+    		<reading>
+          <name>N-grams</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/cs3245-tut01.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Dictionaries and Tolerant Retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w4.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Index Compression</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w6.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Scoring and the Vector Space Model</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w7.pdf</slide_url>
+    		<reading>
+          <name>Tolerant Retrieval and Indexing</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/cs3245-tut03.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>A Complete Search System</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w8.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>IR Evaluation / XML Retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w9.pdf</slide_url>
+    		<reading>
+          <name>Vector Space Model and Weighting</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/cs3245-tut04.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Relevance Feedback and Query Expansion</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w10-v130325.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Probabilistic IR and Language Model IR</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w11-v130401.pdf</slide_url>
+    		<reading>
+          <name>IR Evaluation and XML Retrieval</name>
+          <reading_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/cs3245-tut05.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Crawling and Link Analysis</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w12-v130408.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Practical IR on the Web and Revision</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.comp.nus.edu.sg/~kanmy/courses/3245_2013/w13.pdf</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no="010">
+    <url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/cse506TIRf12.html</url>
+    <textbook>IIR</textbook>
+    <textbook fullname="Search User Interfaces">SUI</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Information behavior, browsing vs seeking, types of search, history of IR</title>
+    		<chpter>SUI Ch. 3</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec1.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>IR Basics: inverted index, query and document representations, boolean retrieval, simple tf/idf and other ranking schemes</title>
+    		<chpter>IIR Ch.1-2</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec2.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>IR models: boolean, vector space, language models</title>
+    		<chpter>IIR ch. 6, 7, 12, and 18</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec3.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Index construction/optimization/compression</title>
+    		<chpter>ch. 4 and 5</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec4.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Experimental Evaluation</title>
+    		<chpter>IIR Ch. 8</chpter>
+        <chpter> Hearst Ch. 2</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec5.pdf</slide_url>
+    		<reading>
+          <name>Cleverdon 1991</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=122861</reading_url>
+        </reading>
+        <reading>
+          <name>Käki and Aula 2007</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1315076</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Relevance feedback</title>
+    		<chpter>IIR Ch.9;</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec6.pdf</slide_url>
+        <slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/RF-disc.pdf</slide_url>
+        <reading>
+          <name>White et al. (2006)</name>
+          <reading_url>http://www.cis.strath.ac.uk/cis/research/publications/papers/strath_cis_publication_514.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Lee et al. (2008)</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1390376</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>	Search UI/UX</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/RF-disc.pdf</slide_url>
+    		<reading>
+          <name>Clarke et al. (2007)</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1277767</reading_url>
+        </reading>
+        <reading>
+          <name>Wu et al. (2012)</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=2348315</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Web search, PageRank</title>
+    		<chpter>IIR Ch. 19 and Ch. 21</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/lec8.pdf</slide_url>
+        <slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/PageRank_Tomer.pdf</slide_url>
+    		<reading>
+          <name>Page et al. (1998)</name>
+          <reading_url>http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Kurland and Lee (2010)</name>
+          <reading_url>http://dl.acm.org/citation.cfm?id=1852102.1852104</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Parallel and Map-Reduce approaches</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/MapReduce-disc.pdf</slide_url>
+    		<reading>
+          <name>Lin (2009)</name>
+          <reading_url>http://www.umiacs.umd.edu/~jimmylin/publications/Lin_SIGIR2009.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Lin et al. (2009)</name>
+          <reading_url>http://lintool.github.com/Ivory/docs/publications/Lin_etal_TREC2009.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Pantel et al. (2009)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/D/D09/D09-1098.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>	Query suggestion/reformulation</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/Query-Suggestion_Golnar-IR-Presentation.pdf</slide_url>
+    		<reading>
+          <name>Jain et al. (2011)</name>
+          <reading_url>http://umutozertem.files.wordpress.com/2012/05/alpa_sigir2011.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Ozertem et al. (2012)</name>
+          <reading_url>http://umutozertem.files.wordpress.com/2012/05/umut_sigir2012.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Guest lecture: Brooke Cowan, Information Extraction</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/extraction.pdf</slide_url>
+    		<reading>
+          <name>Banko et al. (2007)</name>
+          <reading_url>http://turing.cs.washington.edu/papers/ijcai07.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Carlson et al. (2010)</name>
+          <reading_url>http://rtw.ml.cmu.edu/papers/carlson-wsdm10.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>McClosky et al. (2011)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/P/P11/P11-1163.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Jurafsky Ch. 22</name>
+          <reading_url>http://www.cs.colorado.edu/~martin/csci5417/ie-chapter.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>	Weighted lattice indexing</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/LatticeIndexingPresentation_AHF.pdf</slide_url>
+    		<reading>
+          <name>Saraclar and Sproat (2004)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/N/N04/N04-1017.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Allauzen, Mohri and Saraclar (2004)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/W/W04/W04-2907.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Chelba and Acero (2005)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/P/P05/P05-1055.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>Spoken term detection</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/IR_meysam-maider.pdf</slide_url>
+    		<reading>
+          <name>Hori et al. (2007)</name>
+          <reading_url>http://groups.csail.mit.edu/sls//publications/2007/hori-icassp07.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Mamou et al. (2007)</name>
+          <reading_url>http://researchweb.watson.ibm.com/haifa/projects/imt/sir/papers/sigir07.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Parada et al. (2010)</name>
+          <reading_url>http://old-site.clsp.jhu.edu/~carolinap/papers/std_oovs_icassp_10.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>14</no>
+    		<title>Guest lecture: Bill Hersh, Biomedical information retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/hersh_ir_lecture.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Guest lecture: Amanda Jones, E-discovery</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/XLS_Technology_Assisted_Review.pdf</slide_url>
+    		<reading>
+          <name>Grossman and Cormack (2011)</name>
+          <reading_url>http://jolt.richmond.edu/v17i3/article11.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Barnett and Godjevac (2011)</name>
+          <reading_url>http://www.umiacs.umd.edu/~oard/desi4/papers/barnett3.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Learning to rank</title>
+    		<chpter>IIR Ch.15</chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/MLinIR.pdf</slide_url>
+    		<reading>
+          <name>Sculley (2010)</name>
+          <reading_url>http://www.eecs.tufts.edu/~dsculley/papers/combined-ranking-and-regression.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>17</no>
+    		<title>Multimedia retrieval</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/Presentation_MultimediaIR.pdf</slide_url>
+    		<reading>
+          <name>Müller et al. (2004)</name>
+          <reading_url>http://www.ncbi.nlm.nih.gov/pubmed/15036075</reading_url>
+        </reading>
+        <reading>
+          <name>Zhou et al. (2012)</name>
+          <reading_url>http://www.ncbi.nlm.nih.gov/pubmed/21800188</reading_url>
+        </reading>
+        <reading>
+          <name>Mitchell et al. (2012)</name>
+          <reading_url>http://www.aclweb.org/anthology-new/E/E12/E12-1076.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>18</no>
+    		<title>Prediction and sentiment analysis</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.cslu.ogi.edu/~roark/courses/cse506-TIR/Elyasi.pptx</slide_url>
+    		<reading>
+          <name>O'Connor et al. (2010)</name>
+          <reading_url>http://www.cs.cmu.edu/~nasmith/papers/oconnor+balasubramanyan+routledge+smith.icwsm10.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Chahuneau et al. (2012)</name>
+          <reading_url>http://www.cs.cmu.edu/~nasmith/papers/chahuneau+gimpel+routledge+scherlis+smith.emnlp12.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Gayo-Avello (2012)</name>
+          <reading_url>http://arxiv.org/abs/1204.6441</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="011">
+    <url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Introduction</title>
+    		<chpter>ch. 1; 2.3</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture1.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Boolean Retrieval and Indexing</title>
+    		<chpter>ch. 2.2; 2.4</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture2.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Spelling Correction and Tolerant Retrieval</title>
+    		<chpter>ch. 3</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture3.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Index Construction and Compression</title>
+    		<chpter>ch. 4.2-4.4, 5</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture4.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>The Vector Space Model</title>
+    		<chpter>ch. 6</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture5.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Evaluation</title>
+    		<chpter>ch. 8</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture6.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Clustering</title>
+    		<chpter>ch. 16.1-16.4; 17.1-17.2</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture7.pdf</slide_url>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Link Analysis</title>
+    		<chpter>ch. 21</chpter>
+    		<slide_url>https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture8.pdf</slide_url>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="012">
+    <url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lecture.html</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Overview and Background</title>
+    		<chpter>ch. 1;8</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture1.pptx</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Document Indexing and Analysis</title>
+    		<chpter>ch. 4;5</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture2.pptx</slide_url>
+    		<reading>
+          <name>Description of Porter's Stemming Algorithm</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/papers/porter-algorithm.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Indexing Implementation and Indexing Models</title>
+    		<chpter>ch.2</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture3.pptx</slide_url>
+    		<reading>
+          <name>string search algorithms</name>
+          <reading_url>http://www-igm.univ-mlv.fr/~lecroq/string/</reading_url>
+        </reading>
+        <reading>
+          <name>Fast String Searching With Suffix Trees</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/Suffix_Trees/index.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Indexing Implementation and Indexing Models</title>
+    		<chpter>ch.6;7</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture3.pptx</slide_url>
+    		<reading>
+          <name>Information Retrieval on the World Wide Web</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/papers/WWWIR.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Retrieval Models and Ranking Systems ;Implementation Notes on Vector Space Retrieval</title>
+    		<chpter>ch.7;11</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture5.pptx</slide_url>
+        <slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/implementation.pptx</slide_url>
+    		<reading>
+          <name>The Anatomy of a Large-Scale Hypertextual Web Search Engine</name>
+          <reading_url>http://www-db.stanford.edu/~backrub/google.html</reading_url>
+        </reading>
+        <reading>
+          <name>Context in Web Search</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/papers/context-deb00.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Query Operations; Relevance Feedback; Personalization</title>
+    		<chpter>ch.9</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/Lectures/Relevance-Feedback.pptx</slide_url>
+    		<reading>
+          <name>Understanding User Goals in Web Search</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/papers/www04--rose.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Text Learning and Related Intelligent Agents</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/papers/WebWatcher.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Document Categorization;Clustering Techniques; Clustering in IR</title>
+    		<chpter>ch.16;17;13;sections 14.1-14.2</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/categorization.pptx</slide_url>
+        <slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/Lectures/Clustering.pptx</slide_url>
+    		<reading>
+          <name>Supplemental Notes on Clustering</name>
+          <reading_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/clustering/index.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>IR on the World Wide Web: Hyperlink Analysis; PageRank</title>
+    		<chpter>ch.19-21</chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/lectures/lecture8.ppt</slide_url>
+    		<reading>
+          <name></name>
+          <reading_url></reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>IR on the World Wide Web: Intelligent Web Agents; Personalized Search; Future of Web Search</title>
+    		<chpter></chpter>
+    		<slide_url>http://facweb.cs.depaul.edu/mobasher/classes/csc575/Lectures/WebIR-2.pptx</slide_url>
+
+    	</unit>
+    </units>
+  </course>
+
+  <course no="013">
+    <url>http://web.simmons.edu/~benoit/lis466/syllabus466-spring2011.html</url>
+    <textbook></textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Introduction</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/a-Overview-1.html</slide_url>
+    		<reading>
+          <name>Baeza-Yates, chapter 1</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/Baeza-Yateschap01.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Human Language and Full Texts</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/Lecture-2-Overview.html</slide_url>
+    		<reading>
+          <name>van der Weide, chapters 1-3</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/InfoDiscovery-NL.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Language Notes (GB)</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/PhiloLang-1.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Read/Scan this intro to Set Theory</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/basicsOfSettheory.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Language and Logic [html]</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/a-LanguageLogic-1.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>The Query Representation</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>The Document Collection Representation</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/Lecture-4-DocCollection.html</slide_url>
+    		<reading>
+          <name>Intro notes about documents (GB)</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/gb-IR-DocCol-1.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Processing Text (Croft)</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/Text-chap4.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>The Matching Function</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Intro note</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/Lecture5-Matching.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>The Web and IR Intro Notes</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/gb-IR-WebSearching-1.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Non-text documents Intro</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/gb-IR-NonText-1.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Porter Stemming Algorithm (1980)</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/PorterStemmingAlgorithm.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>The Ranking Function</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Intro to ranking and evaluation</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/gb-IR-Text-Evaluation-1.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Evaluating Search Engines</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/Evaluation-chap8.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>Ranking Lecture </name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/lis466-ranking.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>XML and IR</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/Week8-XMLandIR.html</slide_url>
+    		<reading>
+          <name>Library catalogues, XML and IR (GB)</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/gb-IR-LibraryCats-1.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Cross-Language IR</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/CLIRTalkPPT.htm</slide_url>
+        <slide_url>http://web.simmons.edu/~benoit/lis466/CLIR_Spring2001_2.ppt</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Domain-specific IR applications</title>
+    		<chpter></chpter>
+    		<slide_url>http://web.simmons.edu/~benoit/lis466/MultimediaIR.pdf</slide_url>
+        <slide_url>http://web.simmons.edu/~benoit/lis466/BioinformaticsAndLIS.htm</slide_url>
+        <slide_url>http://web.simmons.edu/~benoit/lis466/ferrin-infoviz.pdf</slide_url>
+        <slide_url>http://web.simmons.edu/~benoit/lis466/Bioinformatics-ARIST.pdf</slide_url>
+        <slide_url>http://web.simmons.edu/~benoit/lis466/MillerD99.pdf</slide_url>
+
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Visualization</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+    		<reading>
+          <name>Robertson vis</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/p153-robertson.pdf</reading_url>
+        </reading>
+        <reading>
+          <name>User Interfaces</name>
+          <reading_url>http://web.simmons.edu/~benoit/lis466/Users-Interfaces-Visualization.html</reading_url>
+        </reading>
+        <reading>
+          <name>Tag-Clouds</name>
+          <reading_url>http://www.nosolousabilidad.com/hassan/improving_tagclouds.pdf</reading_url>
+        </reading>
+    	</unit>
+    </units>
+  </course>
+
+  <course no="014">
+    <url>http://www-scf.usc.edu/~csci572/</url>
+    <textbook>IIR</textbook>
+    <units>
+    	<unit>
+    		<no>1</no>
+    		<title>Search Engine Basics</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+
+    	</unit>
+      <unit>
+    		<no>2</no>
+    		<title>Characterizing the Web </title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>WDM2:Structured Data and IR (17 min)</name>
+          <video_url>https://www.youtube.com/watch?v=riROjyPYqLc&amp;index=2&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>**The Story of Google (start at 14 min to 43 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Jjbh9FFW6VE</video_url>
+        </video>
+        <video>
+          <name>WDM1:What is Data Mining (8 min)</name>
+          <video_url>https://www.youtube.com/watch?v=q0srNT_XM_Y&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Search Engine Evaluation</title>
+    		<chpter>ch.8</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Search Engine Evaluation - Jurafsky and Manning, Stanford U. (9 min)</name>
+          <video_url>https://www.youtube.com/watch?v=ds1OKuB7lDw</video_url>
+        </video>
+        <video>
+          <name>**Precision and Recall, Jurafsky &amp; Manning, Stanford U. (16 min)</name>
+          <video_url>https://www.youtube.com/watch?v=2akd6uwtowc</video_url>
+        </video>
+    		<reading>
+          <name>Google's Search Engine Evaluation Manual</name>
+          <reading_url>http://www-scf.usc.edu/~csci572/papers/searchqualityevaluatorguidelines.pdf</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>3</no>
+    		<title>Crawling</title>
+    		<chpter>ch.20</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**WDM116:URL Frontier Using Mercator Scheme (29 min)</name>
+          <video_url>https://www.youtube.com/watch?v=X6kMrZcilTc&amp;amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=123</video_url>
+        </video>
+
+    	</unit>
+      <unit>
+    		<no>4</no>
+    		<title>Identifying Duplicates</title>
+    		<chpter>ch.18;section 19.6</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Scoring with the Jaccard Coefficient, Jurafsky and Manning, Stanford (5 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Vbdki_gnnYM</video_url>
+        </video>
+        <video>
+          <name>**Locality Sensitive Hashing Part 1, Ullman, Stanford (50 min, start 14 minutes in and go as long as you like)</name>
+          <video_url>https://www.youtube.com/watch?v=bQAYY8INBxg</video_url>
+        </video>
+        <video>
+          <name>See Also: Locality Sensitive Hashing Part 2, Ullman, Stanford (50 min)</name>
+          <video_url>See Also: Locality Sensitive Hashing Part 2, Ullman, Stanford (50 min)</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>5</no>
+    		<title>Introduction to Information Retrieval</title>
+    		<chpter>ch.6</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**Inverse Document Frequency Weighting, Jurafsky&amp;Manning, Stanford U. (10 min)</name>
+          <video_url>https://www.youtube.com/watch?v=a50Hv_N-yHA</video_url>
+        </video>
+        <video>
+          <name>**TF-IDF Weighting, Jurafsky&amp;Manning, Stanford U. (3 min)</name>
+          <video_url>https://www.youtube.com/watch?v=PhunzHqhKoQ</video_url>
+        </video>
+        <video>
+          <name>**Calculating TF-IDF Cosine Scores, Jurafsky&amp;Manning, Stanford U. (12 min)</name>
+          <video_url>https://www.youtube.com/watch?v=E3shpvJUZ84</video_url>
+        </video>
+
+    	</unit>
+      <unit>
+    		<no>6</no>
+    		<title>Processing Text: Lexicon&amp;Text Normalization</title>
+    		<chpter>ch.2</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**Word Tokenization, Jurafsky&amp;Manning, Stanford U. (14 min)</name>
+          <video_url>https://www.youtube.com/watch?v=jBk24DI8kg0</video_url>
+        </video>
+        <video>
+          <name>**Word Normalization and Stemming, Jurafsky&amp;Manning, Stanford U. (11 min)</name>
+          <video_url>https://www.youtube.com/watch?v=2s7f8mBwnko</video_url>
+        </video>
+        <video>
+          <name>WDM33:Soundex Algorithm (9 min)</name>
+          <video_url>https://www.youtube.com/watch?v=ejFR-hw2eoI</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>7</no>
+    		<title>Building an Inverted Index, Phase One</title>
+    		<chpter>ch.1;2</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>WDM10: Query Optimization Using Document Frequency 2 (11 min)</name>
+          <video_url>https://www.youtube.com/watch?v=N2uPp4-e-Iw&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=10</video_url>
+        </video>
+        <video>
+          <name>**Word Similarity and Thesaurus Methods (16 min)</name>
+          <video_url>https://www.youtube.com/watch?v=c9zcE1bQhm8&amp;index=90&amp;list=PL6397E4B26D00A269</video_url>
+        </video>
+        <video>
+          <name>**Word Similarity Distributional Similarity Part I (14 min)</name>
+          <video_url>https://www.youtube.com/watch?v=tYw3gJMumg0&amp;list=PL6397E4B26D00A269&amp;index=91</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>8</no>
+    		<title>Building an Inverted Index, Phase Two </title>
+    		<chpter>ch.4</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**WDM50 DYNAMIC INDEXING USING LOGARITHMIC MERGE (17 min)</name>
+          <video_url>https://www.youtube.com/watch?v=VNjf2dxWH2Y</video_url>
+        </video>
+
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Google Query Formulation</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**Inside Google, Search Quality Meeting: Spelling for Long Queries (8 min)</name>
+          <video_url>https://www.youtube.com/watch?v=JtRJXnXgE-A</video_url>
+        </video>
+        <video>
+          <name>**Google Search in a Mobile World (start at 21 minutes, career advice, total 59 min)</name>
+          <video_url>https://www.youtube.com/watch?v=0k2ufqVh-pU</video_url>
+        </video>
+        <video>
+          <name>Inside Google's Search Office (1hr 30 min)</name>
+          <video_url>https://www.youtube.com/watch?v=qlAydU6vBZo</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>9</no>
+    		<title>Page Rank </title>
+    		<chpter>ch.20;21</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Fifty Two videos on PageRank</name>
+          <video_url>https://www.youtube.com/playlist?list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt</video_url>
+        </video>
+        <video>
+          <name>**2 5 Link Analysis and PageRank (9 min)</name>
+          <video_url>https://www.youtube.com/watch?v=IiBVy6sBIU4&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt&amp;index=16</video_url>
+        </video>
+        <video>
+          <name>**2 6 PageRank The Flow Formulation (9 min)</name>
+          <video_url>https://www.youtube.com/watch?v=SA_u2ze3TXY&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt&amp;index=20</video_url>
+        </video>
+        <video>
+          <name>**2 7 PageRank The Matrix Formulation (8 min)</name>
+          <video_url>https://www.youtube.com/watch?v=zQiJc-wzcyI&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt&amp;index=4</video_url>
+        </video>
+        <video>
+          <name>2 8 PageRank Power Iteration (10 min)</name>
+          <video_url>https://www.youtube.com/watch?v=VpiyOxiVmCg&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt&amp;index=5</video_url>
+        </video>
+        <video>
+          <name>PageRank the Google Formulation (12 min)</name>
+          <video_url>https://www.youtube.com/watch?v=ytjf6zYDd4s&amp;index=11&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt</video_url>
+        </video>
+        <video>
+          <name>PageRank The Flow Formulation (9 min)</name>
+          <video_url>https://www.youtube.com/watch?v=1nLV8FEaZD0&amp;index=15&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt</video_url>
+        </video>
+        <video>
+          <name>How we really compute pagerank (13 min)</name>
+          <video_url>https://www.youtube.com/watch?v=E9aoTVmQvok&amp;index=19&amp;list=PL9jtZXkxK1eGLNIuwCVRs7N33v3X202mt</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>10</no>
+    		<title>Search Engine Advertising</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**Creating an AdWords Campaign (2 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Sy7Y7T5Dz4M&amp;list=PL9piTIvKJnJN4ot42</video_url>
+        </video>
+        <video>
+          <name>**Doubleclick Ad Exchange (first 45 minutes is good)</name>
+          <video_url>https://www.youtube.com/watch?v=pXBCQLfUS44&amp;feature=edu&amp;list=PLAD8A7B6D66DDD297</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>11</no>
+    		<title>Knowledge Systems</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**Knowledge Graph (2 min 30 sec)</name>
+          <video_url>https://www.youtube.com/watch?v=mmQl6VGvX-c</video_url>
+        </video>
+        <video>
+          <name>**The History of Wikipedia (2 min)</name>
+          <video_url>https://www.youtube.com/watch?v=oVFPW0r4jWk</video_url>
+        </video>
+        <video>
+          <name>**Trolling the Wikipedia Trolls (4.5 min)</name>
+          <video_url>https://www.youtube.com/watch?v=kOuZlSR0AHI</video_url>
+        </video>
+        <video>
+          <name>What is Wikipedia Zero?</name>
+          <video_url>https://www.youtube.com/watch?v=ZaZf6h0Pus8</video_url>
+        </video>
+        <video>
+          <name>Build a Wikipedia Viewer Part 1 (7 min)</name>
+          <video_url>https://www.youtube.com/watch?v=PFrzq01h4m0</video_url>
+        </video>
+        <video>
+          <name>Build a Wikipedia Viewer Part 2 (6 min)</name>
+          <video_url>https://www.youtube.com/watch?v=dRZxQY2RgUA</video_url>
+        </video>
+        <video>
+          <name>Using Wikipedia for Academic Research (3.3 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Cql_yVUYj6A</video_url>
+        </video>
+        <video>
+          <name>How Reliable is Wikipedia? (9.3 min)</name>
+          <video_url>https://www.youtube.com/watch?v=y__arosJ4ns</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>12</no>
+    		<title>Query Processing;Google Architecture</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**WDM68 EFFICIENT COSINE RANKING (15 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Bzf3H4yWq9Q&amp;list=PL0ZVw5-GryEkGAQT7\</video_url>
+        </video>
+        <video>
+          <name>**WDM69 GENERIC APPROACH FOR SPEEDING UP COSINE SIMILARITY (7 min)</name>
+          <video_url>https://www.youtube.com/watch?v=QLDBCRTge_s&amp;index=68&amp;list=PL0ZVw5-G</video_url>
+        </video>
+        <video>
+          <name>**WDM70 INDEX ELIMINATION (15 min)</name>
+          <video_url>https://www.youtube.com/watch?v=HLvjeS63PnQ&amp;index=69&amp;list=PL0ZVw5-G</video_url>
+        </video>
+        <video>
+          <name>**Google Video on Search Engine Ranking, Singhal and Dean (29 min)</name>
+          <video_url>https://www.youtube.com/watch?v=4SGRKPpIMwc</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>13</no>
+    		<title>Map/Reduce</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Google Fellows discuss MapReduce, Dean and Ghemawat (25 min)</name>
+          <video_url>https://www.youtube.com/watch?v=NXCIItzkn3E</video_url>
+        </video>
+        <video>
+          <name>**WDM48:Map/Reduce (24 min)</name>
+          <video_url>https://www.youtube.com/watch?v=iTIvYQINwoc&amp;index=47&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>Google Course on Map/Reduce, Part 1 (46 min)</name>
+          <video_url>https://www.youtube.com/watch?v=yjPBkvYh-ss</video_url>
+        </video>
+        <video>
+          <name>Google Course on Map/Reduce, Part 2 (52 min)</name>
+          <video_url>https://www.youtube.com/watch?v=-vD6PUdf3Js</video_url>
+        </video>
+    		<reading>
+          <name>Jeff Dean MapReduce Slides</name>
+          <reading_url>http://research.google.com/archive/mapreduce-osdi04-slides/index.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>14</no>
+    		<title>Spelling Correction</title>
+    		<chpter>ch.3;section3.3</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>**WDM38:Spelling Correction Using N-Gram Overlap Technique (21 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Qmrki2CoElk&amp;index=37&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>**WDM40:Context Sensitive Spell Correction (12 min)</name>
+          <video_url>https://www.youtube.com/watch?v=q3QEKCWguBw&amp;index=39&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>WDM34:Spelling Correction Part 2 (18 min)</name>
+          <video_url>https://www.youtube.com/watch?v=q5XiT-AvMG8&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=33</video_url>
+        </video>
+        <video>
+          <name>WDM36:Calculating the Edit Distance Between Two Strings(63 min)</name>
+          <video_url>https://www.youtube.com/watch?v=CB425OsE4Fo&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=35</video_url>
+        </video>
+        <video>
+          <name>WDM37:Spelling Correction Using Weighted Edit Distance (24 min)</name>
+          <video_url>https://www.youtube.com/watch?v=2nTu_wAeHN8&amp;index=36&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>15</no>
+    		<title>Rich Text Snippets</title>
+    		<chpter></chpter>
+    		<slide_url>http://www.stanford.edu/class/ee380/Abstracts/101110-slides.pdf</slide_url>
+        <video>
+          <name>Challenges in Building Large-Scale IR System by Jeff Dean, Google Fellow (1 hr)</name>
+          <video_url>http://videolectures.net/wsdm09_dean_cblirs/</video_url>
+        </video>
+        <video>
+          <name>Building Software Systems at Google by Jeff Dean (1 hr 22 min)</name>
+          <video_url>https://www.youtube.com/watch?v=modXC5IWTJI</video_url>
+        </video>
+        <video>
+          <name>**Generating Snippets - Jurafsky&amp;Manning, Stanford U. (7 min)</name>
+          <video_url>https://www.youtube.com/watch?v=dOr4NX4Z6-g&amp;list=PL6397E4B26D00A269&amp;index=99</video_url>
+        </video>
+        <video>
+          <name>**Max Cutts talks about Snippets (8 min)</name>
+          <video_url>https://www.youtube.com/watch?v=vS1Mw1Adrk0</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>16</no>
+    		<title>Clustering</title>
+    		<chpter>ch.16;17</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>WDM97:Applications of Clustering in IR Systems (18 min)</name>
+          <video_url>https://www.youtube.com/watch?v=_km57Qzjq0g&amp;index=98&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>WDM98: Issues for Clustering (5 min)</name>
+          <video_url>https://www.youtube.com/watch?v=y0khBcjvaPQ&amp;index=96&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>**WDM99: Introduction to Clustering Algorithms (5 min)</name>
+          <video_url>https://www.youtube.com/watch?v=NnuvAP7A34E&amp;index=97&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>WDM100: K-Means Clustering (1 hr 4 min)</name>
+          <video_url>https://www.youtube.com/watch?v=Ro9EpTzFvoI&amp;index=95&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ</video_url>
+        </video>
+        <video>
+          <name>**Hierarchical Agglomerative Clustering (12 min)</name>
+          <video_url>https://www.youtube.com/watch?v=OcoE7JlbXvY</video_url>
+        </video>
+        <video>
+          <name>**K-Means Clustering (15 min)</name>
+          <video_url>https://www.youtube.com/watch?v=mfqmoUN-Cuw</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>17</no>
+    		<title>Battling Click Fraud</title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Click Fraud: Anecdotes from the Front Line CMU talk 2007 (1 hr, start 15 minute s in)</name>
+          <video_url>https://www.youtube.com/watch?v=6gihlx0tEWM</video_url>
+        </video>
+    		<reading>
+          <name>Google Grabs Spider.io</name>
+          <reading_url>https://storify.com/VivaKi/down-with-click-fraud-google-grabs-spide</reading_url>
+        </reading>
+        <reading>
+          <name>Google Issues Bad Ads Report, 2013</name>
+          <reading_url>http://searchengineland.com/google-issues-bad-ads-report-59-percent</reading_url>
+        </reading>
+        <reading>
+          <name>Google issues Bad Ads Report, 2015</name>
+          <reading_url>https://googleblog.blogspot.com/2016/01/better-ads-report.html</reading_url>
+        </reading>
+    	</unit>
+      <unit>
+    		<no>18</no>
+    		<title>Question Answering</title>
+    		<chpter>ch.19</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>What is Question Answering - Jurafsky&amp;Manning, Stanford U. (7 m in)</name>
+          <video_url>https://www.youtube.com/watch?v=DAHZPL6voc4&amp;index=93&amp;list=PL6397E4B</video_url>
+        </video>
+        <video>
+          <name>Answer Types and Query Formulation - Jurafsky&amp;Manning, Stanford U. (8min)</name>
+          <video_url>https://www.youtube.com/watch?v=K7VwMBRArgw&amp;index=94&amp;list=PL6397E4B</video_url>
+        </video>
+        <video>
+          <name>Passage Retrieval and Answer Extraction - Jurafsky&amp;Manning, Sta nford U. (6 min)</name>
+          <video_url>https://www.youtube.com/watch?v=cRYf1CT0SpI&amp;index=95&amp;list=PL6397E4B</video_url>
+        </video>
+        <video>
+          <name>WordNet and Other Online Thesauri - Jurafsky&amp;Manning, Stanford U. (6 min)</name>
+          <video_url>https://www.youtube.com/watch?v=3VEzPbh3qBE&amp;list=PL6397E4B26D00A269</video_url>
+        </video>
+        <video>
+          <name>Using Knowledge in QA - Jurafsky&amp;Manning, Stanford U. (4 min)</name>
+          <video_url>https://www.youtube.com/watch?v=5io66XP66os&amp;index=96&amp;list=PL6397E4B</video_url>
+        </video>
+        <video>
+          <name>Advanced Answering Complex Questions - Jurafsky&amp;Manning, Stanfo rd U. (5 min)</name>
+          <video_url>https://www.youtube.com/watch?v=WRomzf3iwHk&amp;index=97&amp;list=PL6397E4B</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>19</no>
+    		<title>Vector Space Classification:Rocchio and KNN Algorithms</title>
+    		<chpter>ch.9;14</chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>WDM121: Rocchio Algorithms (25 min)</name>
+          <video_url>https://www.youtube.com/watch?v=mAEpkmNjlSc&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=113</video_url>
+        </video>
+        <video>
+          <name>WDM122: K nearest Neighbor Algorithms (23 min)</name>
+          <video_url>https://www.youtube.com/watch?v=M50TyD9x6gM&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=115</video_url>
+        </video>
+        <video>
+          <name>WDM123: Discussion of K Nearest Neighbor (25 min)</name>
+          <video_url>https://www.youtube.com/watch?v=lzK2oeu7Svs&amp;list=PL0ZVw5-GryEkGAQT7lX7oIHqyDPeUyOMQ&amp;index=116</video_url>
+        </video>
+    	</unit>
+      <unit>
+    		<no>20</no>
+    		<title>Image Search </title>
+    		<chpter></chpter>
+    		<slide_url></slide_url>
+        <video>
+          <name>Multimedia Information Retrieval (start at 1:11:41, 10 minutes)</name>
+          <video_url>http://videolectures.net/essir2011_ruger_retrieval/</video_url>
+        </video>
+        <video>
+          <name>Multimedia Information Indexing and Retrieval (start at 33:55, 10 minutes )</name>
+          <video_url>http://videolectures.net/ssms08_smeaton_miir/</video_url>
+        </video>
+        <video>
+          <name>Large-Scale Image Classification: ImageNet and ObjectBank (14:00, 15 minutes)</name>
+          <video_url>https://www.youtube.com/watch?v=qdDHp29QVdw</video_url>
+        </video>
+        <video>
+          <name>How We Teach Computers to Understand Pictures TED Talk (18 min)</name>
+          <video_url>https://www.youtube.com/watch?v=40riCqvRoMs&amp;nohtml5=False</video_url>
+        </video>
+    	</unit>
+    </units>
+  </course>
+</coursename>
